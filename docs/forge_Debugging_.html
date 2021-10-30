@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>forge</title>
+<style type="text/css">
+font.header {color:rgb(216,108,0);}
+h2 {color:rgb(216,108,0);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;">
+<dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dd><a href="forge_Debugging_.html">Debugging </a></dd><dd><a href="forge_Random_number_generators_.html">Random number generators </a></dd><dd><a href="forge_Vector_math_.html">Vector math </a></dd><dd><a href="forge_Integer_vector_math_.html">Integer vector math </a></dd><dd><a href="forge_Matrix_operations_.html">Matrix operations </a></dd><dd><a href="forge_Matrix_Creation_.html">Matrix Creation </a></dd><dd><a href="forge_Splines_.html">Splines </a></dd><dd><a href="forge_Wiggle_.html">Wiggle </a></dd><dd><a href="forge_Smooth_step_.html">Smooth step </a></dd><dd><a href="forge_Perlin_noise_.html">Perlin noise </a></dd><dd><a href="forge_tiled_versions_of_all_perlin_noi.html">tiled versions of all perlin noises</a></dd><dd><a href="forge_Snap_.html">Snap </a></dd><dd><a href="forge_Color_space_.html">Color space </a></dd><dd><a href="forge_Triangle_intersection_.html">Triangle intersection </a></dd><dd><a href="forge_Text_.html">Text </a></dd><dd><a href="forge_Sorting_.html">Sorting </a></dd><dd><a href="forge_Poly_mesh_neighbour_.html">Poly mesh neighbour </a></dd><dd><a href="forge_A*_path_finding_.html">A* path finding </a></dd><dd><a href="forge_defines.html">Defines</a></dd><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dt><a href="testify.html" style="color:rgb(216,0,108);">testify</a></dt></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+
+<h1><p>Debugging </p></h1>
+<p class="group">If F_MEMORY_DEBUG  is enabled, the memory debugging system will create macros that replace malloc, free and realloc and allows the system to keppt track of and report where memory is beeing allocated, how much and if the memory is beeing freed. This is very useful for finding memory leaks in large applications. The system can also over allocate memory and fill it with a magic number and can therfor detect if the application writes outside of the allocated memory. if F_EXIT_CRASH is defined, then exit(); will be replaced with a funtion that writes to NULL. This will make it trivial ti find out where an application exits using any debugger., </p>
+<H3><p id="f_debug_memory_init">f_debug_memory_init</p></H3>
+<p class="code">void f_debug_memory_init(void (*lock)(void *mutex), void (*unlock)(void *mutex), void *mutex); </p>
+<font class="header">Description:</font>
+<font class="description">Required for memory debugger to be thread safe </font>
+<H3><p id="f_debug_mem_malloc">f_debug_mem_malloc</p></H3>
+<p class="code">void *f_debug_mem_malloc(uint size, char *file, uint line); </p>
+<font class="header">Description:</font>
+<font class="description">Replaces malloc and records the c file and line where it was called</font>
+<H3><p id="f_debug_mem_realloc">f_debug_mem_realloc</p></H3>
+<p class="code">void *f_debug_mem_realloc(void *pointer, uint size, char *file, uint line); </p>
+<font class="header">Description:</font>
+<font class="description">Replaces realloc and records the c file and line where it was called</font>
+<H3><p id="f_debug_mem_free">f_debug_mem_free</p></H3>
+<p class="code">void f_debug_mem_free(void *buf); </p>
+<font class="header">Description:</font>
+<font class="description">Replaces free and records the c file and line where it was called</font>
+<H3><p id="f_debug_mem_print">f_debug_mem_print</p></H3>
+<p class="code">void f_debug_mem_print(uint min_allocs); </p>
+<font class="header">Description:</font>
+<font class="description">Prints out a list of all allocations made, their location, how much memorey each has allocated, freed, and how many allocations have been made. The min_allocs parameter can be set to avoid printing any allocations that have been made fewer times then min_allocs </font>
+<H3><p id="f_debug_mem_reset">f_debug_mem_reset</p></H3>
+<p class="code">void f_debug_mem_reset(); </p>
+<font class="header">Description:</font>
+<font class="description">f_debug_mem_reset allows you to clear all memory stored in the debugging system if you only want to record allocations after a specific point in your code</font>
+<H3><p id="f_debug_memory">f_debug_memory</p></H3>
+<p class="code">boolean f_debug_memory(); </p>
+<font class="header">Description:</font>
+<font class="description">f_debug_memory checks if any of the bounds of any allocation has been over written and reports where to standard out. The function returns TRUE if any error was found</font>
+<H3><p id="exit_crash">exit_crash</p></H3>
+<p class="code">void exit_crash(uint i); </p>
+<font class="header">Description:</font>
+<font class="description">finction guaranteed to crash (Writes to NULL).</font>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html> 

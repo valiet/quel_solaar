@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>betray</title>
+<style type="text/css">
+font.header {color:rgb(0,216,108);}
+h2 {color:rgb(0,216,108);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;">
+<dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dd><a href="betray_Functionality_query_.html">Functionality query </a></dd><dd><a href="betray_Display_Functionality_.html">Display Functionality </a></dd><dd><a href="betray_Main_loop_.html">Main loop </a></dd><dd><a href="betray_Mouse_Warp_.html">Mouse Warp </a></dd><dd><a href="betray_File_requesters_.html">File requesters </a></dd><dd><a href="betray_Clip_board_.html">Clip board </a></dd><dd><a href="betray_Timers_.html">Timers </a></dd><dd><a href="betray_OpenGL_.html">OpenGL </a></dd><dd><a href="betray_Button_and_key_.html">Button and key </a></dd><dd><a href="betray_Sound_Clip_.html">Sound Clip </a></dd><dd><a href="betray_Sound_Stream__.html">Sound Stream  </a></dd><dd><a href="betray_Sound_Listener__.html">Sound Listener  </a></dd><dd><a href="betray_Sound_Listener__.html">Sound Listener  </a></dd><dd><a href="betray_Settings_.html">Settings </a></dd><dd><a href="betray_defines.html">Defines</a></dd><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dt><a href="testify.html" style="color:rgb(216,0,108);">testify</a></dt></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+
+<p><H2>betray</H2></p>
+<p class="group">
+Betray is the main platform abstraction layer that lets you open a window that you can draw to and access user input, and other operat ing system specific functionality. Betray is designed to be implemented on any kind of polatform that supports some form of OpenGL (It would be popssibble to extend its capabilities to other graphics APIS too), it is therefor similar to GLUT and SDL. <BR>
+<BR>
+One of the main design goals with betray is to make it possible to write an applications that makes use of many different types of hardware setups, so that a single codebase can run on different hardware. If utilized corrrectly a single Betray application should be able to run on everything from a phone, to a laptop all the way to a sterioscopic headmounted display, or a multi user wall. The api is designed to try tto reduce the ammount of query needed to make the application run well on any hardware. For instance, all pointers are the same indipendently of if they are created using touch or one or more mice. The same goes for buttons and axis input. It is obviusly recomended that you try to test your application with as many different hardware setups as possible.<BR>
+<BR>
+Betray is designed to be compiled in to any project, and therfore needs to be small, lightweight and not have any dependencies. On the other hand it is decirable for Betray to have as many dependencies to as many Hardware SDKs as possible in order to support a wide set of hardware. In order to solve this hardware paradox, Betray uses "imagine" to create a blugin interface where plugings can add functionality to betray. This way application developers can focus on building applications, and people who are interested in supporting hardware can write plugins that add functionality to Betray applications. Some functionality in Betrays A<a href="forge_Forge_is_a_basic_utility_library.html#PI">PI</a> doesnt do anything until a plugin is present to provide the functionality (Like sound). A plugin can also expose settings to the applications using the settings API. If you are interested in writing a plugin for Betray, check out the separate betray_plugin_api.h.<BR>
+<BR>
+Betray supports multi user inputs. This may be multiple game controlers, or more exotic setups like multi user multi touch walls. For most uses this does not matter to a developer, but in some cases (like matching a specific pointer activating a type-in feild to a specific keyboard) developers may want to take this in to account. All UI ellements in Seduce supports this.<BR>
+<BR>
+The main loop:<BR>
+<BR>
+In order to start betray and open a window the application needs to call betray_init, but this does not start the applications main loop. In order to start the main loop you first need to give betray a function pointer to call as the main loop using  <a href="betray_Main_loop_.html#betray_action_func_set">betray_action_func_set</a> and then call <a href="betray_Main_loop_.html#betray_launch_main_loop">betray_launch_main_loop</a> to launch the application main loop. If the window is closed, the <a href="betray_Main_loop_.html#betray_launch_main_loop">betray_launch_main_loop</a> function will return. When the main loop is called it gets called with a pointer to a structure named BInputState. This read only structure contains a lot of information about the current state, such as pointer positions and events. One of the most important parameters of this structure is "mode" that describes why the function was called. It can be either BAM_DRAW because the application is asked to redraw the graphics, BAM_EVENT because the application needs to respond to incomming events, or BAM_MAIN because time has elapsed. Ofther all three are cvalled for each frame, but this is not always the case. BAM_DRAW may not be called if the application is minimized, but can also be called multiple times for each frame to support thinjgs like sterioscopic rendering. The application can read out the parameter draw_id and draw_count in order to know how many draw calls are expected and what call is currently being requested. This is very useful since you may for instance only want to calculate shadow buffers once even if you are drawing two different outputs. For multi drawcals to work propperly it is important to make use of <a href="betray_Display_Functionality_.html#betray_view_vantage">betray_view_vantage</a> and betray_view_direction. BAM_EVENT may only be called if there are any input events worth prosessing, but should always call at least twice after any event due to the design of the pointer and key events. BAM_MAIN is always called even if the application is minimized. This makes it useful for things like processing and network tradfic.<BR>
+<BR>
+The main design goal of using the same callback for all three calls is that it makes easy to implement high level widgets that, by taking the BInputStruct as a parameter can themselves figure out what to do. For exammple one may implement a function like:<BR>
+<BR>
+booelan my_button(<a href="betray_Input_structure_.html#BInputState">BInputState</a> *input, float pos_x, float pos_y);<BR>
+<BR>
+This function can now either draw a button, or detect if the button is being pressed separatly. The user do not have to describe the button more then once even if the button functionaly does two diffferent things. The UI library Seduce is built entierly arround this concept.<BR>
+<BR>
+A simple sample program using betray is included in the source package and is called betray_test.c. This example uses desktop OpenGL. A different sample program called <a href="betray_relinquish_test.c">betray_relinquish_test.c</a> uses the relinquish rendering wrapper and is therefore compatible with OpenGL ES 2.0<BR>
+<BR>
+Betray depends on Forge, Imagine, and OpenGL.<BR>
+<BR>
+Betray is currently implemented for windows (both 32 and 64 bit) and a iOS port exists (with less functionality obviusly). My plan is to port the layer to other platforms in the future. If you are interested in helping me let me know.<BR>
+<BR>
+</p>
+<p class="header">Contents:</p><dl>
+<dt><a href="betray_Functionality_query_.html">Functionality query </a></dt>
+<dd><a href="betray_Functionality_query_.html#betray_support_context">betray_support_context</a></dd>
+<dd><a href="betray_Functionality_query_.html#betray_support_functionality">betray_support_functionality</a></dd>
+<dt><a href="betray_Display_Functionality_.html">Display Functionality </a></dt>
+<dd><a href="betray_Display_Functionality_.html#betray_init">betray_init</a></dd>
+<dd><a href="betray_Display_Functionality_.html#betray_context_type_get">betray_context_type_get</a></dd>
+<dd><a href="betray_Display_Functionality_.html#betray_screen_mode_set">betray_screen_mode_set</a></dd>
+<dd><a href="betray_Display_Functionality_.html#betray_screen_mode_get">betray_screen_mode_get</a></dd>
+<dd><a href="betray_Display_Functionality_.html#betray_view_vantage">betray_view_vantage</a></dd>
+<dd><a href="betray_Display_Functionality_.html#betray_view_direction">betray_view_direction</a></dd>
+<dd><a href="betray_Display_Functionality_.html#betray_get_input_state">betray_get_input_state</a></dd>
+<dt><a href="betray_Main_loop_.html">Main loop </a></dt>
+<dd><a href="betray_Main_loop_.html#betray_action_func_set">betray_action_func_set</a></dd>
+<dd><a href="betray_Main_loop_.html#betray_launch_main_loop">betray_launch_main_loop</a></dd>
+<dt><a href="betray_Mouse_Warp_.html">Mouse Warp </a></dt>
+<dd><a href="betray_Mouse_Warp_.html#betray_set_mouse_warp">betray_set_mouse_warp</a></dd>
+<dd><a href="betray_Mouse_Warp_.html#betray_set_mouse_move">betray_set_mouse_move</a></dd>
+<dt><a href="betray_File_requesters_.html">File requesters </a></dt>
+<dd><a href="betray_File_requesters_.html#betray_requester_save">betray_requester_save</a></dd>
+<dd><a href="betray_File_requesters_.html#betray_requester_load">betray_requester_load</a></dd>
+<dd><a href="betray_File_requesters_.html#betray_requester_save_get">betray_requester_save_get</a></dd>
+<dd><a href="betray_File_requesters_.html#betray_requester_load_get">betray_requester_load_get</a></dd>
+<dt><a href="betray_Clip_board_.html">Clip board </a></dt>
+<dd><a href="betray_Clip_board_.html#betray_clipboard_set">betray_clipboard_set</a></dd>
+<dd><a href="betray_Clip_board_.html#betray_clipboard_get">betray_clipboard_get</a></dd>
+<dt><a href="betray_Timers_.html">Timers </a></dt>
+<dd><a href="betray_Timers_.html#betray_time_delta_get">betray_time_delta_get</a></dd>
+<dt><a href="betray_OpenGL_.html">OpenGL </a></dt>
+<dd><a href="betray_OpenGL_.html#betray_gl_context_update_func_set">betray_gl_context_update_func_set</a></dd>
+<dd><a href="betray_OpenGL_.html#betray_gl_proc_address_get">betray_gl_proc_address_get</a></dd>
+<dt><a href="betray_Button_and_key_.html">Button and key </a></dt>
+<dd><a href="betray_Button_and_key_.html#betray_button_get">betray_button_get</a></dd>
+<dd><a href="betray_Button_and_key_.html#betray_button_get_up_down">betray_button_get_up_down</a></dd>
+<dd><a href="betray_Button_and_key_.html#betray_button_get_name">betray_button_get_name</a></dd>
+<dd><a href="betray_Button_and_key_.html#betray_button_keyboard">betray_button_keyboard</a></dd>
+<dt><a href="betray_Sound_Clip_.html">Sound Clip </a></dt>
+<dd><a href="betray_Sound_Clip_.html#betray_audio_sound_create">betray_audio_sound_create</a></dd>
+<dd><a href="betray_Sound_Clip_.html#betray_audio_sound_destroy">betray_audio_sound_destroy</a></dd>
+<dd><a href="betray_Sound_Clip_.html#betray_audio_sound_play">betray_audio_sound_play</a></dd>
+<dd><a href="betray_Sound_Clip_.html#betray_audio_sound_set">betray_audio_sound_set</a></dd>
+<dd><a href="betray_Sound_Clip_.html#betray_audio_sound_is_playing">betray_audio_sound_is_playing</a></dd>
+<dd><a href="betray_Sound_Clip_.html#betray_audio_sound_stop">betray_audio_sound_stop</a></dd>
+<dt><a href="betray_Sound_Stream__.html">Sound Stream  </a></dt>
+<dd><a href="betray_Sound_Stream__.html#betray_audio_stream_create">betray_audio_stream_create</a></dd>
+<dd><a href="betray_Sound_Stream__.html#betray_audio_stream_destroy">betray_audio_stream_destroy</a></dd>
+<dd><a href="betray_Sound_Stream__.html#betray_audio_stream_feed">betray_audio_stream_feed</a></dd>
+<dd><a href="betray_Sound_Stream__.html#betray_audio_stream_buffer_left">betray_audio_stream_buffer_left</a></dd>
+<dd><a href="betray_Sound_Stream__.html#betray_audio_stream_set">betray_audio_stream_set</a></dd>
+<dt><a href="betray_Sound_Listener__.html">Sound Listener  </a></dt>
+<dd><a href="betray_Sound_Listener__.html#betray_audio_listener">betray_audio_listener</a></dd>
+<dd><a href="betray_Sound_Listener__.html#betray_audio_master_volume_set">betray_audio_master_volume_set</a></dd>
+<dd><a href="betray_Sound_Listener__.html#betray_audio_master_volume_get">betray_audio_master_volume_get</a></dd>
+<dt><a href="betray_Sound_Listener__.html">Sound Listener  </a></dt>
+<dd><a href="betray_Sound_Listener__.html#betray_audio_read_units">betray_audio_read_units</a></dd>
+<dd><a href="betray_Sound_Listener__.html#betray_audio_read_channels_availables">betray_audio_read_channels_availables</a></dd>
+<dd><a href="betray_Sound_Listener__.html#betray_audio_read_channel_directions">betray_audio_read_channel_directions</a></dd>
+<dd><a href="betray_Sound_Listener__.html#betray_audio_read">betray_audio_read</a></dd>
+<dt><a href="betray_Settings_.html">Settings </a></dt>
+<dd><a href="betray_Settings_.html#betray_settings_count">betray_settings_count</a></dd>
+<dd><a href="betray_Settings_.html#betray_settings_type">betray_settings_type</a></dd>
+<dd><a href="betray_Settings_.html#betray_settings_name">betray_settings_name</a></dd>
+<dd><a href="betray_Settings_.html#betray_settings_trigger">betray_settings_trigger</a></dd>
+<dd><a href="betray_Settings_.html#betray_settings_toggle_get">betray_settings_toggle_get</a></dd>
+<dd><a href="betray_Settings_.html#betray_settings_toggle_set">betray_settings_toggle_set</a></dd>
+<dd><a href="betray_Settings_.html#betray_settings_select_get">betray_settings_select_get</a></dd>
+<dd><a href="betray_Settings_.html#betray_settings_select_set">betray_settings_select_set</a></dd>
+<dd><a href="betray_Settings_.html#betray_settings_select_count_get">betray_settings_select_count_get</a></dd>
+<dd><a href="betray_Settings_.html#betray_settings_select_name_get">betray_settings_select_name_get</a></dd>
+<dd><a href="betray_Settings_.html#betray_settings_number_float_get">betray_settings_number_float_get</a></dd>
+<dd><a href="betray_Settings_.html#betray_settings_number_float_set">betray_settings_number_float_set</a></dd>
+<dd><a href="betray_Settings_.html#betray_settings_number_int_get">betray_settings_number_int_get</a></dd>
+<dd><a href="betray_Settings_.html#betray_settings_number_int_set">betray_settings_number_int_set</a></dd>
+<dd><a href="betray_Settings_.html#betray_settings_slider_get">betray_settings_slider_get</a></dd>
+<dd><a href="betray_Settings_.html#betray_settings_slider_set">betray_settings_slider_set</a></dd>
+<dd><a href="betray_Settings_.html#betray_settings_2d_get">betray_settings_2d_get</a></dd>
+<dd><a href="betray_Settings_.html#betray_settings_2d_set">betray_settings_2d_set</a></dd>
+<dd><a href="betray_Settings_.html#betray_settings_3d_get">betray_settings_3d_get</a></dd>
+<dd><a href="betray_Settings_.html#betray_settings_3d_set">betray_settings_3d_set</a></dd>
+<dd><a href="betray_Settings_.html#betray_settings_color_get">betray_settings_color_get</a></dd>
+<dd><a href="betray_Settings_.html#betray_settings_color_set">betray_settings_color_set</a></dd>
+<dd><a href="betray_Settings_.html#betray_settings_4x4_matrix_get">betray_settings_4x4_matrix_get</a></dd>
+<dd><a href="betray_Settings_.html#betray_settings_4x4_matrix_set">betray_settings_4x4_matrix_set</a></dd>
+<dt><a href="betray_defines.html">Defines</a></dt>
+</dl>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html> 

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>forge</title>
+<style type="text/css">
+font.header {color:rgb(216,108,0);}
+h2 {color:rgb(216,108,0);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;">
+<dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dd><a href="forge_Debugging_.html">Debugging </a></dd><dd><a href="forge_Random_number_generators_.html">Random number generators </a></dd><dd><a href="forge_Vector_math_.html">Vector math </a></dd><dd><a href="forge_Integer_vector_math_.html">Integer vector math </a></dd><dd><a href="forge_Matrix_operations_.html">Matrix operations </a></dd><dd><a href="forge_Matrix_Creation_.html">Matrix Creation </a></dd><dd><a href="forge_Splines_.html">Splines </a></dd><dd><a href="forge_Wiggle_.html">Wiggle </a></dd><dd><a href="forge_Smooth_step_.html">Smooth step </a></dd><dd><a href="forge_Perlin_noise_.html">Perlin noise </a></dd><dd><a href="forge_tiled_versions_of_all_perlin_noi.html">tiled versions of all perlin noises</a></dd><dd><a href="forge_Snap_.html">Snap </a></dd><dd><a href="forge_Color_space_.html">Color space </a></dd><dd><a href="forge_Triangle_intersection_.html">Triangle intersection </a></dd><dd><a href="forge_Text_.html">Text </a></dd><dd><a href="forge_Sorting_.html">Sorting </a></dd><dd><a href="forge_Poly_mesh_neighbour_.html">Poly mesh neighbour </a></dd><dd><a href="forge_A*_path_finding_.html">A* path finding </a></dd><dd><a href="forge_defines.html">Defines</a></dd><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dt><a href="testify.html" style="color:rgb(216,0,108);">testify</a></dt></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+
+<h1><p>Matrix Creation </p></h1>
+<p class="group">These functions lets you create a matrix from two points and an optional origo (The origo can be left as NULL). The first vector dominates and the second will be used to determain rotation arround trhe first vecrtor</p>
+<H3><p id="f_matrixxyf">f_matrixxyf</p></H3>
+<p class="code">void f_matrixxyf(float *matrix, const float *origo, const float *point_a, const float *point_b); </p>
+<font class="header">Description:</font>
+<font class="description">Lets you create a 32 bit float 4x4 matrix using the X and Y vector </font>
+<H3><p id="f_matrixxzf">f_matrixxzf</p></H3>
+<p class="code">void f_matrixxzf(float *matrix, const float *origo, const float *point_a, const float *point_b); </p>
+<font class="header">Description:</font>
+<font class="description">Lets you create a 32 bit float 4x4 matrix using the X and Z vector </font>
+<H3><p id="f_matrixyxf">f_matrixyxf</p></H3>
+<p class="code">void f_matrixyxf(float *matrix, const float *origo, const float *point_a, const float *point_b); </p>
+<font class="header">Description:</font>
+<font class="description">Lets you create a 32 bit float 4x4 matrix using the Y and X vector </font>
+<H3><p id="f_matrixyzf">f_matrixyzf</p></H3>
+<p class="code">void f_matrixyzf(float *matrix, const float *origo, const float *point_a, const float *point_b); </p>
+<font class="header">Description:</font>
+<font class="description">Lets you create a 32 bit float 4x4 matrix using the Y and Z vector </font>
+<H3><p id="f_matrixzxf">f_matrixzxf</p></H3>
+<p class="code">void f_matrixzxf(float *matrix, const float *origo, const float *point_a, const float *point_b); </p>
+<font class="header">Description:</font>
+<font class="description">Lets you create a 32 bit float 4x4 matrix using the Z and X vector </font>
+<H3><p id="f_matrixzyf">f_matrixzyf</p></H3>
+<p class="code">void f_matrixzyf(float *matrix, const float *origo, const float *point_a, const float *point_b); </p>
+<font class="header">Description:</font>
+<font class="description">Lets you create a 32 bit float 4x4 matrix using the Z and Y vector </font>
+<H3><p id="f_matrixxyd">f_matrixxyd</p></H3>
+<p class="code">void f_matrixxyd(double *matrix, const double *origo, const double *point_a, const double *point_b); </p>
+<font class="header">Description:</font>
+<font class="description">Lets you create a 64 bit double 4x4 matrix using the X and Y vector </font>
+<H3><p id="f_matrixxzd">f_matrixxzd</p></H3>
+<p class="code">void f_matrixxzd(double *matrix, const double *origo, const double *point_a, const double *point_b); </p>
+<font class="header">Description:</font>
+<font class="description">Lets you create a 64 bit double 4x4 matrix using the X and Z vector </font>
+<H3><p id="f_matrixyxd">f_matrixyxd</p></H3>
+<p class="code">void f_matrixyxd(double *matrix, const double *origo, const double *point_a, const double *point_b); </p>
+<font class="header">Description:</font>
+<font class="description">Lets you create a 64 bit double 4x4 matrix using the Y and X vector </font>
+<H3><p id="f_matrixyzd">f_matrixyzd</p></H3>
+<p class="code">void f_matrixyzd(double *matrix, const double *origo, const double *point_a, const double *point_b); </p>
+<font class="header">Description:</font>
+<font class="description">Lets you create a 64 bit double 4x4 matrix using the Y and Z vector </font>
+<H3><p id="f_matrixzxd">f_matrixzxd</p></H3>
+<p class="code">void f_matrixzxd(double *matrix, const double *origo, const double *point_a, const double *point_b); </p>
+<font class="header">Description:</font>
+<font class="description">Lets you create a 64 bit double 4x4 matrix using the Z and X vector </font>
+<H3><p id="f_matrixzyd">f_matrixzyd</p></H3>
+<p class="code">void f_matrixzyd(double *matrix, const double *origo, const double *point_a, const double *point_b); </p>
+<font class="header">Description:</font>
+<font class="description">Lets you create a 64 bit double 4x4 matrix using the Z and Y vector </font>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html> 

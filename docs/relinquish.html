@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>relinquish</title>
+<style type="text/css">
+font.header {color:rgb(108,0,216);}
+h2 {color:rgb(108,0,216);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;">
+<dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dd><a href="relinquish_Initialization_.html">Initialization </a></dd><dd><a href="relinquish_Array_data__.html">Array data  </a></dd><dd><a href="relinquish_Draw_calls__.html">Draw calls  </a></dd><dd><a href="relinquish_Matrix_management_.html">Matrix management </a></dd><dd><a href="relinquish_Shader_management_.html">Shader management </a></dd><dd><a href="relinquish_Uniform_query_.html">Uniform query </a></dd><dd><a href="relinquish_Uniform_blocks_.html">Uniform blocks </a></dd><dd><a href="relinquish_Uniform_State_.html">Uniform State </a></dd><dd><a href="relinquish_Shader_state_.html">Shader state </a></dd><dd><a href="relinquish_Shader_Debugging_.html">Shader Debugging </a></dd><dd><a href="relinquish_Draw_primitives_.html">Draw primitives </a></dd><dd><a href="relinquish_Surface_primitives_.html">Surface primitives </a></dd><dd><a href="relinquish_Line_primitives_.html">Line primitives </a></dd><dd><a href="relinquish_Sprite_primitives_.html">Sprite primitives </a></dd><dd><a href="relinquish_Image_and_texture_API_.html">Image and texture API </a></dd><dd><a href="relinquish_Frame_buffer_objects_.html">Frame buffer objects </a></dd><dd><a href="relinquish_defines.html">Defines</a></dd><dt><a href="testify.html" style="color:rgb(216,0,108);">testify</a></dt></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+
+<p><H2>relinquish</H2></p>
+<p class="group">
+Relinquish is a Rendering library that wraps arround OpenGL. It is intended to smooth out some of the roughness of OpenGL. Instead of beeing a state machine, it has a object model where state is encapsulated in to objects and then boud. This counteracts the common problems of state leaks. Reliqush also provides many convinient features such as shader parsing and a matrix stack.<BR>
+<BR>
+Reliquish is written to create a base line of hardware abstraction that allows the user to write portable graphics code that is backwards compatible and should run on any OpenGL 2.0 / DX9 level hardware. It also fully supports OpenGL ES 2.0 so any code written using Relinqush should easily be portable to mobile/embedded devices. The future plan is to port Reliqush over to Vulcan once it becomes available.<BR>
+<BR>
+If you are writing a high-end 3D engine, Reliquish may not provide all the functionality one would need. Relinquish has been designed to be used for things like UIs and tools where it is important to have a strong foundation of stabillity, portability and long therm compatibility rather then access the the latest hardware features. To facilitate the mixing and matching of Relinqush dependent code and other OpenGL code the library has the abillity to reset and restore its state, in order to play nice with other code.<BR>
+   </p>
+<p class="header">Contents:</p><dl>
+<dt><a href="relinquish_Initialization_.html">Initialization </a></dt>
+<dd><a href="relinquish_Initialization_.html#r_init">r_init</a></dd>
+<dd><a href="relinquish_Initialization_.html#r_extension_test">r_extension_test</a></dd>
+<dd><a href="relinquish_Initialization_.html#r_extension_get_address">r_extension_get_address</a></dd>
+<dt><a href="relinquish_Array_data__.html">Array data  </a></dt>
+<dd><a href="relinquish_Array_data__.html#r_array_vertex_size">r_array_vertex_size</a></dd>
+<dd><a href="relinquish_Array_data__.html#r_array_allocate">r_array_allocate</a></dd>
+<dd><a href="relinquish_Array_data__.html#r_array_allocate_from_shader">r_array_allocate_from_shader</a></dd>
+<dd><a href="relinquish_Array_data__.html#r_array_free">r_array_free</a></dd>
+<dd><a href="relinquish_Array_data__.html#r_array_defrag">r_array_defrag</a></dd>
+<dd><a href="relinquish_Array_data__.html#r_array_section_allocate_vertex">r_array_section_allocate_vertex</a></dd>
+<dd><a href="relinquish_Array_data__.html#r_array_section_allocate_reference">r_array_section_allocate_reference</a></dd>
+<dd><a href="relinquish_Array_data__.html#r_array_section_free">r_array_section_free</a></dd>
+<dd><a href="relinquish_Array_data__.html#r_array_load_vertex">r_array_load_vertex</a></dd>
+<dd><a href="relinquish_Array_data__.html#r_array_load_reference">r_array_load_reference</a></dd>
+<dd><a href="relinquish_Array_data__.html#r_array_get_size">r_array_get_size</a></dd>
+<dd><a href="relinquish_Array_data__.html#r_array_get_used">r_array_get_used</a></dd>
+<dd><a href="relinquish_Array_data__.html#r_array_get_left">r_array_get_left</a></dd>
+<dd><a href="relinquish_Array_data__.html#r_array_get_vertex_size">r_array_get_vertex_size</a></dd>
+<dd><a href="relinquish_Array_data__.html#r_array_section_get_vertex_count">r_array_section_get_vertex_count</a></dd>
+<dd><a href="relinquish_Array_data__.html#r_array_debug_print_out">r_array_debug_print_out</a></dd>
+<dt><a href="relinquish_Draw_calls__.html">Draw calls  </a></dt>
+<dd><a href="relinquish_Draw_calls__.html#r_array_draw">r_array_draw</a></dd>
+<dd><a href="relinquish_Draw_calls__.html#r_array_sections_draw">r_array_sections_draw</a></dd>
+<dd><a href="relinquish_Draw_calls__.html#r_array_references_draw">r_array_references_draw</a></dd>
+<dd><a href="relinquish_Draw_calls__.html#r_array_vertex_render">r_array_vertex_render</a></dd>
+<dd><a href="relinquish_Draw_calls__.html#r_array_section_draw">r_array_section_draw</a></dd>
+<dd><a href="relinquish_Draw_calls__.html#r_array_reference_draw">r_array_reference_draw</a></dd>
+<dt><a href="relinquish_Matrix_management_.html">Matrix management </a></dt>
+<dd><a href="relinquish_Matrix_management_.html#r_matrix_identity">r_matrix_identity</a></dd>
+<dd><a href="relinquish_Matrix_management_.html#r_matrix_push">r_matrix_push</a></dd>
+<dd><a href="relinquish_Matrix_management_.html#r_matrix_pop">r_matrix_pop</a></dd>
+<dd><a href="relinquish_Matrix_management_.html#r_matrix_matrix_mult">r_matrix_matrix_mult</a></dd>
+<dd><a href="relinquish_Matrix_management_.html#r_matrix_rotate">r_matrix_rotate</a></dd>
+<dd><a href="relinquish_Matrix_management_.html#r_matrix_scale">r_matrix_scale</a></dd>
+<dd><a href="relinquish_Matrix_management_.html#r_matrix_translate">r_matrix_translate</a></dd>
+<dd><a href="relinquish_Matrix_management_.html#r_matrix_normalize_scale">r_matrix_normalize_scale</a></dd>
+<dd><a href="relinquish_Matrix_management_.html#r_matrix_frustum">r_matrix_frustum</a></dd>
+<dd><a href="relinquish_Matrix_management_.html#r_matrix_ortho">r_matrix_ortho</a></dd>
+<dd><a href="relinquish_Matrix_management_.html#r_matrix_set">r_matrix_set</a></dd>
+<dd><a href="relinquish_Matrix_management_.html#r_matrix_get">r_matrix_get</a></dd>
+<dd><a href="relinquish_Matrix_management_.html#r_matrix_projection_screend">r_matrix_projection_screend</a></dd>
+<dd><a href="relinquish_Matrix_management_.html#r_matrix_projection_screenf">r_matrix_projection_screenf</a></dd>
+<dd><a href="relinquish_Matrix_management_.html#r_matrix_projection_worldf">r_matrix_projection_worldf</a></dd>
+<dd><a href="relinquish_Matrix_management_.html#r_matrix_projection_vertexd">r_matrix_projection_vertexd</a></dd>
+<dd><a href="relinquish_Matrix_management_.html#r_matrix_projection_vertexf">r_matrix_projection_vertexf</a></dd>
+<dd><a href="relinquish_Matrix_management_.html#r_matrix_projection_surfacef">r_matrix_projection_surfacef</a></dd>
+<dd><a href="relinquish_Matrix_management_.html#r_matrix_projection_axisf">r_matrix_projection_axisf</a></dd>
+<dd><a href="relinquish_Matrix_management_.html#r_matrix_projection_vectorf">r_matrix_projection_vectorf</a></dd>
+<dd><a href="relinquish_Matrix_management_.html#r_viewport">r_viewport</a></dd>
+<dt><a href="relinquish_Shader_management_.html">Shader management </a></dt>
+<dd><a href="relinquish_Shader_management_.html#r_shader_create">r_shader_create</a></dd>
+<dd><a href="relinquish_Shader_management_.html#r_shader_create_simple">r_shader_create_simple</a></dd>
+<dd><a href="relinquish_Shader_management_.html#r_shader_create_from_file">r_shader_create_from_file</a></dd>
+<dd><a href="relinquish_Shader_management_.html#r_shader_destroy">r_shader_destroy</a></dd>
+<dd><a href="relinquish_Shader_management_.html#r_shader_set">r_shader_set</a></dd>
+<dd><a href="relinquish_Shader_management_.html#r_shader_texture_set">r_shader_texture_set</a></dd>
+<dt><a href="relinquish_Uniform_query_.html">Uniform query </a></dt>
+<dd><a href="relinquish_Uniform_query_.html#r_shader_uniform_block_count">r_shader_uniform_block_count</a></dd>
+<dd><a href="relinquish_Uniform_query_.html#r_shader_uniform_block_size">r_shader_uniform_block_size</a></dd>
+<dd><a href="relinquish_Uniform_query_.html#r_shader_uniform_block_member_count">r_shader_uniform_block_member_count</a></dd>
+<dd><a href="relinquish_Uniform_query_.html#r_shader_uniform_block_member_name">r_shader_uniform_block_member_name</a></dd>
+<dd><a href="relinquish_Uniform_query_.html#r_shader_uniform_block_member_type">r_shader_uniform_block_member_type</a></dd>
+<dd><a href="relinquish_Uniform_query_.html#r_shader_uniform_block_member_offset">r_shader_uniform_block_member_offset</a></dd>
+<dd><a href="relinquish_Uniform_query_.html#r_shader_uniform_block_location">r_shader_uniform_block_location</a></dd>
+<dt><a href="relinquish_Uniform_blocks_.html">Uniform blocks </a></dt>
+<dd><a href="relinquish_Uniform_blocks_.html#r_shader_uniform_data_set">r_shader_uniform_data_set</a></dd>
+<dd><a href="relinquish_Uniform_blocks_.html#r_shader_uniform_matrix_set">r_shader_uniform_matrix_set</a></dd>
+<dd><a href="relinquish_Uniform_blocks_.html#r_shader_uniform_texture_pointer_get">r_shader_uniform_texture_pointer_get</a></dd>
+<dt><a href="relinquish_Uniform_State_.html">Uniform State </a></dt>
+<dd><a href="relinquish_Uniform_State_.html#r_shader_uniform_location">r_shader_uniform_location</a></dd>
+<dd><a href="relinquish_Uniform_State_.html#r_shader_uniform_texture_set">r_shader_uniform_texture_set</a></dd>
+<dd><a href="relinquish_Uniform_State_.html#r_shader_mat2v_set">r_shader_mat2v_set</a></dd>
+<dd><a href="relinquish_Uniform_State_.html#r_shader_mat3v_set">r_shader_mat3v_set</a></dd>
+<dd><a href="relinquish_Uniform_State_.html#r_shader_mat4v_set">r_shader_mat4v_set</a></dd>
+<dd><a href="relinquish_Uniform_State_.html#r_shader_vec4_set">r_shader_vec4_set</a></dd>
+<dd><a href="relinquish_Uniform_State_.html#r_shader_vec3_set">r_shader_vec3_set</a></dd>
+<dd><a href="relinquish_Uniform_State_.html#r_shader_vec2_set">r_shader_vec2_set</a></dd>
+<dd><a href="relinquish_Uniform_State_.html#r_shader_float_set">r_shader_float_set</a></dd>
+<dd><a href="relinquish_Uniform_State_.html#r_shader_int_set">r_shader_int_set</a></dd>
+<dd><a href="relinquish_Uniform_State_.html#r_shader_int2_set">r_shader_int2_set</a></dd>
+<dd><a href="relinquish_Uniform_State_.html#r_shader_int3_set">r_shader_int3_set</a></dd>
+<dd><a href="relinquish_Uniform_State_.html#r_shader_int4_set">r_shader_int4_set</a></dd>
+<dd><a href="relinquish_Uniform_State_.html#r_shader_input_fomat_components_get">r_shader_input_fomat_components_get</a></dd>
+<dd><a href="relinquish_Uniform_State_.html#r_shader_input_fomat_count_get">r_shader_input_fomat_count_get</a></dd>
+<dd><a href="relinquish_Uniform_State_.html#r_shader_output_fomat_components_get">r_shader_output_fomat_components_get</a></dd>
+<dd><a href="relinquish_Uniform_State_.html#r_shader_output_fomat_count_get">r_shader_output_fomat_count_get</a></dd>
+<dt><a href="relinquish_Shader_state_.html">Shader state </a></dt>
+<dd><a href="relinquish_Shader_state_.html#r_shader_state_set_depth_test">r_shader_state_set_depth_test</a></dd>
+<dd><a href="relinquish_Shader_state_.html#r_shader_state_set_cull_face">r_shader_state_set_cull_face</a></dd>
+<dd><a href="relinquish_Shader_state_.html#r_shader_state_set_blend_mode">r_shader_state_set_blend_mode</a></dd>
+<dd><a href="relinquish_Shader_state_.html#r_shader_state_set_offset">r_shader_state_set_offset</a></dd>
+<dd><a href="relinquish_Shader_state_.html#r_shader_state_set_alpha_to_coverage">r_shader_state_set_alpha_to_coverage</a></dd>
+<dd><a href="relinquish_Shader_state_.html#r_shader_state_set_mask">r_shader_state_set_mask</a></dd>
+<dt><a href="relinquish_Shader_Debugging_.html">Shader Debugging </a></dt>
+<dd><a href="relinquish_Shader_Debugging_.html#r_shader_debug_print_shader">r_shader_debug_print_shader</a></dd>
+<dd><a href="relinquish_Shader_Debugging_.html#r_shader_debug_print_uniform_buffer">r_shader_debug_print_uniform_buffer</a></dd>
+<dt><a href="relinquish_Draw_primitives_.html">Draw primitives </a></dt>
+<dd><a href="relinquish_Draw_primitives_.html#r_shader_presets_get">r_shader_presets_get</a></dd>
+<dt><a href="relinquish_Surface_primitives_.html">Surface primitives </a></dt>
+<dd><a href="relinquish_Surface_primitives_.html#r_primitive_surface">r_primitive_surface</a></dd>
+<dd><a href="relinquish_Surface_primitives_.html#r_primitive_image">r_primitive_image</a></dd>
+<dt><a href="relinquish_Line_primitives_.html">Line primitives </a></dt>
+<dd><a href="relinquish_Line_primitives_.html#r_primitive_line_3d">r_primitive_line_3d</a></dd>
+<dd><a href="relinquish_Line_primitives_.html#r_primitive_line_2d">r_primitive_line_2d</a></dd>
+<dd><a href="relinquish_Line_primitives_.html#r_primitive_line_fade_3d">r_primitive_line_fade_3d</a></dd>
+<dd><a href="relinquish_Line_primitives_.html#r_primitive_line_fade_2d">r_primitive_line_fade_2d</a></dd>
+<dd><a href="relinquish_Line_primitives_.html#r_primitive_line_flush">r_primitive_line_flush</a></dd>
+<dd><a href="relinquish_Line_primitives_.html#r_primitive_line_clear">r_primitive_line_clear</a></dd>
+<dt><a href="relinquish_Sprite_primitives_.html">Sprite primitives </a></dt>
+<dd><a href="relinquish_Sprite_primitives_.html#r_primitive_sprite">r_primitive_sprite</a></dd>
+<dd><a href="relinquish_Sprite_primitives_.html#r_primitive_sprite_uv">r_primitive_sprite_uv</a></dd>
+<dd><a href="relinquish_Sprite_primitives_.html#r_primitive_sprite_flush">r_primitive_sprite_flush</a></dd>
+<dt><a href="relinquish_Image_and_texture_API_.html">Image and texture API </a></dt>
+<dd><a href="relinquish_Image_and_texture_API_.html#r_texture_allocate">r_texture_allocate</a></dd>
+<dd><a href="relinquish_Image_and_texture_API_.html#r_texture_free">r_texture_free</a></dd>
+<dt><a href="relinquish_Frame_buffer_objects_.html">Frame buffer objects </a></dt>
+<dd><a href="relinquish_Frame_buffer_objects_.html#r_framebuffer_allocate">r_framebuffer_allocate</a></dd>
+<dd><a href="relinquish_Frame_buffer_objects_.html#r_framebuffer_free">r_framebuffer_free</a></dd>
+<dd><a href="relinquish_Frame_buffer_objects_.html#r_framebuffer_bind">r_framebuffer_bind</a></dd>
+<dd><a href="relinquish_Frame_buffer_objects_.html#r_framebuffer_clear">r_framebuffer_clear</a></dd>
+<dt><a href="relinquish_defines.html">Defines</a></dt>
+</dl>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html> 

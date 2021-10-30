@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>forge</title>
+<style type="text/css">
+font.header {color:rgb(216,108,0);}
+h2 {color:rgb(216,108,0);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;">
+<dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dd><a href="forge_Debugging_.html">Debugging </a></dd><dd><a href="forge_Random_number_generators_.html">Random number generators </a></dd><dd><a href="forge_Vector_math_.html">Vector math </a></dd><dd><a href="forge_Integer_vector_math_.html">Integer vector math </a></dd><dd><a href="forge_Matrix_operations_.html">Matrix operations </a></dd><dd><a href="forge_Matrix_Creation_.html">Matrix Creation </a></dd><dd><a href="forge_Splines_.html">Splines </a></dd><dd><a href="forge_Wiggle_.html">Wiggle </a></dd><dd><a href="forge_Smooth_step_.html">Smooth step </a></dd><dd><a href="forge_Perlin_noise_.html">Perlin noise </a></dd><dd><a href="forge_tiled_versions_of_all_perlin_noi.html">tiled versions of all perlin noises</a></dd><dd><a href="forge_Snap_.html">Snap </a></dd><dd><a href="forge_Color_space_.html">Color space </a></dd><dd><a href="forge_Triangle_intersection_.html">Triangle intersection </a></dd><dd><a href="forge_Text_.html">Text </a></dd><dd><a href="forge_Sorting_.html">Sorting </a></dd><dd><a href="forge_Poly_mesh_neighbour_.html">Poly mesh neighbour </a></dd><dd><a href="forge_A*_path_finding_.html">A* path finding </a></dd><dd><a href="forge_defines.html">Defines</a></dd><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dt><a href="testify.html" style="color:rgb(216,0,108);">testify</a></dt></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+
+<p><H2>forge</H2></p>
+<p class="group">
+Forge is a basic utility library, consisting of pure c functions that are useful in any development. Forge is meant to be included in to all c files and all other Quel Solaar librariues and applications. Because it is included in all files it can provide some very useful functiuonality such as debugging memory and help find memory leaks. Forge is designed to be lightweight and compleatly platform and dependency indipendent.<BR>
+</p>
+<p class="header">Contents:</p><dl>
+<dt><a href="forge_Debugging_.html">Debugging </a></dt>
+<dd><a href="forge_Debugging_.html#f_debug_memory_init">f_debug_memory_init</a></dd>
+<dd><a href="forge_Debugging_.html#f_debug_mem_malloc">f_debug_mem_malloc</a></dd>
+<dd><a href="forge_Debugging_.html#f_debug_mem_realloc">f_debug_mem_realloc</a></dd>
+<dd><a href="forge_Debugging_.html#f_debug_mem_free">f_debug_mem_free</a></dd>
+<dd><a href="forge_Debugging_.html#f_debug_mem_print">f_debug_mem_print</a></dd>
+<dd><a href="forge_Debugging_.html#f_debug_mem_reset">f_debug_mem_reset</a></dd>
+<dd><a href="forge_Debugging_.html#f_debug_memory">f_debug_memory</a></dd>
+<dd><a href="forge_Debugging_.html#exit_crash">exit_crash</a></dd>
+<dt><a href="forge_Random_number_generators_.html">Random number generators </a></dt>
+<dd><a href="forge_Random_number_generators_.html#f_randf">f_randf</a></dd>
+<dd><a href="forge_Random_number_generators_.html#f_randd">f_randd</a></dd>
+<dd><a href="forge_Random_number_generators_.html#f_randnf">f_randnf</a></dd>
+<dd><a href="forge_Random_number_generators_.html#f_randnd">f_randnd</a></dd>
+<dd><a href="forge_Random_number_generators_.html#f_randi">f_randi</a></dd>
+<dt><a href="forge_Vector_math_.html">Vector math </a></dt>
+<dd><a href="forge_Vector_math_.html#f_length2f">f_length2f</a></dd>
+<dd><a href="forge_Vector_math_.html#f_length3f">f_length3f</a></dd>
+<dd><a href="forge_Vector_math_.html#f_distance2f">f_distance2f</a></dd>
+<dd><a href="forge_Vector_math_.html#f_distance3f">f_distance3f</a></dd>
+<dd><a href="forge_Vector_math_.html#f_dot2f">f_dot2f</a></dd>
+<dd><a href="forge_Vector_math_.html#f_dot3f">f_dot3f</a></dd>
+<dd><a href="forge_Vector_math_.html#f_cross2f">f_cross2f</a></dd>
+<dd><a href="forge_Vector_math_.html#f_cross3f">f_cross3f</a></dd>
+<dd><a href="forge_Vector_math_.html#f_normalize2f">f_normalize2f</a></dd>
+<dd><a href="forge_Vector_math_.html#f_normalize3f">f_normalize3f</a></dd>
+<dd><a href="forge_Vector_math_.html#f_normalize4f">f_normalize4f</a></dd>
+<dd><a href="forge_Vector_math_.html#f_normal2f">f_normal2f</a></dd>
+<dd><a href="forge_Vector_math_.html#f_normal3f">f_normal3f</a></dd>
+<dd><a href="forge_Vector_math_.html#f_reflect2f">f_reflect2f</a></dd>
+<dd><a href="forge_Vector_math_.html#f_reflect3f">f_reflect3f</a></dd>
+<dd><a href="forge_Vector_math_.html#f_flatten2f">f_flatten2f</a></dd>
+<dd><a href="forge_Vector_math_.html#f_flatten3f">f_flatten3f</a></dd>
+<dd><a href="forge_Vector_math_.html#f_project2f">f_project2f</a></dd>
+<dd><a href="forge_Vector_math_.html#f_project3f">f_project3f</a></dd>
+<dd><a href="forge_Vector_math_.html#f_intersect2f">f_intersect2f</a></dd>
+<dd><a href="forge_Vector_math_.html#f_length2d">f_length2d</a></dd>
+<dd><a href="forge_Vector_math_.html#f_length3d">f_length3d</a></dd>
+<dd><a href="forge_Vector_math_.html#f_distance2d">f_distance2d</a></dd>
+<dd><a href="forge_Vector_math_.html#f_distance3d">f_distance3d</a></dd>
+<dd><a href="forge_Vector_math_.html#f_dot2d">f_dot2d</a></dd>
+<dd><a href="forge_Vector_math_.html#f_dot3d">f_dot3d</a></dd>
+<dd><a href="forge_Vector_math_.html#f_cross2d">f_cross2d</a></dd>
+<dd><a href="forge_Vector_math_.html#f_cross3d">f_cross3d</a></dd>
+<dd><a href="forge_Vector_math_.html#f_normalize2d">f_normalize2d</a></dd>
+<dd><a href="forge_Vector_math_.html#f_normalize3d">f_normalize3d</a></dd>
+<dd><a href="forge_Vector_math_.html#f_normalize4d">f_normalize4d</a></dd>
+<dd><a href="forge_Vector_math_.html#f_normal2d">f_normal2d</a></dd>
+<dd><a href="forge_Vector_math_.html#f_normal3d">f_normal3d</a></dd>
+<dd><a href="forge_Vector_math_.html#f_reflect2d">f_reflect2d</a></dd>
+<dd><a href="forge_Vector_math_.html#f_reflect3d">f_reflect3d</a></dd>
+<dd><a href="forge_Vector_math_.html#f_flatten2d">f_flatten2d</a></dd>
+<dd><a href="forge_Vector_math_.html#f_flatten3d">f_flatten3d</a></dd>
+<dd><a href="forge_Vector_math_.html#f_project2d">f_project2d</a></dd>
+<dd><a href="forge_Vector_math_.html#f_project3d">f_project3d</a></dd>
+<dd><a href="forge_Vector_math_.html#f_intersect2d">f_intersect2d</a></dd>
+<dt><a href="forge_Integer_vector_math_.html">Integer vector math </a></dt>
+<dd><a href="forge_Integer_vector_math_.html#f_sqrti">f_sqrti</a></dd>
+<dd><a href="forge_Integer_vector_math_.html#f_normalize_2di">f_normalize_2di</a></dd>
+<dd><a href="forge_Integer_vector_math_.html#f_normalize_3di">f_normalize_3di</a></dd>
+<dd><a href="forge_Integer_vector_math_.html#f_intersect2di">f_intersect2di</a></dd>
+<dt><a href="forge_Matrix_operations_.html">Matrix operations </a></dt>
+<dd><a href="forge_Matrix_operations_.html#f_matrix_clearf">f_matrix_clearf</a></dd>
+<dd><a href="forge_Matrix_operations_.html#f_matrix_cleard">f_matrix_cleard</a></dd>
+<dd><a href="forge_Matrix_operations_.html#f_transform3f">f_transform3f</a></dd>
+<dd><a href="forge_Matrix_operations_.html#f_transform3d">f_transform3d</a></dd>
+<dd><a href="forge_Matrix_operations_.html#f_transform4f">f_transform4f</a></dd>
+<dd><a href="forge_Matrix_operations_.html#f_transform4d">f_transform4d</a></dd>
+<dd><a href="forge_Matrix_operations_.html#f_transforminv3f">f_transforminv3f</a></dd>
+<dd><a href="forge_Matrix_operations_.html#f_transforminv3d">f_transforminv3d</a></dd>
+<dd><a href="forge_Matrix_operations_.html#f_matrix_multiplyf">f_matrix_multiplyf</a></dd>
+<dd><a href="forge_Matrix_operations_.html#f_matrix_multiplyd">f_matrix_multiplyd</a></dd>
+<dd><a href="forge_Matrix_operations_.html#f_matrix_reverse4f">f_matrix_reverse4f</a></dd>
+<dd><a href="forge_Matrix_operations_.html#f_matrix_reverse4d">f_matrix_reverse4d</a></dd>
+<dd><a href="forge_Matrix_operations_.html#f_quaternion_to_matrixf">f_quaternion_to_matrixf</a></dd>
+<dd><a href="forge_Matrix_operations_.html#f_quaternion_to_matrixd">f_quaternion_to_matrixd</a></dd>
+<dd><a href="forge_Matrix_operations_.html#f_matrix_to_quaternionf">f_matrix_to_quaternionf</a></dd>
+<dd><a href="forge_Matrix_operations_.html#f_matrix_to_quaterniond">f_matrix_to_quaterniond</a></dd>
+<dd><a href="forge_Matrix_operations_.html#f_matrix_to_pos_quaternion_scalef">f_matrix_to_pos_quaternion_scalef</a></dd>
+<dd><a href="forge_Matrix_operations_.html#f_matrix_to_pos_quaternion_scaled">f_matrix_to_pos_quaternion_scaled</a></dd>
+<dd><a href="forge_Matrix_operations_.html#f_pos_quaternion_scale_to_matrixf">f_pos_quaternion_scale_to_matrixf</a></dd>
+<dd><a href="forge_Matrix_operations_.html#f_pos_quaternion_scale_to_matrixd">f_pos_quaternion_scale_to_matrixd</a></dd>
+<dt><a href="forge_Matrix_Creation_.html">Matrix Creation </a></dt>
+<dd><a href="forge_Matrix_Creation_.html#f_matrixxyf">f_matrixxyf</a></dd>
+<dd><a href="forge_Matrix_Creation_.html#f_matrixxzf">f_matrixxzf</a></dd>
+<dd><a href="forge_Matrix_Creation_.html#f_matrixyxf">f_matrixyxf</a></dd>
+<dd><a href="forge_Matrix_Creation_.html#f_matrixyzf">f_matrixyzf</a></dd>
+<dd><a href="forge_Matrix_Creation_.html#f_matrixzxf">f_matrixzxf</a></dd>
+<dd><a href="forge_Matrix_Creation_.html#f_matrixzyf">f_matrixzyf</a></dd>
+<dd><a href="forge_Matrix_Creation_.html#f_matrixxyd">f_matrixxyd</a></dd>
+<dd><a href="forge_Matrix_Creation_.html#f_matrixxzd">f_matrixxzd</a></dd>
+<dd><a href="forge_Matrix_Creation_.html#f_matrixyxd">f_matrixyxd</a></dd>
+<dd><a href="forge_Matrix_Creation_.html#f_matrixyzd">f_matrixyzd</a></dd>
+<dd><a href="forge_Matrix_Creation_.html#f_matrixzxd">f_matrixzxd</a></dd>
+<dd><a href="forge_Matrix_Creation_.html#f_matrixzyd">f_matrixzyd</a></dd>
+<dt><a href="forge_Splines_.html">Splines </a></dt>
+<dd><a href="forge_Splines_.html#f_splinef">f_splinef</a></dd>
+<dd><a href="forge_Splines_.html#f_spline2df">f_spline2df</a></dd>
+<dd><a href="forge_Splines_.html#f_spline3df">f_spline3df</a></dd>
+<dd><a href="forge_Splines_.html#f_spline4df">f_spline4df</a></dd>
+<dd><a href="forge_Splines_.html#f_splined">f_splined</a></dd>
+<dd><a href="forge_Splines_.html#f_spline2dd">f_spline2dd</a></dd>
+<dd><a href="forge_Splines_.html#f_spline3dd">f_spline3dd</a></dd>
+<dd><a href="forge_Splines_.html#f_spline4dd">f_spline4dd</a></dd>
+<dt><a href="forge_Wiggle_.html">Wiggle </a></dt>
+<dd><a href="forge_Wiggle_.html#f_wigglef">f_wigglef</a></dd>
+<dd><a href="forge_Wiggle_.html#f_wiggle2df">f_wiggle2df</a></dd>
+<dd><a href="forge_Wiggle_.html#f_wiggle3df">f_wiggle3df</a></dd>
+<dd><a href="forge_Wiggle_.html#f_wiggled">f_wiggled</a></dd>
+<dd><a href="forge_Wiggle_.html#f_wiggle2dd">f_wiggle2dd</a></dd>
+<dd><a href="forge_Wiggle_.html#f_wiggle3dd">f_wiggle3dd</a></dd>
+<dt><a href="forge_Smooth_step_.html">Smooth step </a></dt>
+<dd><a href="forge_Smooth_step_.html#f_smooth_stepf">f_smooth_stepf</a></dd>
+<dd><a href="forge_Smooth_step_.html#f_smooth_stepd">f_smooth_stepd</a></dd>
+<dt><a href="forge_Perlin_noise_.html">Perlin noise </a></dt>
+<dd><a href="forge_Perlin_noise_.html#f_noisef">f_noisef</a></dd>
+<dd><a href="forge_Perlin_noise_.html#f_noise2f">f_noise2f</a></dd>
+<dd><a href="forge_Perlin_noise_.html#f_noise3f">f_noise3f</a></dd>
+<dd><a href="forge_Perlin_noise_.html#f_noiserf">f_noiserf</a></dd>
+<dd><a href="forge_Perlin_noise_.html#f_noiser2f">f_noiser2f</a></dd>
+<dd><a href="forge_Perlin_noise_.html#f_noiser3f">f_noiser3f</a></dd>
+<dd><a href="forge_Perlin_noise_.html#f_noised">f_noised</a></dd>
+<dd><a href="forge_Perlin_noise_.html#f_noise2d">f_noise2d</a></dd>
+<dd><a href="forge_Perlin_noise_.html#f_noise3d">f_noise3d</a></dd>
+<dd><a href="forge_Perlin_noise_.html#f_noiserd">f_noiserd</a></dd>
+<dd><a href="forge_Perlin_noise_.html#f_noiser2d">f_noiser2d</a></dd>
+<dd><a href="forge_Perlin_noise_.html#f_noiser3d">f_noiser3d</a></dd>
+<dt><a href="forge_tiled_versions_of_all_perlin_noi.html">tiled versions of all perlin noises</a></dt>
+<dd><a href="forge_tiled_versions_of_all_perlin_noi.html#f_noisetf">f_noisetf</a></dd>
+<dd><a href="forge_tiled_versions_of_all_perlin_noi.html#f_noiset2f">f_noiset2f</a></dd>
+<dd><a href="forge_tiled_versions_of_all_perlin_noi.html#f_noiset3f">f_noiset3f</a></dd>
+<dd><a href="forge_tiled_versions_of_all_perlin_noi.html#f_noisertf">f_noisertf</a></dd>
+<dd><a href="forge_tiled_versions_of_all_perlin_noi.html#f_noisert2f">f_noisert2f</a></dd>
+<dd><a href="forge_tiled_versions_of_all_perlin_noi.html#f_noisert3f">f_noisert3f</a></dd>
+<dd><a href="forge_tiled_versions_of_all_perlin_noi.html#f_noisetd">f_noisetd</a></dd>
+<dd><a href="forge_tiled_versions_of_all_perlin_noi.html#f_noiset2d">f_noiset2d</a></dd>
+<dd><a href="forge_tiled_versions_of_all_perlin_noi.html#f_noiset3d">f_noiset3d</a></dd>
+<dd><a href="forge_tiled_versions_of_all_perlin_noi.html#f_noisertd">f_noisertd</a></dd>
+<dd><a href="forge_tiled_versions_of_all_perlin_noi.html#f_noisert2d">f_noisert2d</a></dd>
+<dd><a href="forge_tiled_versions_of_all_perlin_noi.html#f_noisert3d">f_noisert3d</a></dd>
+<dt><a href="forge_Snap_.html">Snap </a></dt>
+<dd><a href="forge_Snap_.html#f_snapf">f_snapf</a></dd>
+<dd><a href="forge_Snap_.html#f_snapd">f_snapd</a></dd>
+<dt><a href="forge_Color_space_.html">Color space </a></dt>
+<dd><a href="forge_Color_space_.html#f_rgb_to_hsv">f_rgb_to_hsv</a></dd>
+<dd><a href="forge_Color_space_.html#f_hsv_to_rgb">f_hsv_to_rgb</a></dd>
+<dd><a href="forge_Color_space_.html#f_rgb_to_xyz">f_rgb_to_xyz</a></dd>
+<dd><a href="forge_Color_space_.html#f_xyz_to_rgb">f_xyz_to_rgb</a></dd>
+<dd><a href="forge_Color_space_.html#f_xyz_to_lab">f_xyz_to_lab</a></dd>
+<dd><a href="forge_Color_space_.html#f_lab_to_xyz">f_lab_to_xyz</a></dd>
+<dd><a href="forge_Color_space_.html#f_rgb_to_lab">f_rgb_to_lab</a></dd>
+<dd><a href="forge_Color_space_.html#f_lab_to_rgb">f_lab_to_rgb</a></dd>
+<dt><a href="forge_Triangle_intersection_.html">Triangle intersection </a></dt>
+<dd><a href="forge_Triangle_intersection_.html#f_raycast_trif">f_raycast_trif</a></dd>
+<dd><a href="forge_Triangle_intersection_.html#f_raycast_tri_cullf">f_raycast_tri_cullf</a></dd>
+<dd><a href="forge_Triangle_intersection_.html#f_raycast_trid">f_raycast_trid</a></dd>
+<dd><a href="forge_Triangle_intersection_.html#f_raycast_tri_culld">f_raycast_tri_culld</a></dd>
+<dt><a href="forge_Text_.html">Text </a></dt>
+<dd><a href="forge_Text_.html#f_find_next_word">f_find_next_word</a></dd>
+<dd><a href="forge_Text_.html#f_find_word_compare">f_find_word_compare</a></dd>
+<dd><a href="forge_Text_.html#f_text_copy">f_text_copy</a></dd>
+<dd><a href="forge_Text_.html#f_text_compare">f_text_compare</a></dd>
+<dd><a href="forge_Text_.html#f_text_copy_allocate">f_text_copy_allocate</a></dd>
+<dd><a href="forge_Text_.html#f_word_copy">f_word_copy</a></dd>
+<dd><a href="forge_Text_.html#f_text_copy_until">f_text_copy_until</a></dd>
+<dd><a href="forge_Text_.html#f_text_filter">f_text_filter</a></dd>
+<dt><a href="forge_Sorting_.html">Sorting </a></dt>
+<dd><a href="forge_Sorting_.html#f_sort_ids">f_sort_ids</a></dd>
+<dd><a href="forge_Sorting_.html#f_sort_pointers">f_sort_pointers</a></dd>
+<dd><a href="forge_Sorting_.html#f_sort_strings">f_sort_strings</a></dd>
+<dt><a href="forge_Poly_mesh_neighbour_.html">Poly mesh neighbour </a></dt>
+<dd><a href="forge_Poly_mesh_neighbour_.html#f_sort_quad_tri_neighbor">f_sort_quad_tri_neighbor</a></dd>
+<dd><a href="forge_Poly_mesh_neighbour_.html#f_sort_tri_neighbor">f_sort_tri_neighbor</a></dd>
+<dt><a href="forge_A*_path_finding_.html">A* path finding </a></dt>
+<dd><a href="forge_A*_path_finding_.html#f_path_find">f_path_find</a></dd>
+<dt><a href="forge_defines.html">Defines</a></dt>
+</dl>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html> 

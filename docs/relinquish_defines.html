@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>relinquish</title>
+<style type="text/css">
+font.header {color:rgb(108,0,216);}
+h2 {color:rgb(108,0,216);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;">
+<dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dd><a href="relinquish_Initialization_.html">Initialization </a></dd><dd><a href="relinquish_Array_data__.html">Array data  </a></dd><dd><a href="relinquish_Draw_calls__.html">Draw calls  </a></dd><dd><a href="relinquish_Matrix_management_.html">Matrix management </a></dd><dd><a href="relinquish_Shader_management_.html">Shader management </a></dd><dd><a href="relinquish_Uniform_query_.html">Uniform query </a></dd><dd><a href="relinquish_Uniform_blocks_.html">Uniform blocks </a></dd><dd><a href="relinquish_Uniform_State_.html">Uniform State </a></dd><dd><a href="relinquish_Shader_state_.html">Shader state </a></dd><dd><a href="relinquish_Shader_Debugging_.html">Shader Debugging </a></dd><dd><a href="relinquish_Draw_primitives_.html">Draw primitives </a></dd><dd><a href="relinquish_Surface_primitives_.html">Surface primitives </a></dd><dd><a href="relinquish_Line_primitives_.html">Line primitives </a></dd><dd><a href="relinquish_Sprite_primitives_.html">Sprite primitives </a></dd><dd><a href="relinquish_Image_and_texture_API_.html">Image and texture API </a></dd><dd><a href="relinquish_Frame_buffer_objects_.html">Frame buffer objects </a></dd><dd><a href="relinquish_defines.html">Defines</a></dd><dt><a href="testify.html" style="color:rgb(216,0,108);">testify</a></dt></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+
+<p class="code">relinquish_Vertex_array_data_.html</p>
+<p class="header">Enum:</p> <p class="code">RInputType<p>
+<table border="1">
+<tr><td valign=top><p class="code">R_SIT_BOOL</p></td>
+<tr><td valign=top><p class="code">R_SIT_VBOOL2</p></td>
+<tr><td valign=top><p class="code">R_SIT_VBOOL3</p></td>
+<tr><td valign=top><p class="code">R_SIT_VBOOL4</p></td>
+<tr><td valign=top><p class="code">R_SIT_INT</p></td>
+<tr><td valign=top><p class="code">R_SIT_VINT2</p></td>
+<tr><td valign=top><p class="code">R_SIT_VINT3</p></td>
+<tr><td valign=top><p class="code">R_SIT_VINT4</p></td>
+<tr><td valign=top><p class="code">R_SIT_UINT</p></td>
+<tr><td valign=top><p class="code">R_SIT_VUINT2</p></td>
+<tr><td valign=top><p class="code">R_SIT_VUINT3</p></td>
+<tr><td valign=top><p class="code">R_SIT_VUINT4</p></td>
+<tr><td valign=top><p class="code">R_SIT_FLOAT</p></td>
+<tr><td valign=top><p class="code">R_SIT_VEC2</p></td>
+<tr><td valign=top><p class="code">R_SIT_VEC3</p></td>
+<tr><td valign=top><p class="code">R_SIT_VEC4</p></td>
+<tr><td valign=top><p class="code">R_SIT_DOUBLE</p></td>
+<tr><td valign=top><p class="code">R_SIT_VDOUBLE2</p></td>
+<tr><td valign=top><p class="code">R_SIT_VDOUBLE3</p></td>
+<tr><td valign=top><p class="code">R_SIT_VDOUBLE4</p></td>
+<tr><td valign=top><p class="code">R_SIT_MAT2</p></td>
+<tr><td valign=top><p class="code">R_SIT_MAT2X3</p></td>
+<tr><td valign=top><p class="code">R_SIT_MAT2X4</p></td>
+<tr><td valign=top><p class="code">R_SIT_MAT3X2</p></td>
+<tr><td valign=top><p class="code">R_SIT_MAT3</p></td>
+<tr><td valign=top><p class="code">R_SIT_MAT3X4</p></td>
+<tr><td valign=top><p class="code">R_SIT_MAT4X2</p></td>
+<tr><td valign=top><p class="code">R_SIT_MAT4X3</p></td>
+<tr><td valign=top><p class="code">R_SIT_MAT4</p></td>
+<tr><td valign=top><p class="code">R_SIT_DMAT2</p></td>
+<tr><td valign=top><p class="code">R_SIT_DMAT2X3</p></td>
+<tr><td valign=top><p class="code">R_SIT_DMAT2X4</p></td>
+<tr><td valign=top><p class="code">R_SIT_DMAT3X2</p></td>
+<tr><td valign=top><p class="code">R_SIT_DMAT3</p></td>
+<tr><td valign=top><p class="code">R_SIT_DMAT3X4</p></td>
+<tr><td valign=top><p class="code">R_SIT_DMAT4X2</p></td>
+<tr><td valign=top><p class="code">R_SIT_DMAT4X3</p></td>
+<tr><td valign=top><p class="code">R_SIT_DMAT4</p></td>
+<tr><td valign=top><p class="code">R_SIT_SAMPLER_1D</p></td>
+<tr><td valign=top><p class="code">R_SIT_SAMPLER_2D</p></td>
+<tr><td valign=top><p class="code">R_SIT_SAMPLER_3D</p></td>
+<tr><td valign=top><p class="code">R_SIT_SAMPLER_CUBE</p></td>
+<tr><td valign=top><p class="code">R_SIT_SAMPLER_RECTANGLE</p></td>
+<tr><td valign=top><p class="code">R_SIT_SAMPLER_1D_ARRAY</p></td>
+<tr><td valign=top><p class="code">R_SIT_SAMPLER_2D_ARRAY</p></td>
+<tr><td valign=top><p class="code">R_SIT_SAMPLER_CUBE_MAP_ARRAY</p></td>
+<tr><td valign=top><p class="code">R_SIT_SAMPLER_BUFFER</p></td>
+<tr><td valign=top><p class="code">R_SIT_SAMPLER_2D_MULTISAMPLE</p></td>
+<tr><td valign=top><p class="code">R_SIT_SAMPLER_2D_MULTISAMPLE_ARRAY</p></td>
+<tr><td valign=top><p class="code">R_SIT_COUNT</p></td>
+</table>
+<p class="code">relinquish_Array_data__.html</p>
+<p class="header">Enum:</p> <p class="code">SUIFormats<p>
+<table border="1">
+<tr><td valign=top><p class="code">SUI_INT8</p></td>
+<tr><td valign=top><p class="code">SUI_UINT8</p></td>
+<tr><td valign=top><p class="code">SUI_INT16</p></td>
+<tr><td valign=top><p class="code">SUI_UINT16</p></td>
+<tr><td valign=top><p class="code">SUI_INT32</p></td>
+<tr><td valign=top><p class="code">SUI_UINT32</p></td>
+<tr><td valign=top><p class="code">SUI_FLOAT</p></td>
+<tr><td valign=top><p class="code">SUI_DOUBLE</p></td>
+</table>
+<p class="header">Enum:</p> <p class="code">RPrimitive<p>
+<table border="1">
+<tr><td valign=top><p class="code">R_PRIMITIVE_POINTS</p></td>
+<tr><td valign=top><p class="code">=</p></td>
+<tr><td valign=top><p class="code">0x0000</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description">Draw point primitives.</font>
+</td></tr>
+<tr><td valign=top><p class="code">R_PRIMITIVE_LINES</p></td>
+<tr><td valign=top><p class="code">=</p></td>
+<tr><td valign=top><p class="code">0x0001</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description">Draw Line primitives.</font>
+</td></tr>
+<tr><td valign=top><p class="code">R_PRIMITIVE_TRIANGLES</p></td>
+<tr><td valign=top><p class="code">=</p></td>
+<tr><td valign=top><p class="code">0x0004</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description">Draw Triangle primitives</font>
+</td></tr>
+</table>
+<p class="code">relinquish_Matrix_management_.html</p>
+<p class="code">R_MATRIX_STACK_SIZE 8</p>
+<p class="header">Struct:</p> <p class="code">RMatrix<p>
+<table border="1">
+<tr><td valign=top><p class="code">float matrix[R_MATRIX_STACK_SIZE][16]</p></td>
+<tr><td valign=top><p class="code">float projection[16]</p></td>
+<tr><td valign=top><p class="code">float aspect</p></td>
+<tr><td valign=top><p class="code">float frustum[4]</p></td>
+<tr><td valign=top><p class="code">boolean multiplied</p></td>
+<tr><td valign=top><p class="code">float modelviewprojection[16]</p></td>
+<tr><td valign=top><p class="code">uint current</p></td>
+<tr><td valign=top><p class="code">RMatrix</p></td>
+<tr><td valign=top><p class="code">extern void		r_matrix_identity(RMatrix *matrix)</p></td>
+<tr><td valign=top><p class="code">*Clears and initializes the matrix.</p></td>
+<tr><td valign=top><p class="code">extern void		r_matrix_push(RMatrix *matrix)</p></td>
+<tr><td valign=top><p class="code">* Push the matrix stack one level.</p></td>
+<tr><td valign=top><p class="code">extern void		r_matrix_pop(RMatrix *matrix)</p></td>
+<tr><td valign=top><p class="code">* Pops the matrix one level.</p></td>
+<tr><td valign=top><p class="code">extern void		r_matrix_matrix_mult(RMatrix *matrix</p></td>
+<tr><td valign=top><p class="code">float *mult)</p></td>
+<tr><td valign=top><p class="code">* multiplies a 4by4 float matrix with the current matrix.</p></td>
+<tr><td valign=top><p class="code">extern void		r_matrix_rotate(RMatrix *matrix</p></td>
+<tr><td valign=top><p class="code">float angle</p></td>
+<tr><td valign=top><p class="code">float x</p></td>
+<tr><td valign=top><p class="code">float y</p></td>
+<tr><td valign=top><p class="code">float z)</p></td>
+<tr><td valign=top><p class="code">* Rotates the matrix angle degrees around the x</p></td>
+<tr><td valign=top><p class="code">y</p></td>
+<tr><td valign=top><p class="code">and z axis.</p></td>
+<tr><td valign=top><p class="code">extern void		r_matrix_scale(RMatrix *matrix</p></td>
+<tr><td valign=top><p class="code">float x</p></td>
+<tr><td valign=top><p class="code">float y</p></td>
+<tr><td valign=top><p class="code">float z)</p></td>
+<tr><td valign=top><p class="code">*Scales the matrix in x</p></td>
+<tr><td valign=top><p class="code">y</p></td>
+<tr><td valign=top><p class="code">and z.</p></td>
+<tr><td valign=top><p class="code">extern void		r_matrix_translate(RMatrix *matrix</p></td>
+<tr><td valign=top><p class="code">float x</p></td>
+<tr><td valign=top><p class="code">float y</p></td>
+<tr><td valign=top><p class="code">float z)</p></td>
+<tr><td valign=top><p class="code">*Translates the matrix in x</p></td>
+<tr><td valign=top><p class="code">y</p></td>
+<tr><td valign=top><p class="code">and z.</p></td>
+<tr><td valign=top><p class="code">extern void		r_matrix_normalize_scale(RMatrix *matrix)</p></td>
+<tr><td valign=top><p class="code">*Normalises the scale of the matrix.</p></td>
+<tr><td valign=top><p class="code">extern void		r_matrix_frustum(RMatrix *matrix</p></td>
+<tr><td valign=top><p class="code">float left</p></td>
+<tr><td valign=top><p class="code">float right</p></td>
+<tr><td valign=top><p class="code">float bottom</p></td>
+<tr><td valign=top><p class="code">float top</p></td>
+<tr><td valign=top><p class="code">float znear</p></td>
+<tr><td valign=top><p class="code">float zfar)</p></td>
+<tr><td valign=top><p class="code">*Sets up a frustum for a pespective projection matrix</p></td>
+<tr><td valign=top><p class="code">extern void		r_matrix_ortho(RMatrix *matrix</p></td>
+<tr><td valign=top><p class="code">float left</p></td>
+<tr><td valign=top><p class="code">float right</p></td>
+<tr><td valign=top><p class="code">float bottom</p></td>
+<tr><td valign=top><p class="code">float top</p></td>
+<tr><td valign=top><p class="code">float znear</p></td>
+<tr><td valign=top><p class="code">float zfar)</p></td>
+<tr><td valign=top><p class="code">*Sets up a frustum for a ortogonal projection</p></td>
+<tr><td valign=top><p class="code">extern void		r_matrix_set(RMatrix *matrix)</p></td>
+<tr><td valign=top><p class="code">*Sets the currently active matrix.</p></td>
+<tr><td valign=top><p class="code">extern RMatrix		*r_matrix_get()</p></td>
+</table>
+<p class="code">relinquish_Draw_primitives_.html</p>
+<p class="header">Enum:</p> <p class="code">RShaderPresets<p>
+<table border="1">
+<tr><td valign=top><p class="code">P_SP_COLOR_UNIFORM</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> a single colored (accessed using the uniform "color") surface transformed by "ModelViewProjectionMatrix". it wiull use the first component of the vertex array as its position. </font>
+</td></tr>
+<tr><td valign=top><p class="code">P_SP_COLOR_VERTEX</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Same as P_SP_COLOR_UNIFORM, but will use the second component of the vertex array as surface color instead of a uniform. </font>
+</td></tr>
+<tr><td valign=top><p class="code">P_SP_TEXTURE</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description">Draws a textured surface where the first array indicates position and the second uv.</font>
+</td></tr>
+<tr><td valign=top><p class="code">P_SP_COLORED_UNIFORM_TEXTURE</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description">Same as P_SP_TEXTURE but adds the uniform "color" to shade the textured surface. </font>
+</td></tr>
+</table>
+<p class="code">relinquish_Image_and_texture_API_.html</p>
+<p class="header">Enum:</p> <p class="code">PImageFormat<p>
+<table border="1">
+<tr><td valign=top><p class="code">R_IF_R_UINT8</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Single chanel texture format with 8 bit integer storage corresponding to a float in GLSL </font>
+</td></tr>
+<tr><td valign=top><p class="code">R_IF_RG_UINT8</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Dual chanel texture format with 8 bit integer storage corresponding to a vec2 in GLSL </font>
+</td></tr>
+<tr><td valign=top><p class="code">R_IF_RGB_UINT8</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Tripple chanel texture format with 8 bit integer storage corresponding to a vec3 in GLSL </font>
+</td></tr>
+<tr><td valign=top><p class="code">R_IF_RGBA_UINT8</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Quadruple chanel texture format with 8 bit integer storage corresponding to a vec4 in GLSL </font>
+</td></tr>
+<tr><td valign=top><p class="code">R_IF_R_FLOAT16</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Single chanel texture format with 16 bit floating point storage corresponding to a float in GLSL </font>
+</td></tr>
+<tr><td valign=top><p class="code">R_IF_RG_FLOAT16</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Dual chanel texture format with 16 bit floating point storage corresponding to a vec2 in GLSL </font>
+</td></tr>
+<tr><td valign=top><p class="code">R_IF_RGB_FLOAT16</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Tripple chanel texture format with 16 bit floating point storage corresponding to a vec3 in GLSL </font>
+</td></tr>
+<tr><td valign=top><p class="code">R_IF_RGBA_FLOAT16</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Quadruple chanel texture format with 16 bit floating point storage corresponding to a vec4 in GLSL </font>
+</td></tr>
+<tr><td valign=top><p class="code">R_IF_R_FLOAT32</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Single chanel texture format with 32 bit floating point storage corresponding to a float in GLSL </font>
+</td></tr>
+<tr><td valign=top><p class="code">R_IF_RG_FLOAT32</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Dual chanel texture format with 32 bit floating point storage corresponding to a vec2 in GLSL </font>
+</td></tr>
+<tr><td valign=top><p class="code">R_IF_RGB_FLOAT32</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Tripple chanel texture format with 32 bit floating point storage corresponding to a vec3 in GLSL </font>
+</td></tr>
+<tr><td valign=top><p class="code">R_IF_RGBA_FLOAT32</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Quadruple chanel texture format with 32 bit floating point storage corresponding to a vec4 in GLSL </font>
+</td></tr>
+<tr><td valign=top><p class="code">R_IF_DEPTH16</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description">16 Bit depth map.</font>
+</td></tr>
+<tr><td valign=top><p class="code">R_IF_DEPTH24</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description">24 Bit depth map.</font>
+</td></tr>
+<tr><td valign=top><p class="code">R_IF_DEPTH32</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description">32 Bit depth map.</font>
+</td></tr>
+<tr><td valign=top><p class="code">R_IF_DEPTH24_STENCIL8</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description">24 Bit depth map interleaved with a 8 bit stencil map.</font>
+</td></tr>
+</table>
+<p class="code">R_IB_IMAGE_CUBE -1</p>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html> 

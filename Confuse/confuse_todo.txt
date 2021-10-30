@@ -1,0 +1,106 @@
+NEXT major Confuse push:
+
+-Multi pass reendering.
+-Event management.
+-State.
+-Multi space animation.
+-Graphics overlay.
+-Interface hide.
+-Recursive objects.
+-Draw State dependencies.
+-Geometry mega thing.
+
+
+Return to entity.
+fix colaps params.
+fix add list
+Attribute dependencies.
+Update shader.....
+
+-------------------
+Point edit_tool
+Popup re-design;
+
+Minis:
+-Camera controls
++Matrix interface
+
++Cascading dependencies
+
++Render pipeline.
++Shader parse.
++Verse support.
+-Data save.
+-Enduser API.
+-Threading.
+-Camera controls
++Image loader.
++Stack viewer.
+
+Plan:
+-Stabalize interface and testing
+	-Test Follow all crashes.
+	+Fix init blend mode
+	-Add some proppeer shaders
+	-Add primitive add.
+	+Remove primitive
+	-Fix handle size
+	+Animation
+	-Camera
+-Save and load.
+	-Move cmponent struct in to session.
+
+	-Reduce stack size.
+
+
+
++Renaming
++Texture save
+Verse reconect
++Handle size
+<1/10>
+Popup redesign
++Popup x swap
++Stack fold in
+Component list
++UV Snap
++UV display
++Drag connect to stack
+
+--------------------------
+
+Save error
+Rotation and scale objects
+-Fixed pos input.
+
+-Think about primitive types.
+
+-----------------------
+Known issues:
++Multi touch
+-Connecting type, inherits current type.
++adding a operation where there already is one doenst clear the previous dependency
++input clicks dont work too far to the left.
++Shaders with too many inputs dont fit the screen.
++Cant edit individiual values
+-Number input (seduce, negative, printing and typing)
+-Crop and fit list selections.
+-Remove Primitive
+-Remove entity
+
+-Asset lock.
+-Asset API access.
+
+-Input
+
++On/off button
++Sorting
+
+FORCES:
++Friction.
++Spin.
+-Gravity well.
++Collission Bounce.
++Collission death
++Die emit
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>imagine</title>
+<style type="text/css">
+font.header {color:rgb(108,216,0);}
+h2 {color:rgb(108,216,0);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;">
+<dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dd><a href="imagine_Library_loading_.html">Library loading </a></dd><dd><a href="imagine_Multi_Treading_.html">Multi Treading </a></dd><dd><a href="imagine_timing_.html">timing </a></dd><dd><a href="imagine_Execution_.html">Execution </a></dd><dd><a href="imagine_Settings_storage_.html">Settings storage </a></dd><dd><a href="imagine_Directory_listing_.html">Directory listing </a></dd><dd><a href="imagine_defines.html">Defines</a></dd><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dt><a href="testify.html" style="color:rgb(216,0,108);">testify</a></dt></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+
+<h1><p>Settings storage </p></h1>
+<p class="group">Imagines setting system is convinient system for storing application settings in an XML file. An application can both set and get a settings value. If an application is using any of the "get" functions requesting a non existent setting, then the setting will be automaticaly created using the default value. This makes the system very robust as a deleter file, or even part of a file, can be recreated by the setting sytem system. An application also has the abillity to provide comments to make the settings file easier for humans to read.</p>
+<H3><p id="imagine_setting_boolean_get">imagine_setting_boolean_get</p></H3>
+<p class="code">boolean	imagine_setting_boolean_get(const char *setting, boolean default_value, const char *comment); </p>
+<font class="header">Description:</font>
+<font class="description">Get boolean setting. The function will return default_value if the setting is not available, and create the setting in the setting li</font>
+<H3><p id="imagine_setting_boolean_set">imagine_setting_boolean_set</p></H3>
+<p class="code">void		imagine_setting_boolean_set(const char *setting, boolean value, const char *comment); </p>
+<font class="header">Description:</font>
+<font class="description">set boolean setting </font>
+<H3><p id="imagine_setting_integer_get">imagine_setting_integer_get</p></H3>
+<p class="code">int		imagine_setting_integer_get(const char *setting, int default_value, const char *comment); </p>
+<font class="header">Description:</font>
+<font class="description">get uint setting </font>
+<H3><p id="imagine_setting_integer_set">imagine_setting_integer_set</p></H3>
+<p class="code">void		imagine_setting_integer_set(const char *setting, int value, const char *comment); </p>
+<font class="header">Description:</font>
+<font class="description">set uint setting </font>
+<H3><p id="imagine_setting_double_get">imagine_setting_double_get</p></H3>
+<p class="code">double	imagine_setting_double_get(const char *setting, double default_value, const char *comment); </p>
+<font class="header">Description:</font>
+<font class="description">get double setting </font>
+<H3><p id="imagine_setting_double_set">imagine_setting_double_set</p></H3>
+<p class="code">void		imagine_setting_double_set(const char *setting, double value, const char *comment); </p>
+<font class="header">Description:</font>
+<font class="description">set double setting </font>
+<H3><p id="imagine_setting_text_get">imagine_setting_text_get</p></H3>
+<p class="code">char		*imagine_setting_text_get(const char *setting, char *default_text, const char *comment); </p>
+<font class="header">Description:</font>
+<font class="description">get text setting </font>
+<H3><p id="imagine_setting_text_set">imagine_setting_text_set</p></H3>
+<p class="code">void		imagine_setting_text_set(const char *setting, char *text, const char *comment); </p>
+<font class="header">Description:</font>
+<font class="description">set text setting </font>
+<H3><p id="imagine_settings_save">imagine_settings_save</p></H3>
+<p class="code">void		imagine_settings_save(const char *file_name); </p>
+<font class="header">Description:</font>
+<font class="description">saves all settings to a file </font>
+<H3><p id="imagine_settings_load">imagine_settings_load</p></H3>
+<p class="code">void		imagine_settings_load(const char *file_name); </p>
+<font class="header">Description:</font>
+<font class="description">loads all settings from a file </font>
+<H3><p id="imagine_setting_test">imagine_setting_test</p></H3>
+<p class="code">boolean  imagine_setting_test(const char *setting); </p>
+<font class="header">Description:</font>
+<font class="description">Test if a setting exists </font>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html> 

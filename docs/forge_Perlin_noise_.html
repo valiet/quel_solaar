@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>forge</title>
+<style type="text/css">
+font.header {color:rgb(216,108,0);}
+h2 {color:rgb(216,108,0);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;">
+<dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dd><a href="forge_Debugging_.html">Debugging </a></dd><dd><a href="forge_Random_number_generators_.html">Random number generators </a></dd><dd><a href="forge_Vector_math_.html">Vector math </a></dd><dd><a href="forge_Integer_vector_math_.html">Integer vector math </a></dd><dd><a href="forge_Matrix_operations_.html">Matrix operations </a></dd><dd><a href="forge_Matrix_Creation_.html">Matrix Creation </a></dd><dd><a href="forge_Splines_.html">Splines </a></dd><dd><a href="forge_Wiggle_.html">Wiggle </a></dd><dd><a href="forge_Smooth_step_.html">Smooth step </a></dd><dd><a href="forge_Perlin_noise_.html">Perlin noise </a></dd><dd><a href="forge_tiled_versions_of_all_perlin_noi.html">tiled versions of all perlin noises</a></dd><dd><a href="forge_Snap_.html">Snap </a></dd><dd><a href="forge_Color_space_.html">Color space </a></dd><dd><a href="forge_Triangle_intersection_.html">Triangle intersection </a></dd><dd><a href="forge_Text_.html">Text </a></dd><dd><a href="forge_Sorting_.html">Sorting </a></dd><dd><a href="forge_Poly_mesh_neighbour_.html">Poly mesh neighbour </a></dd><dd><a href="forge_A*_path_finding_.html">A* path finding </a></dd><dd><a href="forge_defines.html">Defines</a></dd><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dt><a href="testify.html" style="color:rgb(216,0,108);">testify</a></dt></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+
+<h1><p>Perlin noise </p></h1>
+<p class="group">Single and multi dimentional implementations of Perlin noise. Very useful for procedural data generation </p>
+<H3><p id="f_noisef">f_noisef</p></H3>
+<p class="code">float f_noisef(float f); </p>
+<font class="header">Description:</font>
+<font class="description">Single octave 1D 32 bit float noise.</font>
+<H3><p id="f_noise2f">f_noise2f</p></H3>
+<p class="code">float f_noise2f(float x, float y); </p>
+<font class="header">Description:</font>
+<font class="description">Single octave 2D 32 bit float noise.</font>
+<H3><p id="f_noise3f">f_noise3f</p></H3>
+<p class="code">float f_noise3f(float x, float y, float z); </p>
+<font class="header">Description:</font>
+<font class="description">Single octave 3D 32 bit float noise.</font>
+<H3><p id="f_noiserf">f_noiserf</p></H3>
+<p class="code">float f_noiserf(float f, uint recursions); </p>
+<font class="header">Description:</font>
+<font class="description">Recursive 1D 32 bit float noise.</font>
+<H3><p id="f_noiser2f">f_noiser2f</p></H3>
+<p class="code">float f_noiser2f(float x, float y, uint recursions); </p>
+<font class="header">Description:</font>
+<font class="description">Recursive 2D 32 bit float noise.</font>
+<H3><p id="f_noiser3f">f_noiser3f</p></H3>
+<p class="code">float f_noiser3f(float x, float y, float z, uint recursions); </p>
+<font class="header">Description:</font>
+<font class="description">Recursive 3D 32 bit float noise.</font>
+<H3><p id="f_noised">f_noised</p></H3>
+<p class="code">double f_noised(double f); </p>
+<font class="header">Description:</font>
+<font class="description">Single octave 1D 64 bit double noise.</font>
+<H3><p id="f_noise2d">f_noise2d</p></H3>
+<p class="code">double f_noise2d(double x, double y); </p>
+<font class="header">Description:</font>
+<font class="description">Single octave 2D 64 bit double noise.</font>
+<H3><p id="f_noise3d">f_noise3d</p></H3>
+<p class="code">double f_noise3d(double x, double y, double z); </p>
+<font class="header">Description:</font>
+<font class="description">Single octave 3D 64 bit double noise.</font>
+<H3><p id="f_noiserd">f_noiserd</p></H3>
+<p class="code">double f_noiserd(double f, uint recursions); </p>
+<font class="header">Description:</font>
+<font class="description">Recursive 1D 64 bit double noise.</font>
+<H3><p id="f_noiser2d">f_noiser2d</p></H3>
+<p class="code">double f_noiser2d(double x, double y, uint recursions); </p>
+<font class="header">Description:</font>
+<font class="description">Recursive 2D 64 bit double noise.</font>
+<H3><p id="f_noiser3d">f_noiser3d</p></H3>
+<p class="code">double f_noiser3d(double x, double y, double z, uint recursions); </p>
+<font class="header">Description:</font>
+<font class="description">Recursive 3D 64 bit double noise.</font>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html> 

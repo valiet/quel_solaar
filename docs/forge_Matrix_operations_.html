@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>forge</title>
+<style type="text/css">
+font.header {color:rgb(216,108,0);}
+h2 {color:rgb(216,108,0);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;">
+<dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dd><a href="forge_Debugging_.html">Debugging </a></dd><dd><a href="forge_Random_number_generators_.html">Random number generators </a></dd><dd><a href="forge_Vector_math_.html">Vector math </a></dd><dd><a href="forge_Integer_vector_math_.html">Integer vector math </a></dd><dd><a href="forge_Matrix_operations_.html">Matrix operations </a></dd><dd><a href="forge_Matrix_Creation_.html">Matrix Creation </a></dd><dd><a href="forge_Splines_.html">Splines </a></dd><dd><a href="forge_Wiggle_.html">Wiggle </a></dd><dd><a href="forge_Smooth_step_.html">Smooth step </a></dd><dd><a href="forge_Perlin_noise_.html">Perlin noise </a></dd><dd><a href="forge_tiled_versions_of_all_perlin_noi.html">tiled versions of all perlin noises</a></dd><dd><a href="forge_Snap_.html">Snap </a></dd><dd><a href="forge_Color_space_.html">Color space </a></dd><dd><a href="forge_Triangle_intersection_.html">Triangle intersection </a></dd><dd><a href="forge_Text_.html">Text </a></dd><dd><a href="forge_Sorting_.html">Sorting </a></dd><dd><a href="forge_Poly_mesh_neighbour_.html">Poly mesh neighbour </a></dd><dd><a href="forge_A*_path_finding_.html">A* path finding </a></dd><dd><a href="forge_defines.html">Defines</a></dd><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dt><a href="testify.html" style="color:rgb(216,0,108);">testify</a></dt></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+
+<h1><p>Matrix operations </p></h1>
+<p class="group">Matrix operations for 4x4 matrices.</p>
+<H3><p id="f_matrix_clearf">f_matrix_clearf</p></H3>
+<p class="code">void f_matrix_clearf(float *matrix); </p>
+<font class="header">Description:</font>
+<font class="description">Clears a 4x4 32 bit float matrix to an identity matrix.</font>
+<H3><p id="f_matrix_cleard">f_matrix_cleard</p></H3>
+<p class="code">void f_matrix_cleard(double *matrix); </p>
+<font class="header">Description:</font>
+<font class="description">Clears a 4x4 64 bit double matrix to an identity matrix.</font>
+<H3><p id="f_transform3f">f_transform3f</p></H3>
+<p class="code">void f_transform3f(float *output, const float *matrix, const float x, const float y, const float z); </p>
+<font class="header">Description:</font>
+<font class="description">Transforms a 3D point with a 4x4 32 bit float matrix.</font>
+<H3><p id="f_transform3d">f_transform3d</p></H3>
+<p class="code">void f_transform3d(double *out, const double *matrix, const double x, const double y, const double z);  </p>
+<font class="header">Description:</font>
+<font class="description">Transforms a 3D point with a 4x4 64 bit double matrix.</font>
+<H3><p id="f_transform4f">f_transform4f</p></H3>
+<p class="code">void f_transform4f(float *output, const float *matrix, const float x, const float y, const float z, const double w); </p>
+<font class="header">Description:</font>
+<font class="description">Transforms a 4D point with a 4x4 32 bit float matrix.</font>
+<H3><p id="f_transform4d">f_transform4d</p></H3>
+<p class="code">void f_transform4d(double *out, const double *matrix, const double x, const double y, const double z, const double w); </p>
+<font class="header">Description:</font>
+<font class="description">Transforms a 4D point with a 4x4 64 bit double matrix.</font>
+<H3><p id="f_transforminv3f">f_transforminv3f</p></H3>
+<p class="code">void f_transforminv3f(float *out, const float *matrix, float x, float y, float z);</p>
+<H3><p id="f_transforminv3d">f_transforminv3d</p></H3>
+<p class="code">void f_transforminv3d(double *out, const double *matrix, double x, double y, double z);</p>
+<H3><p id="f_matrix_multiplyf">f_matrix_multiplyf</p></H3>
+<p class="code">void f_matrix_multiplyf(float *output, const float *a, const float *b); </p>
+<font class="header">Description:</font>
+<font class="description">Multiplies two 4x4 32 bit float matrices.</font>
+<H3><p id="f_matrix_multiplyd">f_matrix_multiplyd</p></H3>
+<p class="code">void f_matrix_multiplyd(double *output, const double *a, const double *b); </p>
+<font class="header">Description:</font>
+<font class="description">Multiplies two 4x4 64 bit double matrices.</font>
+<H3><p id="f_matrix_reverse4f">f_matrix_reverse4f</p></H3>
+<p class="code">void f_matrix_reverse4f(float *output, const float *matrix); </p>
+<font class="header">Description:</font>
+<font class="description">Reverces a 4x4 32 bit float matrix.</font>
+<H3><p id="f_matrix_reverse4d">f_matrix_reverse4d</p></H3>
+<p class="code">void f_matrix_reverse4d(double *output, const double *matrix); </p>
+<font class="header">Description:</font>
+<font class="description">Reverces a 4x4 64 bit double matrix.</font>
+<H3><p id="f_quaternion_to_matrixf">f_quaternion_to_matrixf</p></H3>
+<p class="code">void f_quaternion_to_matrixf(float *matrix, float x, float y, float z, float w); </p>
+<font class="header">Description:</font>
+<font class="description">Converts a 32 bit float quaternoion to a 4x4 32 bit float matrix.</font>
+<H3><p id="f_quaternion_to_matrixd">f_quaternion_to_matrixd</p></H3>
+<p class="code">void f_quaternion_to_matrixd(double *matrix, double x, double y, double z, double w); </p>
+<font class="header">Description:</font>
+<font class="description">Converts a 64 bit double quaternoion to a 4x4 64 bit double matrix.</font>
+<H3><p id="f_matrix_to_quaternionf">f_matrix_to_quaternionf</p></H3>
+<p class="code">void f_matrix_to_quaternionf(float *quaternion, float *matrix); </p>
+<font class="header">Description:</font>
+<font class="description">Converts a 4x4 32 bit float matrix to a 32 bit float quaternoion.</font>
+<H3><p id="f_matrix_to_quaterniond">f_matrix_to_quaterniond</p></H3>
+<p class="code">void f_matrix_to_quaterniond(double *quaternion, double *matrix); </p>
+<font class="header">Description:</font>
+<font class="description">Converts a 4x4 64 bit double matrix to a 64 bit double quaternoion.</font>
+<H3><p id="f_matrix_to_pos_quaternion_scalef">f_matrix_to_pos_quaternion_scalef</p></H3>
+<p class="code">void f_matrix_to_pos_quaternion_scalef(float *matrix, float *pos, float *quaternion, float *scale); </p>
+<font class="header">Description:</font>
+<font class="description">Converts a 4x4 32 bit float matrix to a 32 bit float position, scale and quaternoion.</font>
+<H3><p id="f_matrix_to_pos_quaternion_scaled">f_matrix_to_pos_quaternion_scaled</p></H3>
+<p class="code">void f_matrix_to_pos_quaternion_scaled(double *matrix, double *pos, double *quaternion, double *scale); </p>
+<font class="header">Description:</font>
+<font class="description">Converts a 4x4 64 bit double matrix to a 64 bit double position, scale and quaternoion.</font>
+<H3><p id="f_pos_quaternion_scale_to_matrixf">f_pos_quaternion_scale_to_matrixf</p></H3>
+<p class="code">void f_pos_quaternion_scale_to_matrixf(float *pos, float *quaternion, float *scale, float *matrix); </p>
+<font class="header">Description:</font>
+<font class="description">Converts a 32 bit float position, scale and quaternoion to a 4x4 32 bit float matrix.</font>
+<H3><p id="f_pos_quaternion_scale_to_matrixd">f_pos_quaternion_scale_to_matrixd</p></H3>
+<p class="code">void f_pos_quaternion_scale_to_matrixd(double *pos, double *quaternion, double *scale, double *matrix); </p>
+<font class="header">Description:</font>
+<font class="description">Converts a 64 bit double position, scale and quaternoion to a 4x4 64 bit double matrix.</font>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html> 

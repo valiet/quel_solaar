@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>testify</title>
+<style type="text/css">
+font.header {color:rgb(216,0,108);}
+h2 {color:rgb(216,0,108);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;">
+<dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dt><a href="testify.html" style="color:rgb(216,0,108);">testify</a></dt><dd><a href="testify_TCP_Networking_.html">TCP Networking </a></dd><dd><a href="testify_UDP_Networking_.html">UDP Networking </a></dd><dd><a href="testify_File_Management_.html">File Management </a></dd><dd><a href="testify_Memmory_buffers_.html">Memmory buffers </a></dd><dd><a href="testify_Handle_Utillities_.html">Handle Utillities </a></dd><dd><a href="testify_Debugging_.html">Debugging </a></dd><dd><a href="testify_Markers_.html">Markers </a></dd><dd><a href="testify_Data_packing_.html">Data packing </a></dd><dd><a href="testify_Data_unpacking_.html">Data unpacking </a></dd><dd><a href="testify_defines.html">Defines</a></dd></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+
+<p><H2>testify</H2></p>
+<p class="group">
+Testify is a library for sereielizing data in to bit streams, and then unpacking them. Data can be packed/unpacked form memory, a network connection or a file. Testify packs all data in big endian order and hides any difference between big or small endianess of the CPU. While Testify is written to be very fast it allso has extensive debugging capabillities. By enabling the debug state of a Stream Testify can be made to pack significant ammounts of meta data arround each entry. By doing this the receving end can match the incomming data with the expected data makig it trivial to find pack/unpack miss-match buggs. By building Testify without the define <a href="testify_Testify_.html#TESTIFY_DEBUG">TESTIFY_DEBUG</a> all debugging code can be dissabled and maximum preformance can be obtained.</p>
+<p class="header">Contents:</p><dl>
+<dt><a href="testify_TCP_Networking_.html">TCP Networking </a></dt>
+<dd><a href="testify_TCP_Networking_.html#testify_network_stream_address_create">testify_network_stream_address_create</a></dd>
+<dd><a href="testify_TCP_Networking_.html#testify_network_stream_send_force">testify_network_stream_send_force</a></dd>
+<dd><a href="testify_TCP_Networking_.html#testify_network_stream_wait_for_connection">testify_network_stream_wait_for_connection</a></dd>
+<dd><a href="testify_TCP_Networking_.html#testify_network_stream_connected">testify_network_stream_connected</a></dd>
+<dt><a href="testify_UDP_Networking_.html">UDP Networking </a></dt>
+<dd><a href="testify_UDP_Networking_.html#testify_network_address_lookup">testify_network_address_lookup</a></dd>
+<dd><a href="testify_UDP_Networking_.html#testify_network_datagram_create">testify_network_datagram_create</a></dd>
+<dd><a href="testify_UDP_Networking_.html#testify_network_datagram_send">testify_network_datagram_send</a></dd>
+<dd><a href="testify_UDP_Networking_.html#testify_network_datagram_receive">testify_network_datagram_receive</a></dd>
+<dt><a href="testify_File_Management_.html">File Management </a></dt>
+<dd><a href="testify_File_Management_.html#testify_file_load">testify_file_load</a></dd>
+<dd><a href="testify_File_Management_.html#testify_file_save">testify_file_save</a></dd>
+<dd><a href="testify_File_Management_.html#testify_file_size">testify_file_size</a></dd>
+<dd><a href="testify_File_Management_.html#testify_file_position_set">testify_file_position_set</a></dd>
+<dd><a href="testify_File_Management_.html#testify_file_position_get">testify_file_position_get</a></dd>
+<dt><a href="testify_Memmory_buffers_.html">Memmory buffers </a></dt>
+<dd><a href="testify_Memmory_buffers_.html#testify_buffer_create">testify_buffer_create</a></dd>
+<dd><a href="testify_Memmory_buffers_.html#testify_buffer_get">testify_buffer_get</a></dd>
+<dd><a href="testify_Memmory_buffers_.html#testify_buffer_set">testify_buffer_set</a></dd>
+<dt><a href="testify_Handle_Utillities_.html">Handle Utillities </a></dt>
+<dd><a href="testify_Handle_Utillities_.html#testify_type">testify_type</a></dd>
+<dd><a href="testify_Handle_Utillities_.html#testify_free">testify_free</a></dd>
+<dd><a href="testify_Handle_Utillities_.html#testify_network_wait">testify_network_wait</a></dd>
+<dt><a href="testify_Debugging_.html">Debugging </a></dt>
+<dd><a href="testify_Debugging_.html#testify_debug_mode_set">testify_debug_mode_set</a></dd>
+<dt><a href="testify_Markers_.html">Markers </a></dt>
+<dd><a href="testify_Markers_.html#testify_restart_marker_set">testify_restart_marker_set</a></dd>
+<dd><a href="testify_Markers_.html#testify_restart_marker_release">testify_restart_marker_release</a></dd>
+<dd><a href="testify_Markers_.html#testify_restart_marker_reset">testify_restart_marker_reset</a></dd>
+<dd><a href="testify_Markers_.html#testify_retivable">testify_retivable</a></dd>
+<dd><a href="testify_Markers_.html#testify_retivable_terminated">testify_retivable_terminated</a></dd>
+<dt><a href="testify_Data_packing_.html">Data packing </a></dt>
+<dd><a href="testify_Data_packing_.html#testify_pack_uint8">testify_pack_uint8</a></dd>
+<dd><a href="testify_Data_packing_.html#testify_pack_int8">testify_pack_int8</a></dd>
+<dd><a href="testify_Data_packing_.html#testify_pack_uint16">testify_pack_uint16</a></dd>
+<dd><a href="testify_Data_packing_.html#testify_pack_int16">testify_pack_int16</a></dd>
+<dd><a href="testify_Data_packing_.html#testify_pack_uint32">testify_pack_uint32</a></dd>
+<dd><a href="testify_Data_packing_.html#testify_pack_int32">testify_pack_int32</a></dd>
+<dd><a href="testify_Data_packing_.html#testify_pack_uint64">testify_pack_uint64</a></dd>
+<dd><a href="testify_Data_packing_.html#testify_pack_int64">testify_pack_int64</a></dd>
+<dd><a href="testify_Data_packing_.html#testify_pack_real32">testify_pack_real32</a></dd>
+<dd><a href="testify_Data_packing_.html#testify_pack_real64">testify_pack_real64</a></dd>
+<dd><a href="testify_Data_packing_.html#testify_pack_string">testify_pack_string</a></dd>
+<dt><a href="testify_Data_unpacking_.html">Data unpacking </a></dt>
+<dd><a href="testify_Data_unpacking_.html#testify_unpack_uint8">testify_unpack_uint8</a></dd>
+<dd><a href="testify_Data_unpacking_.html#testify_unpack_int8">testify_unpack_int8</a></dd>
+<dd><a href="testify_Data_unpacking_.html#testify_unpack_uint16">testify_unpack_uint16</a></dd>
+<dd><a href="testify_Data_unpacking_.html#testify_unpack_int16">testify_unpack_int16</a></dd>
+<dd><a href="testify_Data_unpacking_.html#testify_unpack_uint32">testify_unpack_uint32</a></dd>
+<dd><a href="testify_Data_unpacking_.html#testify_unpack_int32">testify_unpack_int32</a></dd>
+<dd><a href="testify_Data_unpacking_.html#testify_unpack_uint64">testify_unpack_uint64</a></dd>
+<dd><a href="testify_Data_unpacking_.html#testify_unpack_int64">testify_unpack_int64</a></dd>
+<dd><a href="testify_Data_unpacking_.html#testify_unpack_real32">testify_unpack_real32</a></dd>
+<dd><a href="testify_Data_unpacking_.html#testify_unpack_real64">testify_unpack_real64</a></dd>
+<dd><a href="testify_Data_unpacking_.html#testify_unpack_string">testify_unpack_string</a></dd>
+<dd><a href="testify_Data_unpacking_.html#testify_unpack_string_allocate">testify_unpack_string_allocate</a></dd>
+<dt><a href="testify_defines.html">Defines</a></dt>
+</dl>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html> 

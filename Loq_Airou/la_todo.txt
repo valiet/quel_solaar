@@ -1,0 +1,6 @@
+Todo:
++visualaize base mesh.
++Build settings menu
++Build betray settings in to menu.
++Test new node.
++Multi layer menu

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>forge</title>
+<style type="text/css">
+font.header {color:rgb(216,108,0);}
+h2 {color:rgb(216,108,0);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;">
+<dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dd><a href="forge_Debugging_.html">Debugging </a></dd><dd><a href="forge_Random_number_generators_.html">Random number generators </a></dd><dd><a href="forge_Vector_math_.html">Vector math </a></dd><dd><a href="forge_Integer_vector_math_.html">Integer vector math </a></dd><dd><a href="forge_Matrix_operations_.html">Matrix operations </a></dd><dd><a href="forge_Matrix_Creation_.html">Matrix Creation </a></dd><dd><a href="forge_Splines_.html">Splines </a></dd><dd><a href="forge_Wiggle_.html">Wiggle </a></dd><dd><a href="forge_Smooth_step_.html">Smooth step </a></dd><dd><a href="forge_Perlin_noise_.html">Perlin noise </a></dd><dd><a href="forge_tiled_versions_of_all_perlin_noi.html">tiled versions of all perlin noises</a></dd><dd><a href="forge_Snap_.html">Snap </a></dd><dd><a href="forge_Color_space_.html">Color space </a></dd><dd><a href="forge_Triangle_intersection_.html">Triangle intersection </a></dd><dd><a href="forge_Text_.html">Text </a></dd><dd><a href="forge_Sorting_.html">Sorting </a></dd><dd><a href="forge_Poly_mesh_neighbour_.html">Poly mesh neighbour </a></dd><dd><a href="forge_A*_path_finding_.html">A* path finding </a></dd><dd><a href="forge_defines.html">Defines</a></dd><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dt><a href="testify.html" style="color:rgb(216,0,108);">testify</a></dt></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+
+<p class="code">forge_Forge_is_a_basic_utility_library.html</p>
+<p class="code">TYPES_H</p>
+<H3><p id="NULL">NULL<p></H3>
+<p class="code">NULL    0 </p>
+<font class="header">Description:</font>
+<font class="description">Defines NULL in C++</font>
+<H3><p id="NULL">NULL<p></H3>
+<p class="code">NULL    ((void *)0) </p>
+<font class="header">Description:</font>
+<font class="description">Defines NULL in C</font>
+<H3><p id="TRUE">TRUE<p></H3>
+<p class="code">TRUE 1 </p>
+<font class="header">Description:</font>
+<font class="description">Defines TRUE </font>
+<H3><p id="FALSE">FALSE<p></H3>
+<p class="code">FALSE 0 </p>
+<font class="header">Description:</font>
+<font class="description">Defines FALSE</font>
+<H3><p id="F_DOUBLE_PRECISION">F_DOUBLE_PRECISION<p></H3>
+<p class="code">F_DOUBLE_PRECISION </p>
+<font class="header">Description:</font>
+<font class="description">if F_DOUBLE_PRECISION is defined the type "freal" is defined as double otherwhise it will be defined as float. This is very usefull if you want to write an application that can be compiled to use either 32 or 64 bit floating point math. Forges entire match librarie are defined in both 32 and 64 bit precission and all functionality can be accessed using the freal type, a macro will replace all freal calls with the aropriate funtion using either 32 or 64 bit depending on if F_DOUBLE_PRECISION is defined</font>
+<H3><p id="PI">PI<p></H3>
+<p class="code">PI  3.141592653 </p>
+<font class="header">Description:</font>
+<font class="description">Defines PI </font>
+<p class="code">forge_Debugging_.html</p>
+<H3><p id="malloc(n)">malloc(n)<p></H3>
+<p class="code">malloc(n) f_debug_mem_malloc(n, __FILE__, __LINE__) </p>
+<font class="header">Description:</font>
+<font class="description">Replaces malloc. </font>
+<H3><p id="realloc(n,">realloc(n,<p></H3>
+<p class="code">realloc(n, m) f_debug_mem_realloc(n, m, __FILE__, __LINE__) </p>
+<font class="header">Description:</font>
+<font class="description">Replaces realloc. </font>
+<H3><p id="free(n)">free(n)<p></H3>
+<p class="code">free(n) f_debug_mem_free(n) </p>
+<font class="header">Description:</font>
+<font class="description">Replaces free. </font>
+<H3><p id="exit(n)">exit(n)<p></H3>
+<p class="code">exit(n) exit_crash(n) </p>
+<font class="header">Description:</font>
+<font class="description">over writhing exit(0)  with afunction guaraneed tyo crash. </font>
+<p class="code">forge_Vector_math_.html</p>
+<H3><p id="d_sqrt">d_sqrt<p></H3>
+<p class="code">d_sqrt sqrt </p>
+<font class="header">Description:</font>
+<font class="description">replaced sqrt with carmacks  inverse sqrt aproximation </font>
+<p class="code">forge_Sorting_.html</p>
+<p class="header">Enum:</p> <p class="code">FStringSortResult<p>
+<table border="1">
+<tr><td valign=top><p class="code">F_SSR_A</p></td>
+<tr><td valign=top><p class="code">F_SSR_B</p></td>
+<tr><td valign=top><p class="code">F_SSR_EQUAL</p></td>
+<tr><td valign=top><p class="code">F_SSR_COUNT</p></td>
+</table>
+<p class="code">forge_A*_path_finding_.html</p>
+<p class="header">Enum:</p> <p class="code">ForgeDataElementType<p>
+<table border="1">
+<tr><td valign=top><p class="code">FORGE_DET_BOOLEAN</p></td>
+<tr><td valign=top><p class="code">FORGE_DET_TRIGGER</p></td>
+<tr><td valign=top><p class="code">FORGE_DET_INTEGER</p></td>
+<tr><td valign=top><p class="code">FORGE_DET_UNSIGNED_INTEGER</p></td>
+<tr><td valign=top><p class="code">FORGE_DET_INTEGER_BOUND</p></td>
+<tr><td valign=top><p class="code">FORGE_DET_REAL</p></td>
+<tr><td valign=top><p class="code">FORGE_DET_REAL_BOUND</p></td>
+<tr><td valign=top><p class="code">FORGE_DET_2D_POS</p></td>
+<tr><td valign=top><p class="code">FORGE_DET_3D_POS</p></td>
+<tr><td valign=top><p class="code">FORGE_DET_4D_POS</p></td>
+<tr><td valign=top><p class="code">FORGE_DET_QUATERNION</p></td>
+<tr><td valign=top><p class="code">FORGE_DET_2D_NORMAL</p></td>
+<tr><td valign=top><p class="code">FORGE_DET_3D_NORMAL</p></td>
+<tr><td valign=top><p class="code">FORGE_DET_2X2MATRIX</p></td>
+<tr><td valign=top><p class="code">FORGE_DET_3X3MATRIX</p></td>
+<tr><td valign=top><p class="code">FORGE_DET_4X4MATRIX</p></td>
+<tr><td valign=top><p class="code">FORGE_DET_TEXT</p></td>
+<tr><td valign=top><p class="code">FORGE_DET_PASSWORD</p></td>
+<tr><td valign=top><p class="code">FORGE_DET_TEXT_BUFFER</p></td>
+<tr><td valign=top><p class="code">FORGE_DET_COLOR_RGB</p></td>
+<tr><td valign=top><p class="code">FORGE_DET_COLOR_RGBA</p></td>
+<tr><td valign=top><p class="code">FORGE_DET_TIME</p></td>
+<tr><td valign=top><p class="code">FORGE_DET_DATE</p></td>
+<tr><td valign=top><p class="code">FORGE_DET_SELECT</p></td>
+<tr><td valign=top><p class="code">FORGE_DET_SECTION_START</p></td>
+<tr><td valign=top><p class="code">FORGE_DET_SECTION_END</p></td>
+<tr><td valign=top><p class="code">FORGE_DET_CUSTOM</p></td>
+<tr><td valign=top><p class="code">FORGE_DET_COUNT</p></td>
+</table>
+<p class="header">Struct:</p> <p class="code">real<p>
+<table border="1">
+<tr><td valign=top><p class="code">ForgeDataElementType type</p></td>
+<tr><td valign=top><p class="code">char *text</p></td>
+<tr><td valign=top><p class="code">char *description</p></td>
+<tr><td valign=top><p class="code">union{
+		boolean active</p></td>
+<tr><td valign=top><p class="code">boolean trigger</p></td>
+<tr><td valign=top><p class="code">int		integer</p></td>
+<tr><td valign=top><p class="code">uint	uinteger</p></td>
+<tr><td valign=top><p class="code">struct{
+			double value</p></td>
+<tr><td valign=top><p class="code">double max</p></td>
+<tr><td valign=top><p class="code">double min</p></td>
+<tr><td valign=top><p class="code">real</p></td>
+<tr><td valign=top><p class="code">float color[4]</p></td>
+<tr><td valign=top><p class="code">double vector[4]</p></td>
+<tr><td valign=top><p class="code">double matrix[16]</p></td>
+<tr><td valign=top><p class="code">char text[64]</p></td>
+<tr><td valign=top><p class="code">struct{
+			char	*text_buffer</p></td>
+<tr><td valign=top><p class="code">uint	buffer_size</p></td>
+</table>
+<p class="code">forge_Seconds_in_a_day_.html</p>
+<p class="code">f_length2 f_length2d</p>
+<p class="code">f_length3 f_length3d</p>
+<p class="code">f_distance2 f_distance2d</p>
+<p class="code">f_distance3 f_distance3d</p>
+<p class="code">f_dot2 f_dot2d</p>
+<p class="code">f_dot3 f_dot3d</p>
+<p class="code">f_cross2 f_cross2d</p>
+<p class="code">f_cross3 f_cross3d</p>
+<p class="code">f_normalize2 f_normalize2d</p>
+<p class="code">f_normalize3 f_normalize3d</p>
+<p class="code">f_normalize4 f_normalize4d</p>
+<p class="code">f_reflect2 f_reflect2d</p>
+<p class="code">f_reflect3 f_reflect3d</p>
+<p class="code">f_flatten2 f_flatten2d</p>
+<p class="code">f_flatten3 f_flatten3d</p>
+<p class="code">f_project2 f_project2d</p>
+<p class="code">f_project3 f_project3d</p>
+<p class="code">f_intersect2 f_intersect2d</p>
+<p class="code">f_matrix_clear f_matrix_cleard</p>
+<p class="code">f_transform3 f_transform3d</p>
+<p class="code">f_transform4 f_transform4d</p>
+<p class="code">f_matrix_multiply f_matrix_multiplyd</p>
+<p class="code">f_matrixxy f_matrixxyd</p>
+<p class="code">f_matrixxz f_matrixxzd</p>
+<p class="code">f_matrixyx f_matrixyxd</p>
+<p class="code">f_matrixyz f_matrixyzd</p>
+<p class="code">f_matrixzx f_matrixzxd</p>
+<p class="code">f_matrixzy f_matrixzyd</p>
+<p class="code">f_spline f_splined</p>
+<p class="code">f_spline2d f_spline2dd</p>
+<p class="code">f_spline3d f_spline3dd</p>
+<p class="code">f_spline4d f_spline4dd</p>
+<p class="code">f_wiggle f_wiggled</p>
+<p class="code">f_wiggle2d f_wiggle2dd</p>
+<p class="code">f_wiggle3d f_wiggle3dd</p>
+<p class="code">f_smooth_step f_smooth_stepd</p>
+<p class="code">f_noise f_noised</p>
+<p class="code">f_noise2 f_noise2d</p>
+<p class="code">f_noise3 f_noise3d</p>
+<p class="code">f_noiser f_noiserd</p>
+<p class="code">f_noiser2 f_noiser2d</p>
+<p class="code">f_noiser3 f_noiser3d</p>
+<p class="code">f_step f_stepd</p>
+<p class="code">f_length2 f_length2f</p>
+<p class="code">f_length3 f_length3f</p>
+<p class="code">f_distance2 f_distance2f</p>
+<p class="code">f_distance3 f_distance3f</p>
+<p class="code">f_dot2 f_dot2f</p>
+<p class="code">f_dot3 f_dot3f</p>
+<p class="code">f_cross2 f_cross2f</p>
+<p class="code">f_cross3 f_cross3f</p>
+<p class="code">f_normalize2 f_normalize2f</p>
+<p class="code">f_normalize3 f_normalize3f</p>
+<p class="code">f_normalize4 f_normalize4f</p>
+<p class="code">f_reflect2 f_reflect2f</p>
+<p class="code">f_reflect3 f_reflect3f</p>
+<p class="code">f_flatten2 f_flatten2f</p>
+<p class="code">f_flatten3 f_flatten3f</p>
+<p class="code">f_project2 f_project2f</p>
+<p class="code">f_project3 f_project3f</p>
+<p class="code">f_intersect2 f_intersect2f</p>
+<p class="code">f_matrix_clear f_matrix_clearf</p>
+<p class="code">f_transform3 f_transform3f</p>
+<p class="code">f_transform4 f_transform4f</p>
+<p class="code">f_matrix_multiply f_matrix_multiplyf</p>
+<p class="code">f_matrixxy f_matrixxyf</p>
+<p class="code">f_matrixxz f_matrixxzf</p>
+<p class="code">f_matrixyx f_matrixyxf</p>
+<p class="code">f_matrixyz f_matrixyzf</p>
+<p class="code">f_matrixzx f_matrixzxf</p>
+<p class="code">f_matrixzy f_matrixzyf</p>
+<p class="code">f_spline f_splinef</p>
+<p class="code">f_spline2d f_spline2df</p>
+<p class="code">f_spline3d f_spline3df</p>
+<p class="code">f_spline4d f_spline4df</p>
+<p class="code">f_wiggle f_wigglef</p>
+<p class="code">f_wiggle2d f_wiggle2df</p>
+<p class="code">f_wiggle3d f_wiggle3df</p>
+<p class="code">f_smooth_step f_smooth_stepf</p>
+<p class="code">f_noise f_noisef</p>
+<p class="code">f_noise2 f_noise2f</p>
+<p class="code">f_noise3 f_noise3f</p>
+<p class="code">f_noiser f_noiserf</p>
+<p class="code">f_noiser2 f_noiser2f</p>
+<p class="code">f_noiser3 f_noiser3f</p>
+<p class="code">f_step f_stepf </p>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html> 

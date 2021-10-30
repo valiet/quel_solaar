@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>seduce</title>
+<style type="text/css">
+font.header {color:rgb(216,0,108);}
+h2 {color:rgb(216,0,108);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;"><dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dt><a href="seduce.html" style="color:rgb(216,0,108);">seduce</a></dt><dd><a href="seduce_Initialize_Seduce______.html">Initialize Seduce      </a></dd><dd><a href="seduce_text_lines_.html">text lines </a></dd><dd><a href="seduce_text_blocks_.html">text blocks </a></dd><dd><a href="seduce_text_buttons_.html">text buttons </a></dd><dd><a href="seduce_Language_translation_.html">Language translation </a></dd><dd><a href="seduce_Popup_Menus_.html">Popup Menus </a></dd><dd><a href="seduce_view_and_projection_code_.html">view and projection code </a></dd><dd><a href="seduce_---------------------_.html">--------------------- </a></dd><dd><a href="seduce_-------------------------------_.html">------------------------------- </a></dd><dd><a href="seduce_-----------_.html">----------- </a></dd><dd><a href="seduce_-------------------------_.html">------------------------- </a></dd><dd><a href="seduce_defines.html">Defines</a></dd></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+<p class="group">------------------------- </p>
+<H3><p id="seduce_element_add_point">seduce_element_add_point</p></H3>
+<p class="code">void seduce_element_add_point(BInputState *input, void *id, uint part, float *pos);</p>
+<H3><p id="seduce_element_add_line">seduce_element_add_line</p></H3>
+<p class="code">void seduce_element_add_line(BInputState *input, void *id, uint part, float *a, float *b);</p>
+<H3><p id="seduce_element_add_triangle">seduce_element_add_triangle</p></H3>
+<p class="code">void seduce_element_add_triangle(BInputState *input, void *id, uint part, float *a, float *b, float *c);</p>
+<H3><p id="seduce_element_add_quad">seduce_element_add_quad</p></H3>
+<p class="code">void seduce_element_add_quad(BInputState *input, void *id, uint part, float *a, float *b, float *c, float *d);</p>
+<H3><p id="seduce_element_add_surface">seduce_element_add_surface</p></H3>
+<p class="code">void seduce_element_add_surface(BInputState *input, void *id);</p>
+<H3><p id="seduce_element_colission_test">seduce_element_colission_test</p></H3>
+<p class="code">void *seduce_element_colission_test(float *pos, uint *part);</p>
+<H3><p id="seduce_element_pointer_id">seduce_element_pointer_id</p></H3>
+<p class="code">void *seduce_element_pointer_id(BInputState *input, uint pointer, uint *part);</p>
+<H3><p id="seduce_element_selected_id">seduce_element_selected_id</p></H3>
+<p class="code">void *seduce_element_selected_id(uint user_id, float *pos, uint *part);</p>
+<H3><p id="seduce_element_primary_axis">seduce_element_primary_axis</p></H3>
+<p class="code">uint seduce_element_primary_axis(BInputState *input, uint user_id);</p>
+<H3><p id="seduce_element_surface_project">seduce_element_surface_project</p></H3>
+<p class="code">boolean seduce_element_surface_project(BInputState *input, void *id, float *output, float pointer_x, float pointer_y);</p>
+<H3><p id="seduce_element_popup_action_begin">seduce_element_popup_action_begin</p></H3>
+<p class="code">void seduce_element_popup_action_begin(BInputState *input, uint user_id);</p>
+<H3><p id="seduce_element_popup_action_end">seduce_element_popup_action_end</p></H3>
+<p class="code">void seduce_element_popup_action_end(BInputState *input);</p>
+<H3><p id="seduce_element_popup_action">seduce_element_popup_action</p></H3>
+<p class="code">void *seduce_element_popup_action(boolean active);</p>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>seduce</title>
+<style type="text/css">
+font.header {color:rgb(216,0,108);}
+h2 {color:rgb(216,0,108);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;"><dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dt><a href="seduce.html" style="color:rgb(216,0,108);">seduce</a></dt><dd><a href="seduce_Initialize_Seduce______.html">Initialize Seduce      </a></dd><dd><a href="seduce_text_lines_.html">text lines </a></dd><dd><a href="seduce_text_blocks_.html">text blocks </a></dd><dd><a href="seduce_text_buttons_.html">text buttons </a></dd><dd><a href="seduce_Language_translation_.html">Language translation </a></dd><dd><a href="seduce_Popup_Menus_.html">Popup Menus </a></dd><dd><a href="seduce_view_and_projection_code_.html">view and projection code </a></dd><dd><a href="seduce_---------------------_.html">--------------------- </a></dd><dd><a href="seduce_-------------------------------_.html">------------------------------- </a></dd><dd><a href="seduce_-----------_.html">----------- </a></dd><dd><a href="seduce_-------------------------_.html">------------------------- </a></dd><dd><a href="seduce_defines.html">Defines</a></dd></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+<p class="code">SEDUCE_H</p>
+<p class="code">seduce_Initialize_Seduce______.html</p>
+<p class="code">SEDUCE_T_SIZE 0.007</p>
+<p class="code">SEDUCE_T_SPACE 0.2</p>
+<p class="code">SEDUCE_T_SPACEING 2.5</p>
+<p class="code">seduce_text_blocks_.html</p>
+<p class="header">Enum:</p> <p class="code">SUIBlockStyle<p>
+<table border="1">
+<tr><td valign=top><p class="code">SEDUCE_BS_LEFT</p></td>
+<tr><td valign=top><p class="code">SEDUCE_BS_RIGHT</p></td>
+<tr><td valign=top><p class="code">SEDUCE_BS_CENTER</p></td>
+<tr><td valign=top><p class="code">SEDUCE_BS_STRETCH</p></td>
+<tr><td valign=top><p class="code">SEDUCE_BS_CODE</p></td>
+</table>
+<p class="header">Struct:</p> <p class="code">SUIBlock<p>
+<table border="1">
+<tr><td valign=top><p class="code">float pos_x</p></td>
+<tr><td valign=top><p class="code">float pos_y</p></td>
+<tr><td valign=top><p class="code">float letter_size</p></td>
+<tr><td valign=top><p class="code">float letter_spacing</p></td>
+<tr><td valign=top><p class="code">float line_size</p></td>
+<tr><td valign=top><p class="code">float line_spacing</p></td>
+<tr><td valign=top><p class="code">uint line_count</p></td>
+<tr><td valign=top><p class="code">SUIBlockStyle style</p></td>
+<tr><td valign=top><p class="code">SUIBlock</p></td>
+<tr><td valign=top><p class="code">extern uint		sui_text_block_edit(SUIBlock *blocks</p></td>
+<tr><td valign=top><p class="code">uint block_count</p></td>
+<tr><td valign=top><p class="code">const char *text</p></td>
+<tr><td valign=top><p class="code">void (*done_func)(void *user</p></td>
+<tr><td valign=top><p class="code">char *text)</p></td>
+<tr><td valign=top><p class="code">void* user</p></td>
+<tr><td valign=top><p class="code">float *color</p></td>
+<tr><td valign=top><p class="code">uint *color_switch)</p></td>
+</table>
+<p class="code">seduce_Popup_Menus_.html</p>
+<p class="header">Enum:</p> <p class="code">SPopUpType<p>
+<table border="1">
+<tr><td valign=top><p class="code">S_PUT_TOP</p></td>
+<tr><td valign=top><p class="code">S_PUT_BOTTOM</p></td>
+<tr><td valign=top><p class="code">S_PUT_ANGLE</p></td>
+<tr><td valign=top><p class="code">S_PUT_BUTTON</p></td>
+<tr><td valign=top><p class="code">S_PUT_IMAGE</p></td>
+</table>
+<p class="header">Struct:</p> <p class="code">image<p>
+<table border="1">
+<tr><td valign=top><p class="code">SPopUpType	type</p></td>
+<tr><td valign=top><p class="code">char		*text</p></td>
+<tr><td valign=top><p class="code">union{
+		float button_pos[2]</p></td>
+<tr><td valign=top><p class="code">float angle[2]</p></td>
+<tr><td valign=top><p class="code">struct{
+			float pos[2]</p></td>
+<tr><td valign=top><p class="code">float size[2]</p></td>
+<tr><td valign=top><p class="code">uint texture_id</p></td>
+<tr><td valign=top><p class="code">image</p></td>
+<tr><td valign=top><p class="code">struct{
+			float angle[2]</p></td>
+<tr><td valign=top><p class="code">float *value</p></td>
+</table>
+<p class="code">seduce_Not_implemented_yet.__extern_voi.html</p>
+<p class="header">Enum:</p> <p class="code">SeducePanelElementType<p>
+<table border="1">
+<tr><td valign=top><p class="code">SEDUCE_PET_LABEL</p></td>
+<tr><td valign=top><p class="code">SEDUCE_PET_BUTTON</p></td>
+<tr><td valign=top><p class="code">SEDUCE_PET_BOOLEAN</p></td>
+<tr><td valign=top><p class="code">SEDUCE_PET_INTEGER</p></td>
+<tr><td valign=top><p class="code">SEDUCE_PET_UNSIGNED_INTEGER</p></td>
+<tr><td valign=top><p class="code">SEDUCE_PET_REAL</p></td>
+<tr><td valign=top><p class="code">SEDUCE_PET_SLIDER</p></td>
+<tr><td valign=top><p class="code">SEDUCE_PET_TEXT</p></td>
+<tr><td valign=top><p class="code">SEDUCE_PET_PASSWORD</p></td>
+<tr><td valign=top><p class="code">SEDUCE_PET_COLOR_RGB</p></td>
+<tr><td valign=top><p class="code">SEDUCE_PET_COLOR_WHEEL</p></td>
+<tr><td valign=top><p class="code">SEDUCE_PET_COLOR_HUE</p></td>
+<tr><td valign=top><p class="code">SEDUCE_PET_COLOR_SATURATION</p></td>
+<tr><td valign=top><p class="code">SEDUCE_PET_COLOR_VALUE</p></td>
+<tr><td valign=top><p class="code">SEDUCE_PET_SELECT</p></td>
+<tr><td valign=top><p class="code">SEDUCE_PET_POPUP</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description">	SEDUCE_PET_CUSTOM,</font>
+</td></tr>
+<tr><td valign=top><p class="code">SEDUCE_PET_SECTION_START</p></td>
+<tr><td valign=top><p class="code">SEDUCE_PET_SECTION_END</p></td>
+</table>
+<p class="code">seduce_Button(s)_Angular._Pie_Proggress.html</p>
+<p class="header">Struct:</p> <p class="code">button<p>
+<table border="1">
+<tr><td valign=top><p class="code">SeducePanelElementType type</p></td>
+<tr><td valign=top><p class="code">char *text</p></td>
+<tr><td valign=top><p class="code">union{
+		boolean checkbox</p></td>
+<tr><td valign=top><p class="code">int		integer</p></td>
+<tr><td valign=top><p class="code">uint	uinteger</p></td>
+<tr><td valign=top><p class="code">double	real</p></td>
+<tr><td valign=top><p class="code">float	slider</p></td>
+<tr><td valign=top><p class="code">struct{
+			uint	icon</p></td>
+<tr><td valign=top><p class="code">boolean	active</p></td>
+<tr><td valign=top><p class="code">button</p></td>
+<tr><td valign=top><p class="code">struct{
+			char	*text</p></td>
+<tr><td valign=top><p class="code">uint	length</p></td>
+<tr><td valign=top><p class="code">uint	lines</p></td>
+</table>
+<p class="code">seduce_---------------------_.html</p>
+<p class="header">Enum:</p> <p class="code">SColorSettings<p>
+<table border="1">
+<tr><td valign=top><p class="code">SEDUCE_CS_SURFACE</p></td>
+<tr><td valign=top><p class="code">SEDUCE_CS_SURFACE_LIGHT</p></td>
+<tr><td valign=top><p class="code">SEDUCE_CS_SURFACE_SHADE</p></td>
+<tr><td valign=top><p class="code">SEDUCE_CS_OBJECT</p></td>
+<tr><td valign=top><p class="code">SEDUCE_CS_OBJECT_SHADED</p></td>
+<tr><td valign=top><p class="code">SEDUCE_CS_OBJECT_SIGNAL</p></td>
+<tr><td valign=top><p class="code">SEDUCE_CS_COUNT</p></td>
+</table>
+<p class="code">seduce_-------------------------------_.html</p>
+<p class="header">Enum:</p> <p class="code">SViewInterpolationStyle<p>
+<table border="1">
+<tr><td valign=top><p class="code">S_VIS_LINEAR</p></td>
+<tr><td valign=top><p class="code">S_VIS_EASE_IN</p></td>
+<tr><td valign=top><p class="code">S_VIS_EASE_OUT</p></td>
+<tr><td valign=top><p class="code">S_VIS_SMOOTH</p></td>
+<tr><td valign=top><p class="code">S_VIS_CUT</p></td>
+<tr><td valign=top><p class="code">S_VIS_COUNT</p></td>
+</table>
+<p class="header">Struct:</p> <p class="code">camera<p>
+<table border="1">
+<tr><td valign=top><p class="code">float matrix[16]</p></td>
+<tr><td valign=top><p class="code">float model[16]</p></td>
+<tr><td valign=top><p class="code">float target[3]</p></td>
+<tr><td valign=top><p class="code">float camera[3]</p></td>
+<tr><td valign=top><p class="code">float distance</p></td>
+<tr><td valign=top><p class="code">uint type</p></td>
+<tr><td valign=top><p class="code">float speed</p></td>
+<tr><td valign=top><p class="code">SViewInterpolationStyle interpolation_style</p></td>
+<tr><td valign=top><p class="code">union{
+		struct{
+			float			target_target[3]</p></td>
+<tr><td valign=top><p class="code">float			target_camera[3]</p></td>
+<tr><td valign=top><p class="code">float			target_up[3]</p></td>
+<tr><td valign=top><p class="code">float			progress</p></td>
+<tr><td valign=top><p class="code">camera</p></td>
+<tr><td valign=top><p class="code">struct{
+			float			delta_rot[2]</p></td>
+</table>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html>

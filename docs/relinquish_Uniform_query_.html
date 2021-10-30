@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>relinquish</title>
+<style type="text/css">
+font.header {color:rgb(108,0,216);}
+h2 {color:rgb(108,0,216);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;">
+<dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dd><a href="relinquish_Initialization_.html">Initialization </a></dd><dd><a href="relinquish_Array_data__.html">Array data  </a></dd><dd><a href="relinquish_Draw_calls__.html">Draw calls  </a></dd><dd><a href="relinquish_Matrix_management_.html">Matrix management </a></dd><dd><a href="relinquish_Shader_management_.html">Shader management </a></dd><dd><a href="relinquish_Uniform_query_.html">Uniform query </a></dd><dd><a href="relinquish_Uniform_blocks_.html">Uniform blocks </a></dd><dd><a href="relinquish_Uniform_State_.html">Uniform State </a></dd><dd><a href="relinquish_Shader_state_.html">Shader state </a></dd><dd><a href="relinquish_Shader_Debugging_.html">Shader Debugging </a></dd><dd><a href="relinquish_Draw_primitives_.html">Draw primitives </a></dd><dd><a href="relinquish_Surface_primitives_.html">Surface primitives </a></dd><dd><a href="relinquish_Line_primitives_.html">Line primitives </a></dd><dd><a href="relinquish_Sprite_primitives_.html">Sprite primitives </a></dd><dd><a href="relinquish_Image_and_texture_API_.html">Image and texture API </a></dd><dd><a href="relinquish_Frame_buffer_objects_.html">Frame buffer objects </a></dd><dd><a href="relinquish_defines.html">Defines</a></dd><dt><a href="testify.html" style="color:rgb(216,0,108);">testify</a></dt></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+
+<h1><p>Uniform query </p></h1>
+<p class="group">Allows an application to query the available uniform blocks, their members and </p>
+<H3><p id="r_shader_uniform_block_count">r_shader_uniform_block_count</p></H3>
+<p class="code">uint		r_shader_uniform_block_count(RShader *shader);  </p>
+<font class="header">Description:</font>
+<font class="description">Returns the number of uniform blocks used by a shader.</font>
+<H3><p id="r_shader_uniform_block_size">r_shader_uniform_block_size</p></H3>
+<p class="code">uint		r_shader_uniform_block_size(RShader *shader, uint block); </p>
+<font class="header">Description:</font>
+<font class="description">Returns the size of a specific uniform Block in bytes.</font>
+<H3><p id="r_shader_uniform_block_member_count">r_shader_uniform_block_member_count</p></H3>
+<p class="code">uint		r_shader_uniform_block_member_count(RShader *shader, uint block); </p>
+<font class="header">Description:</font>
+<font class="description">Lists the number of members a specific block has. </font>
+<H3><p id="r_shader_uniform_block_member_name">r_shader_uniform_block_member_name</p></H3>
+<p class="code">char		*r_shader_uniform_block_member_name(RShader *shader, uint block, uint member); </p>
+<font class="header">Description:</font>
+<font class="description">returns the name of a member uniform from a block</font>
+<H3><p id="r_shader_uniform_block_member_type">r_shader_uniform_block_member_type</p></H3>
+<p class="code">RInputType r_shader_uniform_block_member_type(RShader *shader, uint block, uint member); </p>
+<font class="header">Description:</font>
+<font class="description">returns the type of a member uniform from a block</font>
+<p>Types:<p>
+<p class="header">Enum:</p> <p class="code">RInputType<p>
+<table border="1">
+<tr><td valign=top><p class="code">R_SIT_BOOL</p></td>
+<tr><td valign=top><p class="code">R_SIT_VBOOL2</p></td>
+<tr><td valign=top><p class="code">R_SIT_VBOOL3</p></td>
+<tr><td valign=top><p class="code">R_SIT_VBOOL4</p></td>
+<tr><td valign=top><p class="code">R_SIT_INT</p></td>
+<tr><td valign=top><p class="code">R_SIT_VINT2</p></td>
+<tr><td valign=top><p class="code">R_SIT_VINT3</p></td>
+<tr><td valign=top><p class="code">R_SIT_VINT4</p></td>
+<tr><td valign=top><p class="code">R_SIT_UINT</p></td>
+<tr><td valign=top><p class="code">R_SIT_VUINT2</p></td>
+<tr><td valign=top><p class="code">R_SIT_VUINT3</p></td>
+<tr><td valign=top><p class="code">R_SIT_VUINT4</p></td>
+<tr><td valign=top><p class="code">R_SIT_FLOAT</p></td>
+<tr><td valign=top><p class="code">R_SIT_VEC2</p></td>
+<tr><td valign=top><p class="code">R_SIT_VEC3</p></td>
+<tr><td valign=top><p class="code">R_SIT_VEC4</p></td>
+<tr><td valign=top><p class="code">R_SIT_DOUBLE</p></td>
+<tr><td valign=top><p class="code">R_SIT_VDOUBLE2</p></td>
+<tr><td valign=top><p class="code">R_SIT_VDOUBLE3</p></td>
+<tr><td valign=top><p class="code">R_SIT_VDOUBLE4</p></td>
+<tr><td valign=top><p class="code">R_SIT_MAT2</p></td>
+<tr><td valign=top><p class="code">R_SIT_MAT2X3</p></td>
+<tr><td valign=top><p class="code">R_SIT_MAT2X4</p></td>
+<tr><td valign=top><p class="code">R_SIT_MAT3X2</p></td>
+<tr><td valign=top><p class="code">R_SIT_MAT3</p></td>
+<tr><td valign=top><p class="code">R_SIT_MAT3X4</p></td>
+<tr><td valign=top><p class="code">R_SIT_MAT4X2</p></td>
+<tr><td valign=top><p class="code">R_SIT_MAT4X3</p></td>
+<tr><td valign=top><p class="code">R_SIT_MAT4</p></td>
+<tr><td valign=top><p class="code">R_SIT_DMAT2</p></td>
+<tr><td valign=top><p class="code">R_SIT_DMAT2X3</p></td>
+<tr><td valign=top><p class="code">R_SIT_DMAT2X4</p></td>
+<tr><td valign=top><p class="code">R_SIT_DMAT3X2</p></td>
+<tr><td valign=top><p class="code">R_SIT_DMAT3</p></td>
+<tr><td valign=top><p class="code">R_SIT_DMAT3X4</p></td>
+<tr><td valign=top><p class="code">R_SIT_DMAT4X2</p></td>
+<tr><td valign=top><p class="code">R_SIT_DMAT4X3</p></td>
+<tr><td valign=top><p class="code">R_SIT_DMAT4</p></td>
+<tr><td valign=top><p class="code">R_SIT_SAMPLER_1D</p></td>
+<tr><td valign=top><p class="code">R_SIT_SAMPLER_2D</p></td>
+<tr><td valign=top><p class="code">R_SIT_SAMPLER_3D</p></td>
+<tr><td valign=top><p class="code">R_SIT_SAMPLER_CUBE</p></td>
+<tr><td valign=top><p class="code">R_SIT_SAMPLER_RECTANGLE</p></td>
+<tr><td valign=top><p class="code">R_SIT_SAMPLER_1D_ARRAY</p></td>
+<tr><td valign=top><p class="code">R_SIT_SAMPLER_2D_ARRAY</p></td>
+<tr><td valign=top><p class="code">R_SIT_SAMPLER_CUBE_MAP_ARRAY</p></td>
+<tr><td valign=top><p class="code">R_SIT_SAMPLER_BUFFER</p></td>
+<tr><td valign=top><p class="code">R_SIT_SAMPLER_2D_MULTISAMPLE</p></td>
+<tr><td valign=top><p class="code">R_SIT_SAMPLER_2D_MULTISAMPLE_ARRAY</p></td>
+<tr><td valign=top><p class="code">R_SIT_COUNT</p></td>
+</table>
+<H3><p id="r_shader_uniform_block_member_offset">r_shader_uniform_block_member_offset</p></H3>
+<p class="code">uint		r_shader_uniform_block_member_offset(RShader *shader, uint block, uint member); </p>
+<font class="header">Description:</font>
+<font class="description">returns the offset of a member uniform from a block</font>
+<H3><p id="r_shader_uniform_block_location">r_shader_uniform_block_location</p></H3>
+<p class="code">uint		r_shader_uniform_block_location(RShader *shader, char *name); </p>
+<font class="header">Description:</font>
+<font class="description">Returns the offset, in number of bytes where a specific value will be read in a uniform block </font>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html> 

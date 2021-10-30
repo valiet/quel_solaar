@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>relinquish</title>
+<style type="text/css">
+font.header {color:rgb(108,0,216);}
+h2 {color:rgb(108,0,216);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;">
+<dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dd><a href="relinquish_Initialization_.html">Initialization </a></dd><dd><a href="relinquish_Array_data__.html">Array data  </a></dd><dd><a href="relinquish_Draw_calls__.html">Draw calls  </a></dd><dd><a href="relinquish_Matrix_management_.html">Matrix management </a></dd><dd><a href="relinquish_Shader_management_.html">Shader management </a></dd><dd><a href="relinquish_Uniform_query_.html">Uniform query </a></dd><dd><a href="relinquish_Uniform_blocks_.html">Uniform blocks </a></dd><dd><a href="relinquish_Uniform_State_.html">Uniform State </a></dd><dd><a href="relinquish_Shader_state_.html">Shader state </a></dd><dd><a href="relinquish_Shader_Debugging_.html">Shader Debugging </a></dd><dd><a href="relinquish_Draw_primitives_.html">Draw primitives </a></dd><dd><a href="relinquish_Surface_primitives_.html">Surface primitives </a></dd><dd><a href="relinquish_Line_primitives_.html">Line primitives </a></dd><dd><a href="relinquish_Sprite_primitives_.html">Sprite primitives </a></dd><dd><a href="relinquish_Image_and_texture_API_.html">Image and texture API </a></dd><dd><a href="relinquish_Frame_buffer_objects_.html">Frame buffer objects </a></dd><dd><a href="relinquish_defines.html">Defines</a></dd><dt><a href="testify.html" style="color:rgb(216,0,108);">testify</a></dt></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+
+<p class="group">Frame buffer objects </p>
+<H3><p id="r_framebuffer_allocate">r_framebuffer_allocate</p></H3>
+<p class="code">uint		r_framebuffer_allocate(uint *buffers, uint buffer_count, uint depth_buffer); </p>
+<font class="header">Description:</font>
+<font class="description">Creates a FBO form an array of textures and/or a depth/stencil buffer. All buffers has to be of the same size. it will return -1 if the different texture and depth formats are not renderable or compatible.</font>
+<H3><p id="r_framebuffer_free">r_framebuffer_free</p></H3>
+<p class="code">void		r_framebuffer_free(uint fbo); </p>
+<font class="header">Description:</font>
+<font class="description">Free a Frame buffer object. </font>
+<H3><p id="r_framebuffer_bind">r_framebuffer_bind</p></H3>
+<p class="code">void		r_framebuffer_bind(uint id); </p>
+<font class="header">Description:</font>
+<font class="description">Binds a frame buffer object</font>
+<H3><p id="r_framebuffer_clear">r_framebuffer_clear</p></H3>
+<p class="code">void		r_framebuffer_clear(float red, float green, float blue, float alpha, boolean color, boolean depth_stencil); </p>
+<font class="header">Description:</font>
+<font class="description">Clear the current frame buffer oblect or screenbuffer.</font>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html> 

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>seduce</title>
+<style type="text/css">
+font.header {color:rgb(216,0,108);}
+h2 {color:rgb(216,0,108);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;"><dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dt><a href="seduce.html" style="color:rgb(216,0,108);">seduce</a></dt><dd><a href="seduce_Initialize_Seduce______.html">Initialize Seduce      </a></dd><dd><a href="seduce_text_lines_.html">text lines </a></dd><dd><a href="seduce_text_blocks_.html">text blocks </a></dd><dd><a href="seduce_text_buttons_.html">text buttons </a></dd><dd><a href="seduce_Language_translation_.html">Language translation </a></dd><dd><a href="seduce_Popup_Menus_.html">Popup Menus </a></dd><dd><a href="seduce_view_and_projection_code_.html">view and projection code </a></dd><dd><a href="seduce_---------------------_.html">--------------------- </a></dd><dd><a href="seduce_-------------------------------_.html">------------------------------- </a></dd><dd><a href="seduce_-----------_.html">----------- </a></dd><dd><a href="seduce_-------------------------_.html">------------------------- </a></dd><dd><a href="seduce_defines.html">Defines</a></dd></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+<p class="group">------------------------------- </p>
+<H3><p id="seduce_view_init">seduce_view_init</p></H3>
+<p class="code">void		seduce_view_init(SViewData *v);</p>
+<H3><p id="seduce_view_set">seduce_view_set</p></H3>
+<p class="code">void		seduce_view_set(SViewData *v, RMatrix *m);</p>
+<H3><p id="seduce_view_update">seduce_view_update</p></H3>
+<p class="code">void		seduce_view_update(SViewData *v, float delta);</p>
+<H3><p id="seduce_view_interpolation_style_set">seduce_view_interpolation_style_set</p></H3>
+<p class="code">void		seduce_view_interpolation_style_set(SViewData *v, SViewInterpolationStyle style, float speed);</p>
+<p>Types:<p>
+<p class="header">Enum:</p> <p class="code">SViewInterpolationStyle<p>
+<table border="1">
+<tr><td valign=top><p class="code">S_VIS_LINEAR</p></td>
+<tr><td valign=top><p class="code">S_VIS_EASE_IN</p></td>
+<tr><td valign=top><p class="code">S_VIS_EASE_OUT</p></td>
+<tr><td valign=top><p class="code">S_VIS_SMOOTH</p></td>
+<tr><td valign=top><p class="code">S_VIS_CUT</p></td>
+<tr><td valign=top><p class="code">S_VIS_COUNT</p></td>
+</table>
+<H3><p id="seduce_view_change_look_at">seduce_view_change_look_at</p></H3>
+<p class="code">void		seduce_view_change_look_at(SViewData *v, float *target, float *camera, float *up);</p>
+<H3><p id="seduce_view_change_right_button">seduce_view_change_right_button</p></H3>
+<p class="code">void		seduce_view_change_right_button(SViewData *v, BInputState *input);</p>
+<H3><p id="seduce_view_change_mouse_look">seduce_view_change_mouse_look</p></H3>
+<p class="code">void		seduce_view_change_mouse_look(SViewData *v, BInputState *input);</p>
+<H3><p id="seduce_view_change_multi_touch">seduce_view_change_multi_touch</p></H3>
+<p class="code">void		seduce_view_change_multi_touch(SViewData *v, BInputState *input);</p>
+<H3><p id="seduce_view_change_axised_orbit">seduce_view_change_axised_orbit</p></H3>
+<p class="code">void		seduce_view_change_axised_orbit(SViewData *v, BInputState *input);</p>
+<H3><p id="seduce_view_change_spin_orbit">seduce_view_change_spin_orbit</p></H3>
+<p class="code">void		seduce_view_change_spin_orbit(SViewData *v, BInputState *input);</p>
+<H3><p id="seduce_view_change_spin_axised_orbit">seduce_view_change_spin_axised_orbit</p></H3>
+<p class="code">void		seduce_view_change_spin_axised_orbit(SViewData *v, BInputState *input);</p>
+<H3><p id="seduce_view_change_orbit">seduce_view_change_orbit</p></H3>
+<p class="code">void		seduce_view_change_orbit(SViewData *v, BInputState *input, uint button, boolean slide);</p>
+<H3><p id="seduce_view_change_orbit_delta">seduce_view_change_orbit_delta</p></H3>
+<p class="code">void		seduce_view_change_orbit_delta(SViewData *v, BInputState *input, uint button, boolean slide);</p>
+<H3><p id="seduce_view_orbit">seduce_view_orbit</p></H3>
+<p class="code">void		seduce_view_orbit(SViewData *v, float x, float y);</p>
+<H3><p id="seduce_view_change_rotate">seduce_view_change_rotate</p></H3>
+<p class="code">void		seduce_view_change_rotate(SViewData *v, BInputState *input, uint button, boolean slide);</p>
+<H3><p id="seduce_view_change_rotate_delta">seduce_view_change_rotate_delta</p></H3>
+<p class="code">void		seduce_view_change_rotate_delta(SViewData *v, BInputState *input, uint button, boolean slide);</p>
+<H3><p id="seduce_view_rotate">seduce_view_rotate</p></H3>
+<p class="code">void		seduce_view_rotate(SViewData *v, float x, float y);</p>
+<H3><p id="seduce_view_change_pan">seduce_view_change_pan</p></H3>
+<p class="code">void		seduce_view_change_pan(SViewData *v, BInputState *input, uint button, boolean slide);</p>
+<H3><p id="seduce_view_change_pan_delta">seduce_view_change_pan_delta</p></H3>
+<p class="code">void		seduce_view_change_pan_delta(SViewData *v, BInputState *input, uint button, boolean slide);</p>
+<H3><p id="seduce_view_pan">seduce_view_pan</p></H3>
+<p class="code">void		seduce_view_pan(SViewData *v, float x, float y);</p>
+<H3><p id="seduce_view_pan_to_set">seduce_view_pan_to_set</p></H3>
+<p class="code">void		seduce_view_pan_to_set(SViewData *v, float position_x, float position_y, float position_z);</p>
+<H3><p id="seduce_view_change_distance">seduce_view_change_distance</p></H3>
+<p class="code">void		seduce_view_change_distance(SViewData *v, BInputState *input, uint button, boolean slide);</p>
+<H3><p id="seduce_view_change_distance_delta">seduce_view_change_distance_delta</p></H3>
+<p class="code">void		seduce_view_change_distance_delta(SViewData *v, BInputState *input, uint button, boolean slide);</p>
+<H3><p id="seduce_view_change_distance_scroll">seduce_view_change_distance_scroll</p></H3>
+<p class="code">void		seduce_view_change_distance_scroll(SViewData *v, BInputState *input);</p>
+<H3><p id="seduce_view_distance">seduce_view_distance</p></H3>
+<p class="code">void		seduce_view_distance(SViewData *v, float x, float y);</p>
+<H3><p id="seduce_view_distance_to_set">seduce_view_distance_to_set</p></H3>
+<p class="code">void		seduce_view_distance_to_set(SViewData *v, float distance);</p>
+<H3><p id="seduce_view_change_distance_scroll_zoom">seduce_view_change_distance_scroll_zoom</p></H3>
+<p class="code">void		seduce_view_change_distance_scroll_zoom(SViewData *v, BInputState *input);</p>
+<H3><p id="seduce_view_center_set">seduce_view_center_set</p></H3>
+<p class="code">void		seduce_view_center_set(SViewData *v, float position_x, float position_y, float position_z);</p>
+<H3><p id="seduce_view_camera_set">seduce_view_camera_set</p></H3>
+<p class="code">void		seduce_view_camera_set(SViewData *v, float position_x, float position_y, float position_z);</p>
+<H3><p id="seduce_view_up_set">seduce_view_up_set</p></H3>
+<p class="code">void		seduce_view_up_set(SViewData *v, float up_x, float up_y, float up_z);</p>
+<H3><p id="seduce_view_pan_to_set">seduce_view_pan_to_set</p></H3>
+<p class="code">void		seduce_view_pan_to_set(SViewData *v, float position_x, float position_y, float position_z);</p>
+<H3><p id="seduce_view_direction_set">seduce_view_direction_set</p></H3>
+<p class="code">void		seduce_view_direction_set(SViewData *v, float normal_x, float normal_y, float normal_z);</p>
+<H3><p id="seduce_view_change_zoom">seduce_view_change_zoom</p></H3>
+<p class="code">void		seduce_view_change_zoom(SViewData *v, float delta_x, float delta_y);</p>
+<H3><p id="seduce_view_center_getf">seduce_view_center_getf</p></H3>
+<p class="code">void		seduce_view_center_getf(SViewData *v, float *center);</p>
+<H3><p id="seduce_view_center_getd">seduce_view_center_getd</p></H3>
+<p class="code">void		seduce_view_center_getd(SViewData *v, double *center);</p>
+<H3><p id="seduce_view_distance_camera_set">seduce_view_distance_camera_set</p></H3>
+<p class="code">void		seduce_view_distance_camera_set(SViewData *v, double distance);</p>
+<H3><p id="seduce_view_distance_camera_get">seduce_view_distance_camera_get</p></H3>
+<p class="code">double	seduce_view_distance_camera_get(void);</p>
+<H3><p id="seduce_view_camera_getf">seduce_view_camera_getf</p></H3>
+<p class="code">void		seduce_view_camera_getf(SViewData *v, float *camera);</p>
+<H3><p id="seduce_view_camera_getd">seduce_view_camera_getd</p></H3>
+<p class="code">void		seduce_view_camera_getd(SViewData *v, double *camera);</p>
+<H3><p id="seduce_view_camera_vector_getf">seduce_view_camera_vector_getf</p></H3>
+<p class="code">void		seduce_view_camera_vector_getf(SViewData *v, float *camera, float x, float y);</p>
+<H3><p id="seduce_view_camera_vector_getd">seduce_view_camera_vector_getd</p></H3>
+<p class="code">void		seduce_view_camera_vector_getd(SViewData *v, double *camera, double x, double y);</p>
+<H3><p id="seduce_view_grid_size_set">seduce_view_grid_size_set</p></H3>
+<p class="code">void		seduce_view_grid_size_set(SViewData *v, double grid_size);</p>
+<H3><p id="seduce_view_model_matrixd">seduce_view_model_matrixd</p></H3>
+<p class="code">void		seduce_view_model_matrixd(SViewData *v, double *matrix);</p>
+<H3><p id="seduce_view_model_matrixf">seduce_view_model_matrixf</p></H3>
+<p class="code">void		seduce_view_model_matrixf(SViewData *v, float *matrix);</p>
+<H3><p id="seduce_view_sprite_matrixf">seduce_view_sprite_matrixf</p></H3>
+<p class="code">void		seduce_view_sprite_matrixf(SViewData *v, float *matrix);</p>
+<H3><p id="seduce_view_projectiond">seduce_view_projectiond</p></H3>
+<p class="code">void		seduce_view_projectiond(SViewData *v, double *output, double x, double y);</p>
+<H3><p id="seduce_view_projectionf">seduce_view_projectionf</p></H3>
+<p class="code">void		seduce_view_projectionf(SViewData *v, float *output, float x, float y);</p>
+<H3><p id="seduce_view_projection_vertexf">seduce_view_projection_vertexf</p></H3>
+<p class="code">void		seduce_view_projection_vertexf(SViewData *v, float *output, float *vertex, float x, float y);</p>
+<H3><p id="seduce_view_projection_vertexd">seduce_view_projection_vertexd</p></H3>
+<p class="code">void		seduce_view_projection_vertexd(SViewData *v, double *output, double *vertex, double x, double y);</p>
+<H3><p id="seduce_view_projection_screend">seduce_view_projection_screend</p></H3>
+<p class="code">void		seduce_view_projection_screend(SViewData *v, double *output, double x, double y, double z);</p>
+<H3><p id="seduce_view_projection_screenf">seduce_view_projection_screenf</p></H3>
+<p class="code">void		seduce_view_projection_screenf(SViewData *v, float *output, float x, float y, float z);</p>
+<H3><p id="seduce_view_projection_screen_distanced">seduce_view_projection_screen_distanced</p></H3>
+<p class="code">double	seduce_view_projection_screen_distanced(SViewData *v, double space_x, double space_y, double space_z, double screen_x, double screen_y);</p>
+<H3><p id="seduce_view_projection_planed">seduce_view_projection_planed</p></H3>
+<p class="code">void		seduce_view_projection_planed(SViewData *v, double *dist, uint axis, double pointer_x, double pointer_y , double depth);</p>
+<H3><p id="seduce_view_projection_lined">seduce_view_projection_lined</p></H3>
+<p class="code">double	seduce_view_projection_lined(SViewData *v, double *dist, uint axis, double pointer_x, double pointer_y, double *pos);</p>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html>

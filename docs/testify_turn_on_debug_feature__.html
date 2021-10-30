@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>testify</title>
+<style type="text/css">
+font.header {color:rgb(216,0,108);}
+h2 {color:rgb(216,0,108);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;">
+<dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dt><a href="testify.html" style="color:rgb(216,0,108);">testify</a></dt><dd><a href="testify_TCP_network_handles_.html">TCP network handles </a></dd><dd><a href="testify_UDP_network_handles_.html">UDP network handles </a></dd><dd><a href="testify_Findout_if_any_handles_is_read_o.html">Findout if any handles is read or writable</a></dd><dd><a href="testify_create_file_handles_.html">create file handles </a></dd><dd><a href="testify_free_a_handle_.html">free a handle </a></dd><dd><a href="testify_free_a_handle_.html">free a handle </a></dd><dd><a href="testify_pipe_from_one_handle_to_another_.html">pipe from one handle to another </a></dd><dd><a href="testify_turn_on_debug_feature__.html">turn on debug feature  </a></dd><dd><a href="testify_defines.html">Defines</a></dd></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+
+<p class="group">turn on debug feature  </p>
+<H3><p id="testify_debug_mode_set">testify_debug_mode_set</p></H3>
+<p class="code">void		testify_debug_mode_set(THandle *handle, boolean debug, char *text_copy_name);</p>
+<H3><p id="testify_restart_marker_set">testify_restart_marker_set</p></H3>
+<p class="code">void		testify_restart_marker_set(THandle *handle);</p>
+<H3><p id="testify_restart_marker_release">testify_restart_marker_release</p></H3>
+<p class="code">void		testify_restart_marker_release(THandle *handle);</p>
+<H3><p id="testify_restart_marker_reset">testify_restart_marker_reset</p></H3>
+<p class="code">void		testify_restart_marker_reset(THandle *handle);</p>
+<H3><p id="testify_retivable">testify_retivable</p></H3>
+<p class="code">boolean	testify_retivable(THandle *handle, uint size);</p>
+<H3><p id="testify_retivable_terminated">testify_retivable_terminated</p></H3>
+<p class="code">boolean	testify_retivable_terminated(THandle *handle);</p>
+<H3><p id="testify_pack_uint8">testify_pack_uint8</p></H3>
+<p class="code">void		testify_pack_uint8(THandle *handle, uint8 value, char *name);</p>
+<H3><p id="testify_pack_int8">testify_pack_int8</p></H3>
+<p class="code">void		testify_pack_int8(THandle *handle, int8 value, char *name);</p>
+<H3><p id="testify_pack_uint16">testify_pack_uint16</p></H3>
+<p class="code">void		testify_pack_uint16(THandle *handle, uint16 value, char *name);</p>
+<H3><p id="testify_pack_int16">testify_pack_int16</p></H3>
+<p class="code">void		testify_pack_int16(THandle *handle, int16 value, char *name);</p>
+<H3><p id="testify_pack_uint32">testify_pack_uint32</p></H3>
+<p class="code">void		testify_pack_uint32(THandle *handle, uint32 value, char *name);</p>
+<H3><p id="testify_pack_int32">testify_pack_int32</p></H3>
+<p class="code">void		testify_pack_int32(THandle *handle, int32 value, char *name);</p>
+<H3><p id="testify_pack_uint64">testify_pack_uint64</p></H3>
+<p class="code">void		testify_pack_uint64(THandle *handle, uint64 value, char *name);</p>
+<H3><p id="testify_pack_int64">testify_pack_int64</p></H3>
+<p class="code">void		testify_pack_int64(THandle *handle, int64 value, char *name);	</p>
+<H3><p id="testify_pack_real32">testify_pack_real32</p></H3>
+<p class="code">void		testify_pack_real32(THandle *handle, float value, char *name);</p>
+<H3><p id="testify_pack_real64">testify_pack_real64</p></H3>
+<p class="code">void		testify_pack_real64(THandle *handle, double value, char *name);</p>
+<H3><p id="testify_pack_string">testify_pack_string</p></H3>
+<p class="code">boolean	testify_pack_string(THandle *handle, char *value, char *name);</p>
+<H3><p id="testify_unpack_uint8">testify_unpack_uint8</p></H3>
+<p class="code">uint8	testify_unpack_uint8(THandle *handle, char *name);</p>
+<H3><p id="testify_unpack_int8">testify_unpack_int8</p></H3>
+<p class="code">int8		testify_unpack_int8(THandle *handle, char *name);</p>
+<H3><p id="testify_unpack_uint16">testify_unpack_uint16</p></H3>
+<p class="code">uint16	testify_unpack_uint16(THandle *handle, char *name);</p>
+<H3><p id="testify_unpack_int16">testify_unpack_int16</p></H3>
+<p class="code">int16	testify_unpack_int16(THandle *handle, char *name);</p>
+<H3><p id="testify_unpack_uint32">testify_unpack_uint32</p></H3>
+<p class="code">uint32	testify_unpack_uint32(THandle *handle, char *name);</p>
+<H3><p id="testify_unpack_int32">testify_unpack_int32</p></H3>
+<p class="code">int32	testify_unpack_int32(THandle *handle, char *name);</p>
+<H3><p id="testify_unpack_uint64">testify_unpack_uint64</p></H3>
+<p class="code">uint64	testify_unpack_uint64(THandle *handle, char *name);</p>
+<H3><p id="testify_unpack_int64">testify_unpack_int64</p></H3>
+<p class="code">int64	testify_unpack_int64(THandle *handle, char *name);</p>
+<H3><p id="testify_unpack_real32">testify_unpack_real32</p></H3>
+<p class="code">float	testify_unpack_real32(THandle *handle, char *name);</p>
+<H3><p id="testify_unpack_real64">testify_unpack_real64</p></H3>
+<p class="code">double	testify_unpack_real64(THandle *handle, char *name);</p>
+<H3><p id="testify_unpack_string">testify_unpack_string</p></H3>
+<p class="code">boolean	testify_unpack_string(THandle *handle, char *value, uint buffer_size, char *name);</p>
+<H3><p id="testify_unpack_string_allocate">testify_unpack_string_allocate</p></H3>
+<p class="code">char		*testify_unpack_string_allocate(THandle *handle, char *name);</p>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html> 

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>relinquish</title>
+<style type="text/css">
+font.header {color:rgb(43,0,216);}
+h2 {color:rgb(43,0,216);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;"><dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,130,0);">forge</a></dt><dt><a href="imagine.html" style="color:rgb(43,216,0);">imagine</a></dt><dt><a href="betray_plugin_api.html" style="color:rgb(0,216,216);">betray_plugin_api</a></dt><dt><a href="relinquish.html" style="color:rgb(43,0,216);">relinquish</a></dt><dd><a href="relinquish_Relinquish_.html">Relinquish </a></dd><dd><a href="relinquish_Vertex_arrays.html">Vertex arrays</a></dd><dd><a href="relinquish_Matrix_management_.html">Matrix management </a></dd><dd><a href="relinquish_Shader_management_.html">Shader management </a></dd><dd><a href="relinquish_extern_void__r_shader_attrib_bin.html">extern void		r_shader_attrib_bind(RShader *shader, uint id, char *name);</a></dd><dd><a href="relinquish_extern_void__r_shader_active_tex.html">extern void		r_shader_active_texture(uint id);
+extern void		r_shader_texture_unit_set(RShader *shader, char *name, uint id);</a></dd><dd><a href="relinquish_Frame_buffer_objects_.html">Frame buffer objects </a></dd><dd><a href="relinquish_Draw_primitives_.html">Draw primitives </a></dd><dd><a href="relinquish_defines.html">Defines</a></dd><dt><a href="seduce.html" style="color:rgb(216,0,130);">seduce</a></dt></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+<h1><p>Relinquish </p></h1>
+<p class="group">Relinquish is a convinence wrapper around OpenGL to simply drawing. Relinquish irons out the differences between OpoenGHL and OpenGL ES. As OpenGL has moved over to a programmable model, it has gooten more complicated to draw simple things such as plain colored tiriangles and lines, something that is often very useful for interfaces and debugging. OpenGL also provides a very large degree of indirection (example: Sampler name -> uniform location -> tewxture unit) that is easy to get wrong. Another major problem with OpenGL is state leakage. Relinquish tries to solve these things by automaticaly assign samplers and attributes in the order they are specifyed in the shader, create built in basic shaders, and encapsulate state in to objects that are easier to switch. Relinquish provides the same flexibility as OpenGL but the added flexibility isnt as clumbersome to the developer as it tries to assigne resonable default values. To make sure to maximize compatibility Relinquish makes use of the following OpenGL Extenciuons beyond OpenGL 1.2<BR>
+GL_ARB_vertex_buffer_object - Optional<BR>
+GL_EXT_texture3D - Optional<BR>
+GL_ARB_draw_buffers - Optional<BR>
+GL_EXT_framebuffer_object - Optional<BR>
+GL_ARB_shading_language_100 - Required</p>
+<H3><p id="r_init">r_init</p></H3>
+<p class="code">void r_init(void *(*glGetProcAddr)(const char* proc)); </p>
+<font class="header">Description:</font>
+<font class="description">Initializes relinquish. Takes as argument a function poiunter to a getProc function fort reading out extensions.</font>
+<H3><p id="r_extension_test">r_extension_test</p></H3>
+<p class="code">boolean r_extension_test(const char *string); </p>
+<font class="header">Description:</font>
+<font class="description">Tests is a etension is suported. </font>
+<H3><p id="r_extension_get_address">r_extension_get_address</p></H3>
+<p class="code">void *r_extension_get_address(const char* proc); </p>
+<font class="header">Description:</font>
+<font class="description">Returns the functiuon pointer to an extension function. </font>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html>

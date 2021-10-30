@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>betray</title>
+<style type="text/css">
+font.header {color:rgb(0,216,108);}
+h2 {color:rgb(0,216,108);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;">
+<dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dd><a href="betray_Functionality_query_.html">Functionality query </a></dd><dd><a href="betray_Display_Functionality_.html">Display Functionality </a></dd><dd><a href="betray_Main_loop_.html">Main loop </a></dd><dd><a href="betray_Mouse_Warp_.html">Mouse Warp </a></dd><dd><a href="betray_File_requesters_.html">File requesters </a></dd><dd><a href="betray_Clip_board_.html">Clip board </a></dd><dd><a href="betray_Timers_.html">Timers </a></dd><dd><a href="betray_OpenGL_.html">OpenGL </a></dd><dd><a href="betray_Button_and_key_.html">Button and key </a></dd><dd><a href="betray_Sound_Clip_.html">Sound Clip </a></dd><dd><a href="betray_Sound_Stream__.html">Sound Stream  </a></dd><dd><a href="betray_Sound_Listener__.html">Sound Listener  </a></dd><dd><a href="betray_Sound_Listener__.html">Sound Listener  </a></dd><dd><a href="betray_Settings_.html">Settings </a></dd><dd><a href="betray_defines.html">Defines</a></dd><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dt><a href="testify.html" style="color:rgb(216,0,108);">testify</a></dt></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+
+<p class="code">betray_Betray_.html</p>
+<p class="code">BETRAY_H</p>
+<p class="code">betray_--------------------------------.html</p>
+<p class="code">BETRAY_WIN32_SYSTEM_WRAPPER</p>
+<p class="code">betray_On_Windows,_we_also_need_the_mai.html</p>
+<p class="code">BETRAY_CONTEXT_OPENGL</p>
+<p class="code">betray_Get_hold_of_glut.h_include_file..html</p>
+<p class="code">extern extern __declspec(dllexport)</p>
+<p class="code">BETRAY_AUDIO_MIXER</p>
+<p class="code">betray_--------------------------------.html</p>
+<H3><p id="B_POINTER_BUTTONS_COUNT">B_POINTER_BUTTONS_COUNT<p></H3>
+<p class="code">B_POINTER_BUTTONS_COUNT 16  </p>
+<font class="header">Description:</font>
+<font class="description">Maximum number of buttons ona pointing device </font>
+<H3><p id="B_MAX_EVENT_COUNT">B_MAX_EVENT_COUNT<p></H3>
+<p class="code">B_MAX_EVENT_COUNT 64 </p>
+<font class="header">Description:</font>
+<font class="description">maximum number of simultanius events per frame </font>
+<H3><p id="B_BUTTONS_COUNT">B_BUTTONS_COUNT<p></H3>
+<p class="code">B_BUTTONS_COUNT (256 + 16)  </p>
+<font class="header">Description:</font>
+<font class="description">/</font>
+<p class="code">betray_Pointer_Structure_.html</p>
+<p class="header">Struct:</p> <p class="code">BInputPointerState<p>
+<table border="1">
+<tr><td valign=top><p class="code">float	pointer_x</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Current X position of the pointer ranging form -1 to +1 </font>
+</td></tr>
+<tr><td valign=top><p class="code">float	pointer_y</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Current Y position of the pointer ranging form -Aspect ratio to + aspect ratio </font>
+</td></tr>
+<tr><td valign=top><p class="code">float	click_pointer_x[B_POINTER_BUTTONS_COUNT]</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> X Position of last click event for each button on the device </font>
+</td></tr>
+<tr><td valign=top><p class="code">float	click_pointer_y[B_POINTER_BUTTONS_COUNT]</p></td>
+<tr><td valign=top><p class="code">float	delta_pointer_x</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> X Delta movement </font>
+</td></tr>
+<tr><td valign=top><p class="code">float	delta_pointer_y</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Y Delta movement </font>
+</td></tr>
+<tr><td valign=top><p class="code">boolean	button[B_POINTER_BUTTONS_COUNT]</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Current button state </font>
+</td></tr>
+<tr><td valign=top><p class="code">boolean	last_button[B_POINTER_BUTTONS_COUNT]</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Button state of previous frame.  Use full in combination with the button parameter. Example: if(input->button[0] && !input->last_button) equals a click.</font>
+</td></tr>
+<tr><td valign=top><p class="code">uint	button_count</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> number of buttons on the device </font>
+</td></tr>
+<tr><td valign=top><p class="code">char	name[32]</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> name of the device Example "Mouse"</font>
+</td></tr>
+<tr><td valign=top><p class="code">uint	user_id</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> The id of the user operating the pointer </font>
+</td></tr>
+<tr><td valign=top><p class="code">BInputPointerState</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> ------ Axis Enum -------
+This enum describes the type of decice that is outputing a axis value </font>
+</td></tr>
+<tr><td valign=top><p class="code">typedef enum{
+	B_AXIS_UNDEFINED</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Any axis that doesnt fit any pre definds description </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_STICK</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Joystick </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_SUBSTICK</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Thumb joystiq on top of joystick </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_BUMPER_LEFT</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Left analog bumper top to bottom </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_BUMPER_RIGHT</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Right analog bumper top to bottom </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_PEDAL</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Pedals left to right ranging form 0 to 1</font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_WHEEL</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Stearing Wheels </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_CONTROLER_FORWARD</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Gyroscopc or other input defining forward vector of controler</font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_CONTROLER_UP</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Gyroscopc or other input defining up vector of controler</font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_CONTROLER_ACCELEROMETER</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Accelerometer of controler </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_CONTROLER_POS</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Pos of  controler </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_SCREEN_FORWARD</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> gyroscopc or other input defining forward vector of screen</font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_SCREEN_UP</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> gyroscopc or other input defining up vector of screen</font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_SCREEN_ACCELEROMETER</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Accelerometer of screen </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_SCREEN_POS</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Pos of screen </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_OBJECT_FORWARD</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> gyroscopc or other input defining forward vector of object beeing manipulated on screen</font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_OBJECT_UP</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> gyroscopc or other input defining up vector of object beeing manipulated on screen</font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_OBJECT_ACCELEROMETER</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Accelerometer of object beeing manipulated on screen</font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_OBJECT_POS</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Pos of object of object beeing manipulated on screen</font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_ZOOM</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> ZOOM </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_SCORLL					</p></td>
+<tr><td valign=top><p class="code">* SCROLL *</p></td>
+</table>
+<p class="code">betray_Axis_Enum_.html</p>
+<p class="header">Enum:</p> <p class="code">BAxisType<p>
+<table border="1">
+<tr><td valign=top><p class="code">B_AXIS_UNDEFINED</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Any axis that doesnt fit any pre definds description </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_STICK</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Joystick </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_SUBSTICK</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Thumb joystiq on top of joystick </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_BUMPER_LEFT</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Left analog bumper top to bottom </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_BUMPER_RIGHT</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Right analog bumper top to bottom </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_PEDAL</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Pedals left to right ranging form 0 to 1</font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_WHEEL</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Stearing Wheels </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_CONTROLER_FORWARD</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Gyroscopc or other input defining forward vector of controler</font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_CONTROLER_UP</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Gyroscopc or other input defining up vector of controler</font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_CONTROLER_ACCELEROMETER</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Accelerometer of controler </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_CONTROLER_POS</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Pos of  controler </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_SCREEN_FORWARD</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> gyroscopc or other input defining forward vector of screen</font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_SCREEN_UP</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> gyroscopc or other input defining up vector of screen</font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_SCREEN_ACCELEROMETER</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Accelerometer of screen </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_SCREEN_POS</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Pos of screen </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_OBJECT_FORWARD</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> gyroscopc or other input defining forward vector of object beeing manipulated on screen</font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_OBJECT_UP</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> gyroscopc or other input defining up vector of object beeing manipulated on screen</font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_OBJECT_ACCELEROMETER</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Accelerometer of object beeing manipulated on screen</font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_OBJECT_POS</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Pos of object of object beeing manipulated on screen</font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_ZOOM</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> ZOOM </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_AXIS_SCORLL</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> SCROLL </font>
+</td></tr>
+</table>
+<p class="code">betray_Axis_state_.html</p>
+<p class="header">Struct:</p> <p class="code">BInputAxisState<p>
+<table border="1">
+<tr><td valign=top><p class="code">float			axis[3]</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> position of axis ranged -1.0 to 1.0</font>
+</td></tr>
+<tr><td valign=top><p class="code">uint			axis_count</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Number of axis in use (1-3)</font>
+</td></tr>
+<tr><td valign=top><p class="code">BAxisType		axis_type</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Axis description, see lis above for pre defined axis types </font>
+</td></tr>
+<tr><td valign=top><p class="code">char			name[32]</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Name of axis input </font>
+</td></tr>
+<tr><td valign=top><p class="code">uint			user_id</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> User id of the Axis, Typicaly different if you have multiple contorllers </font>
+</td></tr>
+<tr><td valign=top><p class="code">BInputAxisState</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> ----- Button state -----
+The current state of a button</font>
+</td></tr>
+<tr><td valign=top><p class="code">typedef struct{
+	uint	button</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> the name of the button coresponding to the BETRAY_BUTTO_... defines. </font>
+</td></tr>
+<tr><td valign=top><p class="code">uint	character</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> the unicode character this button corresponds to. -1 if not applicable</font>
+</td></tr>
+<tr><td valign=top><p class="code">boolean state</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> is the button going up or down. If yo want both its curent and previous state use the betray_button_get_up_down function</font>
+</td></tr>
+<tr><td valign=top><p class="code">uint	user_id</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> User id of the button.</font>
+</td></tr>
+<tr><td valign=top><p class="code">BButtonEvent</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description">------ Action Mode -------
+For each frame the main loop is usualy called at least 3 times, once for udating the screen (BAM_DRAW) once for input events (MAM_EVENT) and once for computation (BAM_MAIN).  </font>
+</td></tr>
+<tr><td valign=top><p class="code">typedef enum{
+	BAM_DRAW</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> re draw the frame but do not advance time. can be called multiple times for multi display or sterioscopic systems </font>
+</td></tr>
+<tr><td valign=top><p class="code">BAM_EVENT</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> manage input, can be called multiple times if hardware has multipl separate input devices for multiple users, like more them one joypad </font>
+</td></tr>
+<tr><td valign=top><p class="code">BAM_MAIN </p></td>
+<tr><td valign=top><p class="code">* main idle loop</p></td>
+<tr><td valign=top><p class="code">called even if the program is iconized and doesnt redraw or has input focus. Useful for keeping things like network conecctions alive.*</p></td>
+</table>
+<p class="code">betray_Button_state_.html</p>
+<p class="header">Struct:</p> <p class="code">BButtonEvent<p>
+<table border="1">
+<tr><td valign=top><p class="code">uint	button</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> the name of the button coresponding to the BETRAY_BUTTO_... defines. </font>
+</td></tr>
+<tr><td valign=top><p class="code">uint	character</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> the unicode character this button corresponds to. -1 if not applicable</font>
+</td></tr>
+<tr><td valign=top><p class="code">boolean state</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> is the button going up or down. If yo want both its curent and previous state use the betray_button_get_up_down function</font>
+</td></tr>
+<tr><td valign=top><p class="code">uint	user_id</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> User id of the button.</font>
+</td></tr>
+<tr><td valign=top><p class="code">BButtonEvent</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description">------ Action Mode -------
+For each frame the main loop is usualy called at least 3 times, once for udating the screen (BAM_DRAW) once for input events (MAM_EVENT) and once for computation (BAM_MAIN).  </font>
+</td></tr>
+<tr><td valign=top><p class="code">typedef enum{
+	BAM_DRAW</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> re draw the frame but do not advance time. can be called multiple times for multi display or sterioscopic systems </font>
+</td></tr>
+<tr><td valign=top><p class="code">BAM_EVENT</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> manage input, can be called multiple times if hardware has multipl separate input devices for multiple users, like more them one joypad </font>
+</td></tr>
+<tr><td valign=top><p class="code">BAM_MAIN </p></td>
+<tr><td valign=top><p class="code">* main idle loop</p></td>
+<tr><td valign=top><p class="code">called even if the program is iconized and doesnt redraw or has input focus. Useful for keeping things like network conecctions alive.*</p></td>
+</table>
+<p class="code">betray_Action_Mode_.html</p>
+<p class="header">Enum:</p> <p class="code">BActionMode<p>
+<table border="1">
+<tr><td valign=top><p class="code">BAM_DRAW</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> re draw the frame but do not advance time. can be called multiple times for multi display or sterioscopic systems </font>
+</td></tr>
+<tr><td valign=top><p class="code">BAM_EVENT</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> manage input, can be called multiple times if hardware has multipl separate input devices for multiple users, like more them one joypad </font>
+</td></tr>
+<tr><td valign=top><p class="code">BAM_MAIN</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> main idle loop, called even if the program is iconized and doesnt redraw or has input focus. Useful for keeping things like network conecctions alive.</font>
+</td></tr>
+</table>
+<p class="code">betray_Input_structure_.html</p>
+<p class="header">Struct:</p> <p class="code">BInputState<p>
+<table border="1">
+<tr><td valign=top><p class="code">BInputPointerState *pointers</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> description of state of pointers (first is mouse pointer if availabel)</font>
+</td></tr>
+<tr><td valign=top><p class="code">uint			pointer_count</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> number of pointers currently active </font>
+</td></tr>
+<tr><td valign=top><p class="code">BInputAxisState *axis</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Analog input, joysticks, wheels, pedals, tracking....</font>
+</td></tr>
+<tr><td valign=top><p class="code">uint			axis_count</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Number of axis curerently available </font>
+</td></tr>
+<tr><td valign=top><p class="code">BButtonEvent	button_event[B_MAX_EVENT_COUNT]</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Button events</font>
+</td></tr>
+<tr><td valign=top><p class="code">uint			button_event_count</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Button Event count </font>
+</td></tr>
+<tr><td valign=top><p class="code">double			delta_time</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> delta time for update </font>
+</td></tr>
+<tr><td valign=top><p class="code">double			minute_time</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> timer in fractions of minutes that loops every minute, not syncronized with clock </font>
+</td></tr>
+<tr><td valign=top><p class="code">uint			draw_id</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> current id if we have a multi dispalay output. By default zero. Useful in order to only have to render shadowmaps once for multiple displays</font>
+</td></tr>
+<tr><td valign=top><p class="code">uint			draw_count</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> The number of displays we will render </font>
+</td></tr>
+<tr><td valign=top><p class="code">uint			user_count</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> the number of users </font>
+</td></tr>
+<tr><td valign=top><p class="code">uint			frame_number</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description">increments by one each renderd frame on all draw_ids</font>
+</td></tr>
+<tr><td valign=top><p class="code">BActionMode		mode</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> what is the purpouse of execution </font>
+</td></tr>
+<tr><td valign=top><p class="code">BInputState</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> ------- Button defines -----
+Defines for all buttons. Note that they are variables, and are different on different platforms!</font>
+</td></tr>
+<tr><td valign=top><p class="code">#ifdef BETRAY_BUTTON_BEGIN
+
+#define BETRAY_BUTTON_CANCEL</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_BACK		</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_TAB</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_CLEAR</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_RETURN</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_SHIFT</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_MENU</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_PAUSE</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_CAPS_LOCK</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_ESCAPE</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_SPACE</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_PREV</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_NEXT</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_END</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_HOME</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_LEFT</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_UP</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_RIGHT</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_DOWN</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_SELECT</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_PRINT</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_EXECUTE</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_SCREENSHOT</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_INSERT</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_DELETE</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_BACKSPACE</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_HELP</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_0</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_1</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_2</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_3</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_4</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_5</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_6</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_7</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_8</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_9</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_A</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_B</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_C</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_D</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_E</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_F</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_G</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_H</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_I</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_J</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_K</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_L</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_M</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_N</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_O</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_P</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_Q</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_R	</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_S</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_T</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_U</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_V</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_W</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_X</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_Y</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_Z</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_NUM_0</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_NUM_1</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_NUM_2</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_NUM_3</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_NUM_4</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_NUM_5</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_NUM_6</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_NUM_7</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_NUM_8</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_NUM_9</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_MULTIPLY</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_ADD</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_SUBTRACT</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_DIVIDED</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_F1</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_F2</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_F3</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_F4</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_F5</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_F6</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_F7</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_F8</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_F9</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_F10</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_F11</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_F12</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_F13</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_F14</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_F15</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_F16</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_F17</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_F18</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_F19</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_F20</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_F21</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_F22</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_F23</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_F24</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_VOLUME_DOWN</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_VOLUME_UP</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_NEXT_TRACK</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_PREVIOUS_TRACK</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_STOP</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_PLAY_PAUSE</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> first row of face buttons </font>
+</td></tr>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_FACE_A</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_FACE_B</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_FACE_C</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_FACE_D</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> second row of face buttons </font>
+</td></tr>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_FACE_X</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_FACE_Y</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_FACE_Z</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_FACE_W</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_YES</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_NO</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_UNDO</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_REDO</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_CUT</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_COPY</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_PASTE</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_SELECT</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_SEARCH</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_SHOLDER_LEFT_A</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_SHOLDER_LEFT_B</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_SHOLDER_LEFT_C</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_SHOLDER_LEFT_D</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_SHOLDER_RIGHT_A</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_SHOLDER_RIGHT_B</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_SHOLDER_RIGHT_C</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_SHOLDER_RIGHT_D</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_SCROLL_UP</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_SCROLL_DOWN</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_SCROLL_LEFT</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_SCROLL_RIGHT</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_INVENTORY_NEXT</p></td>
+<tr><td valign=top><p class="code">#define BETRAY_BUTTON_INVENTORY_PREVIOUS</p></td>
+<tr><td valign=top><p class="code">#endif
+
+</p></td>
+<tr><td valign=top><p class="code">* ------ Context type ----- 
+possible contexts that canbe opend</p></td>
+<tr><td valign=top><p class="code">currently only OpenGL but others could be possible in the future </p></td>
+<tr><td valign=top><p class="code">typedef enum{
+	B_CT_OPENGL</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Normal OpenGL context </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_CT_OPENGLES2</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> OpenGL 2.0 ES Context</font>
+</td></tr>
+<tr><td valign=top><p class="code">B_CT_OPENGL_OR_ES </p></td>
+<tr><td valign=top><p class="code">* Creating a context of either OpenGL Or OpenGLES*</p></td>
+</table>
+<p class="code">betray_Button_defines_.html</p>
+<p class="code">BETRAY_BUTTON_CANCEL</p>
+<p class="code">BETRAY_BUTTON_BACK		</p>
+<p class="code">BETRAY_BUTTON_TAB</p>
+<p class="code">BETRAY_BUTTON_CLEAR</p>
+<p class="code">BETRAY_BUTTON_RETURN</p>
+<p class="code">BETRAY_BUTTON_SHIFT</p>
+<p class="code">BETRAY_BUTTON_MENU</p>
+<p class="code">BETRAY_BUTTON_PAUSE</p>
+<p class="code">BETRAY_BUTTON_CAPS_LOCK</p>
+<p class="code">BETRAY_BUTTON_ESCAPE</p>
+<p class="code">BETRAY_BUTTON_SPACE</p>
+<p class="code">BETRAY_BUTTON_PREV</p>
+<p class="code">BETRAY_BUTTON_NEXT</p>
+<p class="code">BETRAY_BUTTON_END</p>
+<p class="code">BETRAY_BUTTON_HOME</p>
+<p class="code">BETRAY_BUTTON_LEFT</p>
+<p class="code">BETRAY_BUTTON_UP</p>
+<p class="code">BETRAY_BUTTON_RIGHT</p>
+<p class="code">BETRAY_BUTTON_DOWN</p>
+<p class="code">BETRAY_BUTTON_SELECT</p>
+<p class="code">BETRAY_BUTTON_PRINT</p>
+<p class="code">BETRAY_BUTTON_EXECUTE</p>
+<p class="code">BETRAY_BUTTON_SCREENSHOT</p>
+<p class="code">BETRAY_BUTTON_INSERT</p>
+<p class="code">BETRAY_BUTTON_DELETE</p>
+<p class="code">BETRAY_BUTTON_BACKSPACE</p>
+<p class="code">BETRAY_BUTTON_HELP</p>
+<p class="code">BETRAY_BUTTON_0</p>
+<p class="code">BETRAY_BUTTON_1</p>
+<p class="code">BETRAY_BUTTON_2</p>
+<p class="code">BETRAY_BUTTON_3</p>
+<p class="code">BETRAY_BUTTON_4</p>
+<p class="code">BETRAY_BUTTON_5</p>
+<p class="code">BETRAY_BUTTON_6</p>
+<p class="code">BETRAY_BUTTON_7</p>
+<p class="code">BETRAY_BUTTON_8</p>
+<p class="code">BETRAY_BUTTON_9</p>
+<p class="code">BETRAY_BUTTON_A</p>
+<p class="code">BETRAY_BUTTON_B</p>
+<p class="code">BETRAY_BUTTON_C</p>
+<p class="code">BETRAY_BUTTON_D</p>
+<p class="code">BETRAY_BUTTON_E</p>
+<p class="code">BETRAY_BUTTON_F</p>
+<p class="code">BETRAY_BUTTON_G</p>
+<p class="code">BETRAY_BUTTON_H</p>
+<p class="code">BETRAY_BUTTON_I</p>
+<p class="code">BETRAY_BUTTON_J</p>
+<p class="code">BETRAY_BUTTON_K</p>
+<p class="code">BETRAY_BUTTON_L</p>
+<p class="code">BETRAY_BUTTON_M</p>
+<p class="code">BETRAY_BUTTON_N</p>
+<p class="code">BETRAY_BUTTON_O</p>
+<p class="code">BETRAY_BUTTON_P</p>
+<p class="code">BETRAY_BUTTON_Q</p>
+<p class="code">BETRAY_BUTTON_R	</p>
+<p class="code">BETRAY_BUTTON_S</p>
+<p class="code">BETRAY_BUTTON_T</p>
+<p class="code">BETRAY_BUTTON_U</p>
+<p class="code">BETRAY_BUTTON_V</p>
+<p class="code">BETRAY_BUTTON_W</p>
+<p class="code">BETRAY_BUTTON_X</p>
+<p class="code">BETRAY_BUTTON_Y</p>
+<p class="code">BETRAY_BUTTON_Z</p>
+<p class="code">BETRAY_BUTTON_NUM_0</p>
+<p class="code">BETRAY_BUTTON_NUM_1</p>
+<p class="code">BETRAY_BUTTON_NUM_2</p>
+<p class="code">BETRAY_BUTTON_NUM_3</p>
+<p class="code">BETRAY_BUTTON_NUM_4</p>
+<p class="code">BETRAY_BUTTON_NUM_5</p>
+<p class="code">BETRAY_BUTTON_NUM_6</p>
+<p class="code">BETRAY_BUTTON_NUM_7</p>
+<p class="code">BETRAY_BUTTON_NUM_8</p>
+<p class="code">BETRAY_BUTTON_NUM_9</p>
+<p class="code">BETRAY_BUTTON_MULTIPLY</p>
+<p class="code">BETRAY_BUTTON_ADD</p>
+<p class="code">BETRAY_BUTTON_SUBTRACT</p>
+<p class="code">BETRAY_BUTTON_DIVIDED</p>
+<p class="code">BETRAY_BUTTON_F1</p>
+<p class="code">BETRAY_BUTTON_F2</p>
+<p class="code">BETRAY_BUTTON_F3</p>
+<p class="code">BETRAY_BUTTON_F4</p>
+<p class="code">BETRAY_BUTTON_F5</p>
+<p class="code">BETRAY_BUTTON_F6</p>
+<p class="code">BETRAY_BUTTON_F7</p>
+<p class="code">BETRAY_BUTTON_F8</p>
+<p class="code">BETRAY_BUTTON_F9</p>
+<p class="code">BETRAY_BUTTON_F10</p>
+<p class="code">BETRAY_BUTTON_F11</p>
+<p class="code">BETRAY_BUTTON_F12</p>
+<p class="code">BETRAY_BUTTON_F13</p>
+<p class="code">BETRAY_BUTTON_F14</p>
+<p class="code">BETRAY_BUTTON_F15</p>
+<p class="code">BETRAY_BUTTON_F16</p>
+<p class="code">BETRAY_BUTTON_F17</p>
+<p class="code">BETRAY_BUTTON_F18</p>
+<p class="code">BETRAY_BUTTON_F19</p>
+<p class="code">BETRAY_BUTTON_F20</p>
+<p class="code">BETRAY_BUTTON_F21</p>
+<p class="code">BETRAY_BUTTON_F22</p>
+<p class="code">BETRAY_BUTTON_F23</p>
+<p class="code">BETRAY_BUTTON_F24</p>
+<p class="code">BETRAY_BUTTON_VOLUME_DOWN</p>
+<p class="code">BETRAY_BUTTON_VOLUME_UP</p>
+<p class="code">BETRAY_BUTTON_NEXT_TRACK</p>
+<p class="code">BETRAY_BUTTON_PREVIOUS_TRACK</p>
+<p class="code">BETRAY_BUTTON_STOP</p>
+<p class="code">BETRAY_BUTTON_PLAY_PAUSE</p>
+<p class="code">betray_first_row_of_face_buttons_.html</p>
+<p class="code">BETRAY_BUTTON_FACE_A</p>
+<p class="code">BETRAY_BUTTON_FACE_B</p>
+<p class="code">BETRAY_BUTTON_FACE_C</p>
+<p class="code">BETRAY_BUTTON_FACE_D</p>
+<p class="code">betray_second_row_of_face_buttons_.html</p>
+<p class="code">BETRAY_BUTTON_FACE_X</p>
+<p class="code">BETRAY_BUTTON_FACE_Y</p>
+<p class="code">BETRAY_BUTTON_FACE_Z</p>
+<p class="code">BETRAY_BUTTON_FACE_W</p>
+<p class="code">BETRAY_BUTTON_YES</p>
+<p class="code">BETRAY_BUTTON_NO</p>
+<p class="code">BETRAY_BUTTON_UNDO</p>
+<p class="code">BETRAY_BUTTON_REDO</p>
+<p class="code">BETRAY_BUTTON_CUT</p>
+<p class="code">BETRAY_BUTTON_COPY</p>
+<p class="code">BETRAY_BUTTON_PASTE</p>
+<p class="code">BETRAY_BUTTON_SELECT</p>
+<p class="code">BETRAY_BUTTON_SEARCH</p>
+<p class="code">BETRAY_BUTTON_SHOLDER_LEFT_A</p>
+<p class="code">BETRAY_BUTTON_SHOLDER_LEFT_B</p>
+<p class="code">BETRAY_BUTTON_SHOLDER_LEFT_C</p>
+<p class="code">BETRAY_BUTTON_SHOLDER_LEFT_D</p>
+<p class="code">BETRAY_BUTTON_SHOLDER_RIGHT_A</p>
+<p class="code">BETRAY_BUTTON_SHOLDER_RIGHT_B</p>
+<p class="code">BETRAY_BUTTON_SHOLDER_RIGHT_C</p>
+<p class="code">BETRAY_BUTTON_SHOLDER_RIGHT_D</p>
+<p class="code">BETRAY_BUTTON_SCROLL_UP</p>
+<p class="code">BETRAY_BUTTON_SCROLL_DOWN</p>
+<p class="code">BETRAY_BUTTON_SCROLL_LEFT</p>
+<p class="code">BETRAY_BUTTON_SCROLL_RIGHT</p>
+<p class="code">BETRAY_BUTTON_INVENTORY_NEXT</p>
+<p class="code">BETRAY_BUTTON_INVENTORY_PREVIOUS</p>
+<p class="code">betray_Context_type_.html</p>
+<p class="header">Enum:</p> <p class="code">BContextType<p>
+<table border="1">
+<tr><td valign=top><p class="code">B_CT_OPENGL</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Normal OpenGL context </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_CT_OPENGLES2</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> OpenGL 2.0 ES Context</font>
+</td></tr>
+<tr><td valign=top><p class="code">B_CT_OPENGL_OR_ES</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Creating a context of either OpenGL Or OpenGLES</font>
+</td></tr>
+</table>
+<p class="code">betray_Functionality_query_Enum_.html</p>
+<p class="header">Enum:</p> <p class="code">BSupportedFunctionality<p>
+<table border="1">
+<tr><td valign=top><p class="code">B_SF_USER_COUNT_MAX</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> whats the maximum number of users </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_SF_POINTER_COUNT_MAX</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> whats the maximum number of pointers </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_SF_FULLSCREEN</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Does the system support full screen </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_SF_WINDOWED</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Does the system support window mode </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_SF_VIEW_POSITION</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Does the system manipulate view vantage </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_SF_VIEW_ROTATION</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Does the system manipulate the view direction</font>
+</td></tr>
+<tr><td valign=top><p class="code">B_SF_MOUSE_WARP</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Does the syetem support mouse warp</font>
+</td></tr>
+<tr><td valign=top><p class="code">B_SF_EXECUTE</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Does the system support execute </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_SF_REQUESTER</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Can the system support save/load requesters </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_SF_CLIPBOARD</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description">Does the syetem support cut and paste </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_SF_COUNT</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description">Number of members of this Enum </font>
+</td></tr>
+</table>
+<p class="code">betray_Sound_Clip_.html</p>
+<p class="code">BETRAY_TYPE_INT8 0</p>
+<p class="code">BETRAY_TYPE_INT16 1</p>
+<p class="code">BETRAY_TYPE_INT32 2</p>
+<p class="code">BETRAY_TYPE_FLOAT32 3</p>
+<p class="code">betray_Settings_.html</p>
+<p class="header">Enum:</p> <p class="code">BSettingType<p>
+<table border="1">
+<tr><td valign=top><p class="code">BETRAY_ST_TRIGGER</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description">Creates a trigger event for a plugi. Useful for things like screen captiure. </font>
+</td></tr>
+<tr><td valign=top><p class="code">BETRAY_ST_TOGGLE</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description">A simpla boolean to turn on or off functionality. </font>
+</td></tr>
+<tr><td valign=top><p class="code">BETRAY_ST_SELECT</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description">A Selector where the application can chose form one of a number of named optrions. </font>
+</td></tr>
+<tr><td valign=top><p class="code">BETRAY_ST_NUMBER_FLOAT</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description">A floating point value. </font>
+</td></tr>
+<tr><td valign=top><p class="code">BETRAY_ST_NUMBER_INT</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description">A integer value. </font>
+</td></tr>
+<tr><td valign=top><p class="code">BETRAY_ST_SLIDER</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description">A Floating point value ranging from zero to one.</font>
+</td></tr>
+<tr><td valign=top><p class="code">BETRAY_ST_2D</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> A two dimational value ranged form, minus one to plus one. </font>
+</td></tr>
+<tr><td valign=top><p class="code">BETRAY_ST_3D</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> A three dimational value ranged form, minus one to plus one. </font>
+</td></tr>
+<tr><td valign=top><p class="code">BETRAY_ST_COLOR</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> A Color </font>
+</td></tr>
+<tr><td valign=top><p class="code">BETRAY_ST_4X4_MATRIX</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> A 4x4 trnasfomration matrix </font>
+</td></tr>
+</table>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html> 

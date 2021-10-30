@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>forge</title>
+<style type="text/css">
+font.header {color:rgb(216,108,0);}
+h2 {color:rgb(216,108,0);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;">
+<dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dd><a href="forge_Debugging_.html">Debugging </a></dd><dd><a href="forge_Random_number_generators_.html">Random number generators </a></dd><dd><a href="forge_Vector_math_.html">Vector math </a></dd><dd><a href="forge_Integer_vector_math_.html">Integer vector math </a></dd><dd><a href="forge_Matrix_operations_.html">Matrix operations </a></dd><dd><a href="forge_Matrix_Creation_.html">Matrix Creation </a></dd><dd><a href="forge_Splines_.html">Splines </a></dd><dd><a href="forge_Wiggle_.html">Wiggle </a></dd><dd><a href="forge_Smooth_step_.html">Smooth step </a></dd><dd><a href="forge_Perlin_noise_.html">Perlin noise </a></dd><dd><a href="forge_tiled_versions_of_all_perlin_noi.html">tiled versions of all perlin noises</a></dd><dd><a href="forge_Snap_.html">Snap </a></dd><dd><a href="forge_Color_space_.html">Color space </a></dd><dd><a href="forge_Triangle_intersection_.html">Triangle intersection </a></dd><dd><a href="forge_Text_.html">Text </a></dd><dd><a href="forge_Sorting_.html">Sorting </a></dd><dd><a href="forge_Poly_mesh_neighbour_.html">Poly mesh neighbour </a></dd><dd><a href="forge_A*_path_finding_.html">A* path finding </a></dd><dd><a href="forge_defines.html">Defines</a></dd><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dt><a href="testify.html" style="color:rgb(216,0,108);">testify</a></dt></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+
+<h1><p>Vector math </p></h1>
+<p class="group">Therse are common functions used in vector math </p>
+<H3><p id="f_length2f">f_length2f</p></H3>
+<p class="code">float f_length2f(float *vec); </p>
+<font class="header">Description:</font>
+<font class="description">Computes the length of a vector 2D for 32 bit floats.</font>
+<H3><p id="f_length3f">f_length3f</p></H3>
+<p class="code">float f_length3f(float *vec); </p>
+<font class="header">Description:</font>
+<font class="description">Computes the length of a vector 3D for 32 bit floats.</font>
+<H3><p id="f_distance2f">f_distance2f</p></H3>
+<p class="code">float f_distance2f(float *a, float *b); </p>
+<font class="header">Description:</font>
+<font class="description">Computes the distance between two points in 2D for 32 bit floats.</font>
+<H3><p id="f_distance3f">f_distance3f</p></H3>
+<p class="code">float f_distance3f(float *a, float *b); </p>
+<font class="header">Description:</font>
+<font class="description">Computes the distance between two points in 3D for 32 bit floats.</font>
+<H3><p id="f_dot2f">f_dot2f</p></H3>
+<p class="code">float f_dot2f(float *a, float *b); </p>
+<font class="header">Description:</font>
+<font class="description">Computes the dot product between two points in 2D for 32 bit floats.</font>
+<H3><p id="f_dot3f">f_dot3f</p></H3>
+<p class="code">float f_dot3f(float *a, float *b); </p>
+<font class="header">Description:</font>
+<font class="description">Computes the dot product between two points in 3D for 32 bit floats.</font>
+<H3><p id="f_cross2f">f_cross2f</p></H3>
+<p class="code">void f_cross2f(float *output, float *a, float *b); </p>
+<font class="header">Description:</font>
+<font class="description">Computes cross product between two points in 2D for 32 bit floats.</font>
+<H3><p id="f_cross3f">f_cross3f</p></H3>
+<p class="code">void f_cross3f(float *output, float *a, float *b); </p>
+<font class="header">Description:</font>
+<font class="description">Computes cross product between two points in 3D for 32 bit floats.</font>
+<H3><p id="f_normalize2f">f_normalize2f</p></H3>
+<p class="code">void f_normalize2f(float *vec); </p>
+<font class="header">Description:</font>
+<font class="description">Normalizes a 2D vector of 32 bit floats.</font>
+<H3><p id="f_normalize3f">f_normalize3f</p></H3>
+<p class="code">void f_normalize3f(float *vec); </p>
+<font class="header">Description:</font>
+<font class="description">Normalizes a 3D vector of 32 bit floats.</font>
+<H3><p id="f_normalize4f">f_normalize4f</p></H3>
+<p class="code">void f_normalize4f(float *vec); </p>
+<font class="header">Description:</font>
+<font class="description">Normalizes a 4D vector of 32 bit floats (useful for quaternions).</font>
+<H3><p id="f_normal2f">f_normal2f</p></H3>
+<p class="code">void f_normal2f(float *output, float *a, float *b); </p>
+<font class="header">Description:</font>
+<font class="description">Generates a normal from 2 points on a line. </font>
+<H3><p id="f_normal3f">f_normal3f</p></H3>
+<p class="code">void f_normal3f(float *output, float *a, float *b, float *c); </p>
+<font class="header">Description:</font>
+<font class="description">Generates a normal from 3 points on a plane. </font>
+<H3><p id="f_reflect2f">f_reflect2f</p></H3>
+<p class="code">void f_reflect2f(float *output, float *pos, float *normal); </p>
+<font class="header">Description:</font>
+<font class="description">Reflects a position to a normal plane in 2D for 32 bit floats.</font>
+<H3><p id="f_reflect3f">f_reflect3f</p></H3>
+<p class="code">void f_reflect3f(float *output, float *pos, float *normal); </p>
+<font class="header">Description:</font>
+<font class="description">Reflects a position to a normal plane in 3D for 32 bit floats.</font>
+<H3><p id="f_flatten2f">f_flatten2f</p></H3>
+<p class="code">void f_flatten2f(float *output, float *pos, float *normal); </p>
+<font class="header">Description:</font>
+<font class="description">Flattens a position to a normal plane in 2D for 32 bit floats.</font>
+<H3><p id="f_flatten3f">f_flatten3f</p></H3>
+<p class="code">void f_flatten3f(float *output, float *pos, float *normal); </p>
+<font class="header">Description:</font>
+<font class="description">Flattens a position to a normal plane in 3D for 32 bit floats.</font>
+<H3><p id="f_project2f">f_project2f</p></H3>
+<p class="code">void f_project2f(float *output, float *plane_pos, float *normal, float *pos, float *vector); </p>
+<font class="header">Description:</font>
+<font class="description">projects from aposition along a vector on to a positioned planein 2D for 32 bit floats.</font>
+<H3><p id="f_project3f">f_project3f</p></H3>
+<p class="code">void f_project3f(float *output, float *plane_pos, float *normal, float *pos, float *vector); </p>
+<font class="header">Description:</font>
+<font class="description">projects fr0m aposition along a vector on to a positioned planein 3D for 32 bit floats.</font>
+<H3><p id="f_intersect2f">f_intersect2f</p></H3>
+<p class="code">void f_intersect2f(float *output, float *line_a0, float *line_a1, float *line_b0, float *line_b1); </p>
+<font class="header">Description:</font>
+<font class="description">Computes the intersection between two lines in 2D for 32 bit floats.</font>
+<H3><p id="f_length2d">f_length2d</p></H3>
+<p class="code">double f_length2d(double *vec); </p>
+<font class="header">Description:</font>
+<font class="description">Computes the length of a vector 2D for 64 bit doubles.</font>
+<H3><p id="f_length3d">f_length3d</p></H3>
+<p class="code">double f_length3d(double *vec); </p>
+<font class="header">Description:</font>
+<font class="description">Computes the length of a vector 3D for 64 bit doubles.</font>
+<H3><p id="f_distance2d">f_distance2d</p></H3>
+<p class="code">double f_distance2d(double *a, double *b); </p>
+<font class="header">Description:</font>
+<font class="description">Computes the distance between two points in 2D for 64 bit doubles.</font>
+<H3><p id="f_distance3d">f_distance3d</p></H3>
+<p class="code">double f_distance3d(double *a, double *b); </p>
+<font class="header">Description:</font>
+<font class="description">Computes the distance between two points in 3D for 64 bit doubles.</font>
+<H3><p id="f_dot2d">f_dot2d</p></H3>
+<p class="code">double f_dot2d(double *a, double *b); </p>
+<font class="header">Description:</font>
+<font class="description">Computes the dot product between two points in 2D for 64 bit doubles.</font>
+<H3><p id="f_dot3d">f_dot3d</p></H3>
+<p class="code">double f_dot3d(double *a, double *b); </p>
+<font class="header">Description:</font>
+<font class="description">Computes the dot product between two points in 3D for 64 bit doubles.</font>
+<H3><p id="f_cross2d">f_cross2d</p></H3>
+<p class="code">void f_cross2d(double *output, double *a, double *b); </p>
+<font class="header">Description:</font>
+<font class="description">Computes cross product between two points in 2D for 64 bit doubles.</font>
+<H3><p id="f_cross3d">f_cross3d</p></H3>
+<p class="code">void f_cross3d(double *output, double *a, double *b); </p>
+<font class="header">Description:</font>
+<font class="description">Computes cross product between two points in 3D for 64 bit doubles.</font>
+<H3><p id="f_normalize2d">f_normalize2d</p></H3>
+<p class="code">void f_normalize2d(double *vec); </p>
+<font class="header">Description:</font>
+<font class="description">Normalizes a 2D vector of 64 bit doubles.</font>
+<H3><p id="f_normalize3d">f_normalize3d</p></H3>
+<p class="code">void f_normalize3d(double *vec); </p>
+<font class="header">Description:</font>
+<font class="description">Normalizes a 3D vector of 64 bit doubles.</font>
+<H3><p id="f_normalize4d">f_normalize4d</p></H3>
+<p class="code">void f_normalize4d(double *vec); </p>
+<font class="header">Description:</font>
+<font class="description">Normalizes a 4D vector of 64 bit doubles (useful for quaternions).</font>
+<H3><p id="f_normal2d">f_normal2d</p></H3>
+<p class="code">void f_normal2d(double *output, double *a, double *b); </p>
+<font class="header">Description:</font>
+<font class="description">Generates a normal from 2 points on a line. </font>
+<H3><p id="f_normal3d">f_normal3d</p></H3>
+<p class="code">void f_normal3d(double *output, double *a, double *b, double *c); </p>
+<font class="header">Description:</font>
+<font class="description">Generates a normal from 3 points on a plane. </font>
+<H3><p id="f_reflect2d">f_reflect2d</p></H3>
+<p class="code">void f_reflect2d(double *output, double *pos, double *normal); </p>
+<font class="header">Description:</font>
+<font class="description">Reflects a position to a normal plane in 2D for 64 bit doubles.</font>
+<H3><p id="f_reflect3d">f_reflect3d</p></H3>
+<p class="code">void f_reflect3d(double *output, double *pos, double *normal); </p>
+<font class="header">Description:</font>
+<font class="description">Reflects a position to a normal plane in 3D for 64 bit doubles.</font>
+<H3><p id="f_flatten2d">f_flatten2d</p></H3>
+<p class="code">void f_flatten2d(double *output, double *pos, double *normal); </p>
+<font class="header">Description:</font>
+<font class="description">Flattens a position to a normal plane in 2D for 64 bit doubles.</font>
+<H3><p id="f_flatten3d">f_flatten3d</p></H3>
+<p class="code">void f_flatten3d(double *output, double *pos, double *normal); </p>
+<font class="header">Description:</font>
+<font class="description">Flattens a position to a normal plane in 3D for 64 bit doubles.</font>
+<H3><p id="f_project2d">f_project2d</p></H3>
+<p class="code">void f_project2d(double *output, double *plane_pos, double *normal, double *pos, double *vector); </p>
+<font class="header">Description:</font>
+<font class="description">projects from aposition along a vector on to a positioned planein 2D for 64 bit doubles.</font>
+<H3><p id="f_project3d">f_project3d</p></H3>
+<p class="code">void f_project3d(double *output, double *plane_pos, double *normal, double *pos, double *vector); </p>
+<font class="header">Description:</font>
+<font class="description">projects fr0m aposition along a vector on to a positioned planein 3D for 64 bit doubles.</font>
+<H3><p id="f_intersect2d">f_intersect2d</p></H3>
+<p class="code">void f_intersect2d(double *output, double *line_a0, double *line_a1, double *line_b0, double *line_b1); </p>
+<font class="header">Description:</font>
+<font class="description">Computes the intersection between two lines in 2D for 64 bit doubles.</font>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html> 

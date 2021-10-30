@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>betray_plugin_api</title>
+<style type="text/css">
+font.header {color:rgb(0,108,216);}
+h2 {color:rgb(0,108,216);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;">
+<dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dd><a href="betray_plugin_api_betray_state_.html">betray state </a></dd><dd><a href="betray_plugin_api_Clipboard__.html">Clipboard  </a></dd><dd><a href="betray_plugin_api_Callbacks_.html">Callbacks </a></dd><dd><a href="betray_plugin_api_Image_manipulation_.html">Image manipulation </a></dd><dd><a href="betray_plugin_api_Sound_call_backs_.html">Sound call backs </a></dd><dd><a href="betray_plugin_api_Allocate_new_buttons,_pointers_a.html">Allocate new buttons, pointers and axis </a></dd><dd><a href="betray_plugin_api_Settings_.html">Settings </a></dd><dd><a href="betray_plugin_api_Windows_specific_.html">Windows specific </a></dd><dd><a href="betray_plugin_ap_defines.html">Defines</a></dd><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dt><a href="testify.html" style="color:rgb(216,0,108);">testify</a></dt></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+
+<p><H2>betray_plugin_api</H2></p>
+<p class="group">
+This is the api to use if you want to write a plugin for Bertray<BR>
+<BR>
+<BR>
+No NOT use funtions from <a href="betray.h">betray.h</a> but do use defines and typedefs<BR>
+<BR>
+To build a library you need to include this file, betray.h, b_keys.h, <BR>
+b_plugin_api.c, <a href="b_plugin_api_internal.h">b_plugin_api_internal.h</a> and the files for the libs <BR>
+Forge <a href="(forge.h">(forge.h</a> and files starting with "f_") and Imagine <a href="(imagine.h">(imagine.h</a> <BR>
+and files starting with "i_").<BR>
+<BR>
+Your plug-in will need to implement:<BR>
+ <BR>
+void betray_plugin_init(void)<BR>
+<BR>
+In this function you can then set upp all callbacks you need. See<BR>
+<a href="b_plugin_templet.c">b_plugin_templet.c</a> for sample code.<BR>
+<BR>
+Betray plugins defining a callback for <a href="betray_plugin_api_Image_manipulation_.html#betray_plugin_callback_set_image_warp">betray_plugin_callback_set_image_warp</a> in betray_plugin_init will be assuiged their own full OpenGL context. All assets of the applications Context will be shared with this context. Plugins can use this secondary context to retrive the graphics from the application in order to modify it befoire drawing it to screen. Examples of uses for this is perspective correction, color correction, screenshot captiure and much more. <BR>
+</p>
+<p class="header">Contents:</p><dl>
+<dt><a href="betray_plugin_api_betray_state_.html">betray state </a></dt>
+<dd><a href="betray_plugin_api_betray_state_.html#betray_plugin_get_input_state">betray_plugin_get_input_state</a></dd>
+<dd><a href="betray_plugin_api_betray_state_.html#betray_plugin_context_type_get">betray_plugin_context_type_get</a></dd>
+<dd><a href="betray_plugin_api_betray_state_.html#betray_plugin_screen_mode_get">betray_plugin_screen_mode_get</a></dd>
+<dd><a href="betray_plugin_api_betray_state_.html#betray_plugin_gl_proc_address_get">betray_plugin_gl_proc_address_get</a></dd>
+<dt><a href="betray_plugin_api_Clipboard__.html">Clipboard  </a></dt>
+<dd><a href="betray_plugin_api_Clipboard__.html#betray_plugin_clipboard_set">betray_plugin_clipboard_set</a></dd>
+<dd><a href="betray_plugin_api_Clipboard__.html#betray_plugin_clipboard_get">betray_plugin_clipboard_get</a></dd>
+<dt><a href="betray_plugin_api_Callbacks_.html">Callbacks </a></dt>
+<dd><a href="betray_plugin_api_Callbacks_.html#betray_plugin_callback_set_main">betray_plugin_callback_set_main</a></dd>
+<dd><a href="betray_plugin_api_Callbacks_.html#betray_plugin_callback_set_view_vantage">betray_plugin_callback_set_view_vantage</a></dd>
+<dd><a href="betray_plugin_api_Callbacks_.html#betray_plugin_callback_set_view_direction">betray_plugin_callback_set_view_direction</a></dd>
+<dd><a href="betray_plugin_api_Callbacks_.html#betray_plugin_callback_set_event_pump">betray_plugin_callback_set_event_pump</a></dd>
+<dt><a href="betray_plugin_api_Image_manipulation_.html">Image manipulation </a></dt>
+<dd><a href="betray_plugin_api_Image_manipulation_.html#betray_plugin_callback_set_image_warp">betray_plugin_callback_set_image_warp</a></dd>
+<dd><a href="betray_plugin_api_Image_manipulation_.html#betray_plugin_application_draw">betray_plugin_application_draw</a></dd>
+<dt><a href="betray_plugin_api_Sound_call_backs_.html">Sound call backs </a></dt>
+<dd><a href="betray_plugin_api_Sound_call_backs_.html#betray_plugin_audio_unit_create">betray_plugin_audio_unit_create</a></dd>
+<dd><a href="betray_plugin_api_Sound_call_backs_.html#betray_plugin_callback_set_audio_sound_create">betray_plugin_callback_set_audio_sound_create</a></dd>
+<dd><a href="betray_plugin_api_Sound_call_backs_.html#betray_plugin_callback_set_audio_sound_destroy">betray_plugin_callback_set_audio_sound_destroy</a></dd>
+<dd><a href="betray_plugin_api_Sound_call_backs_.html#betray_plugin_callback_set_audio_sound_play">betray_plugin_callback_set_audio_sound_play</a></dd>
+<dd><a href="betray_plugin_api_Sound_call_backs_.html#betray_plugin_callback_set_audio_sound_set">betray_plugin_callback_set_audio_sound_set</a></dd>
+<dd><a href="betray_plugin_api_Sound_call_backs_.html#betray_plugin_callback_set_audio_sound_is_playing">betray_plugin_callback_set_audio_sound_is_playing</a></dd>
+<dd><a href="betray_plugin_api_Sound_call_backs_.html#betray_plugin_callback_set_audio_sound_stop">betray_plugin_callback_set_audio_sound_stop</a></dd>
+<dd><a href="betray_plugin_api_Sound_call_backs_.html#betray_plugin_callback_set_audio_stream_create">betray_plugin_callback_set_audio_stream_create</a></dd>
+<dd><a href="betray_plugin_api_Sound_call_backs_.html#betray_plugin_callback_set_audio_stream_destroy">betray_plugin_callback_set_audio_stream_destroy</a></dd>
+<dd><a href="betray_plugin_api_Sound_call_backs_.html#betray_plugin_callback_set_audio_stream_feed">betray_plugin_callback_set_audio_stream_feed</a></dd>
+<dd><a href="betray_plugin_api_Sound_call_backs_.html#betray_plugin_callback_set_audio_stream_buffer_left">betray_plugin_callback_set_audio_stream_buffer_left</a></dd>
+<dd><a href="betray_plugin_api_Sound_call_backs_.html#betray_plugin_callback_set_audio_stream_set">betray_plugin_callback_set_audio_stream_set</a></dd>
+<dd><a href="betray_plugin_api_Sound_call_backs_.html#betray_plugin_callback_set_audio_listener">betray_plugin_callback_set_audio_listener</a></dd>
+<dd><a href="betray_plugin_api_Sound_call_backs_.html#betray_plugin_callback_set_audio_read">betray_plugin_callback_set_audio_read</a></dd>
+<dd><a href="betray_plugin_api_Sound_call_backs_.html#betray_plugin_audio_master_volume_get">betray_plugin_audio_master_volume_get</a></dd>
+<dt><a href="betray_plugin_api_Allocate_new_buttons,_pointers_a.html">Allocate new buttons, pointers and axis </a></dt>
+<dd><a href="betray_plugin_api_Allocate_new_buttons,_pointers_a.html#betray_plugin_user_allocate">betray_plugin_user_allocate</a></dd>
+<dd><a href="betray_plugin_api_Allocate_new_buttons,_pointers_a.html#betray_plugin_button_allocate">betray_plugin_button_allocate</a></dd>
+<dd><a href="betray_plugin_api_Allocate_new_buttons,_pointers_a.html#betray_plugin_button_set">betray_plugin_button_set</a></dd>
+<dd><a href="betray_plugin_api_Allocate_new_buttons,_pointers_a.html#betray_plugin_button_free">betray_plugin_button_free</a></dd>
+<dd><a href="betray_plugin_api_Allocate_new_buttons,_pointers_a.html#betray_plugin_pointer_allocate">betray_plugin_pointer_allocate</a></dd>
+<dd><a href="betray_plugin_api_Allocate_new_buttons,_pointers_a.html#betray_plugin_pointer_set">betray_plugin_pointer_set</a></dd>
+<dd><a href="betray_plugin_api_Allocate_new_buttons,_pointers_a.html#betray_plugin_pointer_free">betray_plugin_pointer_free</a></dd>
+<dd><a href="betray_plugin_api_Allocate_new_buttons,_pointers_a.html#betray_plugin_axis_allocate">betray_plugin_axis_allocate</a></dd>
+<dd><a href="betray_plugin_api_Allocate_new_buttons,_pointers_a.html#betray_plugin_axis_set">betray_plugin_axis_set</a></dd>
+<dd><a href="betray_plugin_api_Allocate_new_buttons,_pointers_a.html#betray_plugin_axis_free">betray_plugin_axis_free</a></dd>
+<dt><a href="betray_plugin_api_Settings_.html">Settings </a></dt>
+<dd><a href="betray_plugin_api_Settings_.html#betray_settings_create">betray_settings_create</a></dd>
+<dd><a href="betray_plugin_api_Settings_.html#betray_settings_count">betray_settings_count</a></dd>
+<dd><a href="betray_plugin_api_Settings_.html#betray_settings_type">betray_settings_type</a></dd>
+<dd><a href="betray_plugin_api_Settings_.html#betray_settings_name">betray_settings_name</a></dd>
+<dd><a href="betray_plugin_api_Settings_.html#betray_settings_toggle_get">betray_settings_toggle_get</a></dd>
+<dd><a href="betray_plugin_api_Settings_.html#betray_settings_toggle_set">betray_settings_toggle_set</a></dd>
+<dd><a href="betray_plugin_api_Settings_.html#betray_settings_select_get">betray_settings_select_get</a></dd>
+<dd><a href="betray_plugin_api_Settings_.html#betray_settings_select_set">betray_settings_select_set</a></dd>
+<dd><a href="betray_plugin_api_Settings_.html#betray_settings_select_count_get">betray_settings_select_count_get</a></dd>
+<dd><a href="betray_plugin_api_Settings_.html#betray_settings_select_name_get">betray_settings_select_name_get</a></dd>
+<dd><a href="betray_plugin_api_Settings_.html#betray_settings_number_float_get">betray_settings_number_float_get</a></dd>
+<dd><a href="betray_plugin_api_Settings_.html#betray_settings_number_float_set">betray_settings_number_float_set</a></dd>
+<dd><a href="betray_plugin_api_Settings_.html#betray_settings_number_int_get">betray_settings_number_int_get</a></dd>
+<dd><a href="betray_plugin_api_Settings_.html#betray_settings_number_int_set">betray_settings_number_int_set</a></dd>
+<dd><a href="betray_plugin_api_Settings_.html#betray_settings_slider_get">betray_settings_slider_get</a></dd>
+<dd><a href="betray_plugin_api_Settings_.html#betray_settings_slider_set">betray_settings_slider_set</a></dd>
+<dd><a href="betray_plugin_api_Settings_.html#betray_settings_2d_get">betray_settings_2d_get</a></dd>
+<dd><a href="betray_plugin_api_Settings_.html#betray_settings_2d_set">betray_settings_2d_set</a></dd>
+<dd><a href="betray_plugin_api_Settings_.html#betray_settings_3d_get">betray_settings_3d_get</a></dd>
+<dd><a href="betray_plugin_api_Settings_.html#betray_settings_3d_set">betray_settings_3d_set</a></dd>
+<dd><a href="betray_plugin_api_Settings_.html#betray_settings_color_get">betray_settings_color_get</a></dd>
+<dd><a href="betray_plugin_api_Settings_.html#betray_settings_color_set">betray_settings_color_set</a></dd>
+<dd><a href="betray_plugin_api_Settings_.html#betray_settings_4x4_matrix_get">betray_settings_4x4_matrix_get</a></dd>
+<dd><a href="betray_plugin_api_Settings_.html#betray_settings_4x4_matrix_set">betray_settings_4x4_matrix_set</a></dd>
+<dt><a href="betray_plugin_api_Windows_specific_.html">Windows specific </a></dt>
+<dd><a href="betray_plugin_api_Windows_specific_.html#betray_plugin_windows_window_handle_get">betray_plugin_windows_window_handle_get</a></dd>
+<dt><a href="betray_plugin_api_defines.html">Defines</a></dt>
+</dl>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html> 

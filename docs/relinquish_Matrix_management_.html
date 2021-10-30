@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>relinquish</title>
+<style type="text/css">
+font.header {color:rgb(108,0,216);}
+h2 {color:rgb(108,0,216);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;">
+<dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dd><a href="relinquish_Initialization_.html">Initialization </a></dd><dd><a href="relinquish_Array_data__.html">Array data  </a></dd><dd><a href="relinquish_Draw_calls__.html">Draw calls  </a></dd><dd><a href="relinquish_Matrix_management_.html">Matrix management </a></dd><dd><a href="relinquish_Shader_management_.html">Shader management </a></dd><dd><a href="relinquish_Uniform_query_.html">Uniform query </a></dd><dd><a href="relinquish_Uniform_blocks_.html">Uniform blocks </a></dd><dd><a href="relinquish_Uniform_State_.html">Uniform State </a></dd><dd><a href="relinquish_Shader_state_.html">Shader state </a></dd><dd><a href="relinquish_Shader_Debugging_.html">Shader Debugging </a></dd><dd><a href="relinquish_Draw_primitives_.html">Draw primitives </a></dd><dd><a href="relinquish_Surface_primitives_.html">Surface primitives </a></dd><dd><a href="relinquish_Line_primitives_.html">Line primitives </a></dd><dd><a href="relinquish_Sprite_primitives_.html">Sprite primitives </a></dd><dd><a href="relinquish_Image_and_texture_API_.html">Image and texture API </a></dd><dd><a href="relinquish_Frame_buffer_objects_.html">Frame buffer objects </a></dd><dd><a href="relinquish_defines.html">Defines</a></dd><dt><a href="testify.html" style="color:rgb(216,0,108);">testify</a></dt></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+
+<h1><p>Matrix management </p></h1>
+<p class="group">Reliquish has a comprehensive projection matrix system that in many ways mirrors the OpenGL 1.x matrix stack. Instead of having a single matrix users can allocate as many matrices as needed and then bind and unbind them for each call. Relinquish also has a default Matrix that can be accessed by bunding matrix NULL. All matrix operations talk a matrix pointer. if this matrix pointer is set to NULL, the currently bound Matrix will be used. Any shader using uniforms of type mat4 with names "NormalMatrix", "ModelViewMatrix", "ProjectionMatrix", and "ModelViewProjectionMatrix" will automaticaly be set in any uniform memory not beeing feed form a pointer of array object. Using the function  <a href="relinquish_Uniform_blocks_.html#r_shader_uniform_matrix_set">r_shader_uniform_matrix_set</a> a block of memory beeing prepared to be used as a instance unifom block can have its matrices set from a Relinquish matrix stack.</p>
+<H3><p id="r_matrix_identity">r_matrix_identity</p></H3>
+<p class="code">void		r_matrix_identity(RMatrix *matrix); </p>
+<font class="header">Description:</font>
+<font class="description">Clears and initializes the matrix.</font>
+<H3><p id="r_matrix_push">r_matrix_push</p></H3>
+<p class="code">void		r_matrix_push(RMatrix *matrix); </p>
+<font class="header">Description:</font>
+<font class="description">Push the matrix stack one level.</font>
+<H3><p id="r_matrix_pop">r_matrix_pop</p></H3>
+<p class="code">void		r_matrix_pop(RMatrix *matrix); </p>
+<font class="header">Description:</font>
+<font class="description">Pops the matrix one level.</font>
+<H3><p id="r_matrix_matrix_mult">r_matrix_matrix_mult</p></H3>
+<p class="code">void		r_matrix_matrix_mult(RMatrix *matrix, float *mult); </p>
+<font class="header">Description:</font>
+<font class="description">multiplies a 4by4 float matrix with the current matrix.</font>
+<H3><p id="r_matrix_rotate">r_matrix_rotate</p></H3>
+<p class="code">void		r_matrix_rotate(RMatrix *matrix, float angle, float x, float y, float z); </p>
+<font class="header">Description:</font>
+<font class="description">Rotates the matrix angle degrees around the x, y, and z axis.</font>
+<H3><p id="r_matrix_scale">r_matrix_scale</p></H3>
+<p class="code">void		r_matrix_scale(RMatrix *matrix, float x, float y, float z); </p>
+<font class="header">Description:</font>
+<font class="description">Scales the matrix in x, y, and z.</font>
+<H3><p id="r_matrix_translate">r_matrix_translate</p></H3>
+<p class="code">void		r_matrix_translate(RMatrix *matrix, float x, float y, float z); </p>
+<font class="header">Description:</font>
+<font class="description">Translates the matrix in x, y, and z.</font>
+<H3><p id="r_matrix_normalize_scale">r_matrix_normalize_scale</p></H3>
+<p class="code">void		r_matrix_normalize_scale(RMatrix *matrix); </p>
+<font class="header">Description:</font>
+<font class="description">Normalises the scale of the matrix.</font>
+<H3><p id="r_matrix_frustum">r_matrix_frustum</p></H3>
+<p class="code">void		r_matrix_frustum(RMatrix *matrix, float left, float right, float bottom, float top, float znear, float zfar); </p>
+<font class="header">Description:</font>
+<font class="description">Sets up a frustum for a pespective projection matrix</font>
+<H3><p id="r_matrix_ortho">r_matrix_ortho</p></H3>
+<p class="code">void		r_matrix_ortho(RMatrix *matrix, float left, float right, float bottom, float top, float znear, float zfar); </p>
+<font class="header">Description:</font>
+<font class="description">Sets up a frustum for a ortogonal projection</font>
+<H3><p id="r_matrix_set">r_matrix_set</p></H3>
+<p class="code">void		r_matrix_set(RMatrix *matrix); </p>
+<font class="header">Description:</font>
+<font class="description">Sets the currently active matrix.</font>
+<H3><p id="r_matrix_get">r_matrix_get</p></H3>
+<p class="code">RMatrix		*r_matrix_get();</p>
+<font class="header">Description:</font>
+<font class="description">Returns a pointer to the currently bound matrix. It will return a pointer to the default matrix if matrix NULL is bound. </font>
+<H3><p id="r_matrix_projection_screend">r_matrix_projection_screend</p></H3>
+<p class="code">void r_matrix_projection_screend(RMatrix *matrix, double *output, double x, double y, double z);</p>
+<font class="header">Description:</font>
+<font class="description">transforms double precission x, y, and z from worldspace coordinates in to screen space coordinates. </font>
+<H3><p id="r_matrix_projection_screenf">r_matrix_projection_screenf</p></H3>
+<p class="code">void r_matrix_projection_screenf(RMatrix *matrix, float *output, float x, float y, float z);</p>
+<font class="header">Description:</font>
+<font class="description">transforms single precission x, y, and z from worldspace coordinates in to screen space coordinates.</font>
+<H3><p id="r_matrix_projection_worldf">r_matrix_projection_worldf</p></H3>
+<p class="code">void r_matrix_projection_worldf(RMatrix *matrix, float *output, float x, float y, float z);</p>
+<font class="header">Description:</font>
+<font class="description">transforms single precission x, y, and z from screen space coordinates to world corrdinates.</font>
+<H3><p id="r_matrix_projection_vertexd">r_matrix_projection_vertexd</p></H3>
+<p class="code">void r_matrix_projection_vertexd(RMatrix *matrix, double *output, double *vertex, double x, double y);</p>
+<font class="header">Description:</font>
+<font class="description">transforms double precission screen space x and y at the depth of vertex (in world coordinates), on to world coordinates.</font>
+<H3><p id="r_matrix_projection_vertexf">r_matrix_projection_vertexf</p></H3>
+<p class="code">void r_matrix_projection_vertexf(RMatrix *matrix, float *output, float *vertex, float x, float y);</p>
+<font class="header">Description:</font>
+<font class="description">transforms single precission screen space x and y at the depth of vertex (in world coordinates), on to world coordinates.</font>
+<H3><p id="r_matrix_projection_surfacef">r_matrix_projection_surfacef</p></H3>
+<p class="code">boolean r_matrix_projection_surfacef(RMatrix *matrix, float *output, float *pos, uint axis, float x, float y);</p>
+<H3><p id="r_matrix_projection_axisf">r_matrix_projection_axisf</p></H3>
+<p class="code">boolean r_matrix_projection_axisf(RMatrix *matrix, float *output, float *pos, uint axis, float x, float y);</p>
+<H3><p id="r_matrix_projection_vectorf">r_matrix_projection_vectorf</p></H3>
+<p class="code">boolean r_matrix_projection_vectorf(RMatrix *matrix, float *output, float *pos, float *vec, float x, float y);</p>
+<H3><p id="r_viewport">r_viewport</p></H3>
+<p class="code">void r_viewport(uint x_start, uint y_start, uint x_end, uint y_end); </p>
+<font class="header">Description:</font>
+<font class="description">sets, in pixes the view port where Relinquish will draw.</font>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html> 

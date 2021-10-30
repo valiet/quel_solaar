@@ -1,0 +1,92 @@
+
+
+
+
+ToDo:
+---------
+
+Bugs
+	+Color wheel
+	+Aspect window change
+	+Popup setup
+	+Text
+	
+Sorting sytem;
+	+Transform
+	+Sort list;
+	+Joystic support;
+
+Backgrounds:
+	+Freeform
+	-Split windows
+	-Buttons
+	-Popups
+	-Arcs
+	-Type-ins
+	+Images
+
+3D objects:
+	+Shading
+	+Loading
+	-Unified lighting
+	-Color set.
+	-Buttons.
+
+Widgets:
+	-Popups
+	-Color selectiors
+	-Sliders
+	-buttons
+	-Toggles
+	-Multi selects
+
+Manipulators
+
+	-Normal Manipulator.
+	-Rotation Manipulator.
+
+-Internals...
+
+	+Square manipulator.
+	+Box manipulator.
+	-Scale manipulator.
+
+
+Days:
+	Wednesday: (Backgrounds)
+		+Lightning model
+		-TypeIn area
+		+Popup
+		?OK/Cansle
+		+ColorConfig
+	Thursday:
+		+Buttons
+		+Toggle
+		+Sliders
+		+Colors;
+			-More lighting options
+	Friday:
+		+Popups
+		+Joystic overlay
+			+Popup mode.
+	Satturday:
+		-Testing 
+		-Cleanup.
+
+	Implement....
+
+
+-controler rotate
+-Rotation snap.
+-Direction areas for popups.
+
+Text typein:
+	Area detection:
+	line
+	number float
+	number int
+	box
+
+
+Editor.
+

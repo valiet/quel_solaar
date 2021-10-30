@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>imagine</title>
+<style type="text/css">
+font.header {color:rgb(108,216,0);}
+h2 {color:rgb(108,216,0);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;">
+<dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dd><a href="imagine_Library_loading_.html">Library loading </a></dd><dd><a href="imagine_Multi_Treading_.html">Multi Treading </a></dd><dd><a href="imagine_timing_.html">timing </a></dd><dd><a href="imagine_Execution_.html">Execution </a></dd><dd><a href="imagine_Settings_storage_.html">Settings storage </a></dd><dd><a href="imagine_Directory_listing_.html">Directory listing </a></dd><dd><a href="imagine_defines.html">Defines</a></dd><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dt><a href="testify.html" style="color:rgb(216,0,108);">testify</a></dt></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+
+<h1><p>Directory listing </p></h1>
+<p class="group">Under window this code will create a imaginary root directory containing all volumes. It is therefor possible to list all files in all volumes.</p>
+<H3><p id="imagine_path_search">imagine_path_search</p></H3>
+<p class="code">boolean imagine_path_search(char *file, boolean partial, char *path, boolean folders, uint number, char *out_buffer, uint out_buffer_size); </p>
+<font class="header">Description:</font>
+<font class="description">Searches for a file recursevly in a path, and writes its location to the out_buffer. If "partial" is set the search will also yeild results wher the seacr string only makes up part of the file name.</font>
+<H3><p id="imagine_path_open">imagine_path_open</p></H3>
+<p class="code">IDir		*imagine_path_open(char *path); </p>
+<font class="header">Description:</font>
+<font class="description">Opens a path for traversial. If the path is not legal or not a directry the fuction will return NULL. </font>
+<H3><p id="imagine_path_next">imagine_path_next</p></H3>
+<p class="code">boolean	imagine_path_next(IDir *d, char *file_name_buffer, uint buffer_size); </p>
+<font class="header">Description:</font>
+<font class="description">Writes the name of the next member of the directory to file_name_buffer. Returns FALSE if there are no files left in the directory to write out. </font>
+<H3><p id="imagine_path_close">imagine_path_close</p></H3>
+<p class="code">void		imagine_path_close(IDir *d); </p>
+<font class="header">Description:</font>
+<font class="description">Closes a directory. </font>
+<H3><p id="imagine_path_is_dir">imagine_path_is_dir</p></H3>
+<p class="code">boolean	imagine_path_is_dir(char *path); </p>
+<font class="header">Description:</font>
+<font class="description">Returns True if the path is a valid directory. </font>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html> 

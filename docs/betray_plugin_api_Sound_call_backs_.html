@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>betray_plugin_api</title>
+<style type="text/css">
+font.header {color:rgb(0,108,216);}
+h2 {color:rgb(0,108,216);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;">
+<dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dd><a href="betray_plugin_api_betray_state_.html">betray state </a></dd><dd><a href="betray_plugin_api_Clipboard__.html">Clipboard  </a></dd><dd><a href="betray_plugin_api_Callbacks_.html">Callbacks </a></dd><dd><a href="betray_plugin_api_Image_manipulation_.html">Image manipulation </a></dd><dd><a href="betray_plugin_api_Sound_call_backs_.html">Sound call backs </a></dd><dd><a href="betray_plugin_api_Allocate_new_buttons,_pointers_a.html">Allocate new buttons, pointers and axis </a></dd><dd><a href="betray_plugin_api_Settings_.html">Settings </a></dd><dd><a href="betray_plugin_api_Windows_specific_.html">Windows specific </a></dd><dd><a href="betray_plugin_ap_defines.html">Defines</a></dd><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dt><a href="testify.html" style="color:rgb(216,0,108);">testify</a></dt></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+
+<h1><p>Sound call backs </p></h1>
+<p class="group">The sound A<a href="forge_Forge_is_a_basic_utility_library.html#PI">PI</a> mirrors the betray sound A<a href="forge_Forge_is_a_basic_utility_library.html#PI">PI</a> </p>
+<H3><p id="betray_plugin_audio_unit_create">betray_plugin_audio_unit_create</p></H3>
+<p class="code">unit		betray_plugin_audio_unit_create(); </p>
+<font class="header">Description:</font>
+<font class="description">you need to create a autio unit id in order to create callbacks</font>
+<H3><p id="betray_plugin_callback_set_audio_sound_create">betray_plugin_callback_set_audio_sound_create</p></H3>
+<p class="code">void		betray_plugin_callback_set_audio_sound_create(uint audio_unit_id, uint (*func)(uint type, uint stride, uint length, uint frequency, void *data, char *name)); </p>
+<font class="header">Description:</font>
+<font class="description">Set a call back for betray_audio_sound_create. </font>
+<H3><p id="betray_plugin_callback_set_audio_sound_destroy">betray_plugin_callback_set_audio_sound_destroy</p></H3>
+<p class="code">void		betray_plugin_callback_set_audio_sound_destroy(uint audio_unit_id, void (*func)(uint sound)); </p>
+<font class="header">Description:</font>
+<font class="description">Set a call back for betray_audio_sound_create. </font>
+<H3><p id="betray_plugin_callback_set_audio_sound_play">betray_plugin_callback_set_audio_sound_play</p></H3>
+<p class="code">void		betray_plugin_callback_set_audio_sound_play(uint audio_unit_id, uint (*func)(uint sound, float *pos, float *vector, float speed, float volume, boolean loop, boolean ambient, boolean auto_delete)); </p>
+<font class="header">Description:</font>
+<font class="description">Set a call back for betray_audio_sound_play. </font>
+<H3><p id="betray_plugin_callback_set_audio_sound_set">betray_plugin_callback_set_audio_sound_set</p></H3>
+<p class="code">void		betray_plugin_callback_set_audio_sound_set(uint audio_unit_id, void (*func)(uint play, float *pos, float *vector, float speed, float volume, boolean loop, boolean ambient)); </p>
+<font class="header">Description:</font>
+<font class="description">Set a call back for betray_audio_sound_set. </font>
+<H3><p id="betray_plugin_callback_set_audio_sound_is_playing">betray_plugin_callback_set_audio_sound_is_playing</p></H3>
+<p class="code">void		betray_plugin_callback_set_audio_sound_is_playing(uint audio_unit_id, boolean (*func)(uint play)); </p>
+<font class="header">Description:</font>
+<font class="description">Set a call back for betray_audio_sound_is_playing. </font>
+<H3><p id="betray_plugin_callback_set_audio_sound_stop">betray_plugin_callback_set_audio_sound_stop</p></H3>
+<p class="code">void		betray_plugin_callback_set_audio_sound_stop(uint audio_unit_id, void (*func)(uint play)); </p>
+<font class="header">Description:</font>
+<font class="description">Set a call back for betray_audio_sound_stop. </font>
+<H3><p id="betray_plugin_callback_set_audio_stream_create">betray_plugin_callback_set_audio_stream_create</p></H3>
+<p class="code">void		betray_plugin_callback_set_audio_stream_create(uint audio_unit_id, uint (*func)(uint frequency, float *pos, float *vector,  float volume, boolean ambient)); </p>
+<font class="header">Description:</font>
+<font class="description">Set a call back for betray_audio_stream_create. </font>
+<H3><p id="betray_plugin_callback_set_audio_stream_destroy">betray_plugin_callback_set_audio_stream_destroy</p></H3>
+<p class="code">void		betray_plugin_callback_set_audio_stream_destroy(uint audio_unit_id, void (*func)(uint stream)); </p>
+<font class="header">Description:</font>
+<font class="description">Set a call back for betray_audio_stream_destroy. </font>
+<H3><p id="betray_plugin_callback_set_audio_stream_feed">betray_plugin_callback_set_audio_stream_feed</p></H3>
+<p class="code">void		betray_plugin_callback_set_audio_stream_feed(uint audio_unit_id, void (*func)(uint stream, uint type, uint stride, uint length, void *data)); </p>
+<font class="header">Description:</font>
+<font class="description">Set a call back for betray_audio_stream_feed. </font>
+<H3><p id="betray_plugin_callback_set_audio_stream_buffer_left">betray_plugin_callback_set_audio_stream_buffer_left</p></H3>
+<p class="code">void		betray_plugin_callback_set_audio_stream_buffer_left(uint audio_unit_id, uint (*func)(uint stream)); </p>
+<font class="header">Description:</font>
+<font class="description">Set a call back for betray_audio_stream_buffre_left. </font>
+<H3><p id="betray_plugin_callback_set_audio_stream_set">betray_plugin_callback_set_audio_stream_set</p></H3>
+<p class="code">void		betray_plugin_callback_set_audio_stream_set(uint audio_unit_id, void (*func)(uint stream, float *pos, float *vector,  float volume, boolean ambient)); </p>
+<font class="header">Description:</font>
+<font class="description">Set a call back for betray_audio_stream_set. </font>
+<H3><p id="betray_plugin_callback_set_audio_listener">betray_plugin_callback_set_audio_listener</p></H3>
+<p class="code">void		betray_plugin_callback_set_audio_listener(uint audio_unit_id, void (*func)(float *pos, float *vector, float *forward, float *side, float scale, float speed_of_sound)) </p>
+<font class="header">Description:</font>
+<font class="description">Set a call back for betray_audio_listener. </font>
+<H3><p id="betray_plugin_callback_set_audio_read">betray_plugin_callback_set_audio_read</p></H3>
+<p class="code">void		betray_plugin_callback_set_audio_read(uint audio_unit_id, uint (*func)(void *data, uint type, uint channel, uint buffer_size), uint channels, float *vectors); </p>
+<font class="header">Description:</font>
+<font class="description">Set up a Audio recording unit, by defining the number of channels it can record, its verctors (array of 3 * channels floats) and the callback to be called by the application to get access to the recorded data.</font>
+<H3><p id="betray_plugin_audio_master_volume_get">betray_plugin_audio_master_volume_get</p></H3>
+<p class="code">float	betray_plugin_audio_master_volume_get(void); </p>
+<font class="header">Description:</font>
+<font class="description">Returns the volume level set by the application from Zero to One</font>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html> 

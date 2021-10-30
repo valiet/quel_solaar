@@ -1,0 +1,166 @@
++ Enough programming introduction:
+
+This is a short "introductionary manual." to the lib Enough. Enough is a very simple storage lib that allows you to receive and store verse data . the data can then be accessed threw the enough.h
+
+For you to have any use of this lib you will need to familiarize yourself with verse, you will find all you need at the verse website at verse.blender.org. It is recommended that you write one or two smaller verse apps without Enough before using enough.
+
+Enough Is a simple storage lib that stores all in coming callbacks form verse. to send data changes back to verse, the normal verse.h API is used. Enough stores the data in a fairly simplistic way, it does not sort the data or prepare the data for any specific use, therefor if you use Enough you are likely to need to write a data conversion code on top of enough.
+
+Ok lets start looking at the API:
+
+Managing Connections:
+
+to initialize you first need to run :
+
+void enough_init(void);
+
+Enough can store more then one connection that you can switch between. you need to use Enoughs connect command rather then the verse.h connection command. so use:
+
+uint e_vc_connect(char *server_address, char *name, char *pass);
+
+once you have sent the connection you can test to see if you got a connection.
+
+extern boolean e_vc_check_connected(void);
+extern boolean e_vc_check_connected_slot(uint connection);
+extern boolean e_vc_check_acsepted_slot(uint connection);
+
+and disconnect using these functions:
+
+extern void e_vc_disconnect(uint connection);
+extern void e_vc_disconnect_all(void);
+
+To update the network and to switch the different connections you need to run:
+
+extern void e_vc_set_current_active_connection(uint connection);
+extern void e_vc_connection_update(uint connection, uint time);
+
+By default Enough will download all node types but you can turn it on and off by calling:
+
+void e_vc_set_auto_subscribe(VNodeType type, boolean set);
+
+Node Handling
+
+All nodes are handled using the type "ENode". the basic way of getting a node is by one of thees functions:
+
+ENode *e_ns_get_node(uint connection, uint node_id);
+ENode *e_ns_get_node_next(uint id, uint connection, VNodeType type);
+ENode *e_ns_get_node_avatar(uint connection);
+ENode *e_ns_get_node_link(ENode *parent, uint node_id);
+
+You can get the number of nodes of any type by calling:
+
+uint e_ns_get_node_count(uint connection, VNodeType type);
+
+Once you have a node you can read out data from it by calling:
+
+uint e_ns_get_node_id(ENode *node);
+VNodeType e_ns_get_node_type(ENode *node);
+uint e_ns_get_node_owner(ENode *node);
+char *e_ns_get_node_name(ENode *node);
+uint e_ns_get_node_connection(ENode *node);
+
+Remember that any ENode or underlying data or pointers become invalid every time you call network update. This is because the nodes may have been deleted or changed. So you have to store the node ids and the look up the node again.
+
+Some data like geometry and bitmap layers will not be subscribed to until the user sends calls to get the data. so if you want to use enough to write a saver you cant just connect, wait a while and then traverse the data. when you receive the data you need to traverse the layers and ask enough for pointers to the data. the first time they are requested they will return pointers pointing to blank data, but then they will start filling up as enough requests the data from the server. if you are writing a app that is connected to a host for a longer time this is very natural behavior.
+
+Custom Data
+
+When you use enough you may still need to store your own custom data. Enough has various functionality to this end.
+
+void e_ns_set_custom_data(ENode *node, uint slot, void *data);
+void *e_ns_get_custom_data(ENode *node, uint slot);
+
+Can be used to store pointers for each node. there are 16 differently slots for each node. It is recommended that you use a define for the slot ids you use to store your data. by doing this it easier to switch slot if you want to merge your code whit other code bases that use enough as storage lib. How ever, this is not enough if the node gets deleted the slots will disappear and you will get a memory leak. therefor use this function:
+
+typedef enum{
+E_CDC_CREATE,
+E_CDC_STRUCT,
+E_CDC_DATA,
+E_CDC_DESTROY
+}ECustomDataCommand;
+
+void e_ns_set_custom_func(uint slot, VNodeType type, void (*func)(ENode *node, ECustomDataCommand command));
+
+this lets you assign a call back that will be called whenever a node is created, destroyed or updated. Tis lets you write service functions that keep your custom data synced with verses data.
+
+Now on top of this each node has 2 version numbers that can be used to see if a node has been updated or not.
+
+uint e_ns_get_node_version_struct(ENode *node);
+uint e_ns_get_node_version_data(ENode *node);
+
+the data version is updated if there is any change to the node at all, and the structure version will only be updated if there is a structural change. For instance a new vertex, will result in a structural update , while moving a existing vertex will only be a data update. you can also poke at thees version numbers your self to force a update by calling:
+
+void e_ns_update_node_version_struct(ENode *node);
+void e_ns_update_node_version_data(ENode *node);
+
+On top of all this functionality there is actually an other callback that you can give enough to call:
+
+void e_ns_set_node_create_func(void (* func)(uint connection, uint id, VNodeType type, void *user), void *user);
+
+This callback is called when ever your connection receives a node create command form a node that you have asked to create. This is useful if you write a app that creates anode and then automatically want to add more data to it.
+
+Similarly to the node graph, you can in the material graph store custom data and get update callbacks whit thees calls:
+
+uint e_nsm_get_fragment_version(ENode *node, VNMFragmentID id);
+
+void e_nsm_set_custom_data(ENode *node, VNMFragmentID frag, uint slot, void *data);
+void *e_nsm_get_custom_data(ENode *node, VNMFragmentID frag, uint slot);
+
+void e_nsm_set_custom_func(uint slot, void (*func)(ENode *node, VNMFragmentID frag, ECustomDataCommand command));
+
+Node Data;
+
+This is a very short documentation and most of the functionality is self explanatory if you know how verse works. But however there are some things to enplane. Layers and other data have their own handles like:
+
+typedef void EObjLink;
+typedef void EGeoLayer;
+typedef void EBitLayer;
+typedef void ECodeBuffer;
+
+They are obtained just like ENode handles using the same types of functions.
+
+All of them have functions named "_next" this will give you the next available handles that has the same or higher id as the one given. This allow you to make loops that lists all nodes or layers. Here is an example of a loop that gives you all object nodes.
+
+ENode *node;
+
+for(node = e_ns_get_node_next(0, 0, V_NT_OBJECT); node != NULL; node = e_ns_get_node_next(e_ns_get_node_id(node) + 1, 0, V_NT_OBJECT)
+{
+...
+}
+
+Some data types doesn't have their own types and only ids are used. they have similar _next functions. here is an example of going threw all tag groups of a node:
+
+for(id = e_ns_get_next_tag_group(node, 0); id != (uint16)-1; e_ns_get_next_tag_group(node, id + 1))
+
+Special Node Functions:
+
+Geometry node:
+
+When modifying a geometry node one wants to add new vertices and polygon one needs empty ids. to do this use the functions:
+
+uint e_nsg_find_empty_vertex_slot(ENode *node, uint start);
+uint e_nsg_find_empty_polygon_slot(ENode *node, uint start);
+
+use the "start" param if you need to more then one id. a typical loop to obtain ten id can look like this:
+
+uint ids[10], i;
+
+ids[0] = e_nsg_find_empty_vertex_slot(node, 0);
+
+for(i = 1; i < 10; i++)
+ids[i] = e_nsg_find_empty_vertex_slot(node, ids[i - 1]);
+
+The bitmap node has the same type of functions as the other nodes. but it also has some extra functionality for read out colors form layers. All you need to do is to get a handle and then use that to read out a color at any UV. the functionality will handle , layer searching, data conversion, and pixel filtering and pixel look-up. here is an example:
+
+EBMHandle *my_handle; EBMPrecision my_pixel[3];
+
+my_handle = e_nsb_get_image_handle(node_id, "col_r", "col_g", "col_b");
+for(i = 0; i < 200; i++)
+{
+e_nsb_evaluate_image_handle_tile(my_handle, my_pixel, u, v, w);
+...
+}
+
+e_nsb_destroy_image_handle(my_handle);
+
+The image handle doesn't ever get in valid and will work even if the node gets deleted, or if layers are crated, destroyed, change name or type. 

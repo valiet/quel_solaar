@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>forge</title>
+<style type="text/css">
+font.header {color:rgb(216,108,0);}
+h2 {color:rgb(216,108,0);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;">
+<dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dd><a href="forge_Debugging_.html">Debugging </a></dd><dd><a href="forge_Random_number_generators_.html">Random number generators </a></dd><dd><a href="forge_Vector_math_.html">Vector math </a></dd><dd><a href="forge_Integer_vector_math_.html">Integer vector math </a></dd><dd><a href="forge_Matrix_operations_.html">Matrix operations </a></dd><dd><a href="forge_Matrix_Creation_.html">Matrix Creation </a></dd><dd><a href="forge_Splines_.html">Splines </a></dd><dd><a href="forge_Wiggle_.html">Wiggle </a></dd><dd><a href="forge_Smooth_step_.html">Smooth step </a></dd><dd><a href="forge_Perlin_noise_.html">Perlin noise </a></dd><dd><a href="forge_tiled_versions_of_all_perlin_noi.html">tiled versions of all perlin noises</a></dd><dd><a href="forge_Snap_.html">Snap </a></dd><dd><a href="forge_Color_space_.html">Color space </a></dd><dd><a href="forge_Triangle_intersection_.html">Triangle intersection </a></dd><dd><a href="forge_Text_.html">Text </a></dd><dd><a href="forge_Sorting_.html">Sorting </a></dd><dd><a href="forge_Poly_mesh_neighbour_.html">Poly mesh neighbour </a></dd><dd><a href="forge_A*_path_finding_.html">A* path finding </a></dd><dd><a href="forge_defines.html">Defines</a></dd><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dt><a href="testify.html" style="color:rgb(216,0,108);">testify</a></dt></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+
+<p class="group">tiled versions of all perlin noises</p>
+<H3><p id="f_noisetf">f_noisetf</p></H3>
+<p class="code">float f_noisetf(float f, int period); </p>
+<font class="header">Description:</font>
+<font class="description">Single octave 1D 32 bit float tiled noise.</font>
+<H3><p id="f_noiset2f">f_noiset2f</p></H3>
+<p class="code">float f_noiset2f(float x, float y, int period); </p>
+<font class="header">Description:</font>
+<font class="description">Single octave 2D 32 bit float tiled noise.</font>
+<H3><p id="f_noiset3f">f_noiset3f</p></H3>
+<p class="code">float f_noiset3f(float x, float y, float z, int period); </p>
+<font class="header">Description:</font>
+<font class="description">Single octave 3D 32 bit float tiled noise.</font>
+<H3><p id="f_noisertf">f_noisertf</p></H3>
+<p class="code">float f_noisertf(float f, uint recursions, int period); </p>
+<font class="header">Description:</font>
+<font class="description">Recursive 1D 32 bit float tiled noise.</font>
+<H3><p id="f_noisert2f">f_noisert2f</p></H3>
+<p class="code">float f_noisert2f(float x, float y, uint recursions, int period); </p>
+<font class="header">Description:</font>
+<font class="description">Recursive 2D 32 bit float tiled noise.</font>
+<H3><p id="f_noisert3f">f_noisert3f</p></H3>
+<p class="code">float f_noisert3f(float x, float y, float z, uint recursions, int period); </p>
+<font class="header">Description:</font>
+<font class="description">Recursive 3D 32 bit float tiled noise.</font>
+<H3><p id="f_noisetd">f_noisetd</p></H3>
+<p class="code">double f_noisetd(double f, int period); </p>
+<font class="header">Description:</font>
+<font class="description">Single octave 1D 64 bit double tiled noise.</font>
+<H3><p id="f_noiset2d">f_noiset2d</p></H3>
+<p class="code">double f_noiset2d(double x, double y, int period); </p>
+<font class="header">Description:</font>
+<font class="description">Single octave 2D 64 bit double tiled noise.</font>
+<H3><p id="f_noiset3d">f_noiset3d</p></H3>
+<p class="code">double f_noiset3d(double x, double y, double z, int period); </p>
+<font class="header">Description:</font>
+<font class="description">Single octave 3D 64 bit double tiled noise.</font>
+<H3><p id="f_noisertd">f_noisertd</p></H3>
+<p class="code">double f_noisertd(double f, uint recursions, int period); </p>
+<font class="header">Description:</font>
+<font class="description">Recursive 1D 64 bit double tiled noise.</font>
+<H3><p id="f_noisert2d">f_noisert2d</p></H3>
+<p class="code">double f_noisert2d(double x, double y, uint recursions, int period); </p>
+<font class="header">Description:</font>
+<font class="description">Recursive 2D 64 bit double tiled noise.</font>
+<H3><p id="f_noisert3d">f_noisert3d</p></H3>
+<p class="code">double f_noisert3d(double x, double y, double z, uint recursions, int period); </p>
+<font class="header">Description:</font>
+<font class="description">Recursive 3D 64 bit double tiled noise.</font>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html> 

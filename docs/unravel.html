@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>unravel</title>
+<style type="text/css">
+font.header {color:rgb(216,0,108);}
+h2 {color:rgb(216,0,108);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;">
+<dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dt><a href="unravel.html" style="color:rgb(216,0,108);">unravel</a></dt><dd><a href="unravel_TCP_network_handles_.html">TCP network handles </a></dd><dd><a href="unravel_UDP_network_handles_.html">UDP network handles </a></dd><dd><a href="unravel_Findout_if_any_handles_is_read_o.html">Findout if any handles is read or writable</a></dd><dd><a href="unravel_create_file_handles_.html">create file handles </a></dd><dd><a href="unravel_free_a_handle_.html">free a handle </a></dd><dd><a href="unravel_free_a_handle_.html">free a handle </a></dd><dd><a href="unravel_pipe_from_one_handle_to_another_.html">pipe from one handle to another </a></dd><dd><a href="unravel_turn_on_debug_feature__.html">turn on debug feature  </a></dd><dd><a href="unravel_defines.html">Defines</a></dd></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+
+<p><H2>unravel</H2></p>
+<p class="group">
+TCP network handles </p>
+<p class="header">Contents:</p><dl>
+<dd><a href="#unravel_network_stream_address_create">unravel_network_stream_address_create</a></dd>
+<dd><a href="#unravel_network_stream_send_force">unravel_network_stream_send_force</a></dd>
+<dd><a href="#unravel_network_stream_wait_for_connection">unravel_network_stream_wait_for_connection</a></dd>
+<dd><a href="#unravel_network_stream_connected">unravel_network_stream_connected</a></dd>
+<dt><a href="unravel_UDP_network_handles_.html">UDP network handles </a></dt>
+<dd><a href="unravel_UDP_network_handles_.html#unravel_network_datagram_create">unravel_network_datagram_create</a></dd>
+<dd><a href="unravel_UDP_network_handles_.html#unravel_network_datagram_send">unravel_network_datagram_send</a></dd>
+<dt><a href="unravel_Findout_if_any_handles_is_read_o.html">Findout if any handles is read or writable</a></dt>
+<dd><a href="unravel_Findout_if_any_handles_is_read_o.html#unravel_network_wait">unravel_network_wait</a></dd>
+<dd><a href="unravel_Findout_if_any_handles_is_read_o.html#unravel_network_receive">unravel_network_receive</a></dd>
+<dd><a href="unravel_Findout_if_any_handles_is_read_o.html#unravel_network_address_print">unravel_network_address_print</a></dd>
+<dd><a href="unravel_Findout_if_any_handles_is_read_o.html#unravel_network_address_lookup">unravel_network_address_lookup</a></dd>
+<dt><a href="unravel_create_file_handles_.html">create file handles </a></dt>
+<dd><a href="unravel_create_file_handles_.html#unravel_file_load">unravel_file_load</a></dd>
+<dd><a href="unravel_create_file_handles_.html#unravel_file_save">unravel_file_save</a></dd>
+<dd><a href="unravel_create_file_handles_.html#unravel_file_size">unravel_file_size</a></dd>
+<dd><a href="unravel_create_file_handles_.html#unravel_file_position_set">unravel_file_position_set</a></dd>
+<dd><a href="unravel_create_file_handles_.html#unravel_file_position_get">unravel_file_position_get</a></dd>
+<dt><a href="unravel_free_a_handle_.html">free a handle </a></dt>
+<dd><a href="unravel_free_a_handle_.html#unravel_type">unravel_type</a></dd>
+<dt><a href="unravel_free_a_handle_.html">free a handle </a></dt>
+<dd><a href="unravel_free_a_handle_.html#unravel_free">unravel_free</a></dd>
+<dt><a href="unravel_pipe_from_one_handle_to_another_.html">pipe from one handle to another </a></dt>
+<dd><a href="unravel_pipe_from_one_handle_to_another_.html#unravel_buffer_create">unravel_buffer_create</a></dd>
+<dd><a href="unravel_pipe_from_one_handle_to_another_.html#unravel_buffer_get">unravel_buffer_get</a></dd>
+<dd><a href="unravel_pipe_from_one_handle_to_another_.html#unravel_buffer_set">unravel_buffer_set</a></dd>
+<dt><a href="unravel_turn_on_debug_feature__.html">turn on debug feature  </a></dt>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_debug_mode_set">unravel_debug_mode_set</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_restart_marker_set">unravel_restart_marker_set</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_restart_marker_release">unravel_restart_marker_release</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_restart_marker_reset">unravel_restart_marker_reset</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_retivable">unravel_retivable</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_retivable_terminated">unravel_retivable_terminated</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_pack_uint8">unravel_pack_uint8</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_pack_int8">unravel_pack_int8</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_pack_uint16">unravel_pack_uint16</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_pack_int16">unravel_pack_int16</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_pack_uint32">unravel_pack_uint32</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_pack_int32">unravel_pack_int32</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_pack_uint64">unravel_pack_uint64</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_pack_int64">unravel_pack_int64</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_pack_real32">unravel_pack_real32</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_pack_real64">unravel_pack_real64</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_pack_string">unravel_pack_string</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_unpack_uint8">unravel_unpack_uint8</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_unpack_int8">unravel_unpack_int8</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_unpack_uint16">unravel_unpack_uint16</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_unpack_int16">unravel_unpack_int16</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_unpack_uint32">unravel_unpack_uint32</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_unpack_int32">unravel_unpack_int32</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_unpack_uint64">unravel_unpack_uint64</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_unpack_int64">unravel_unpack_int64</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_unpack_real32">unravel_unpack_real32</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_unpack_real64">unravel_unpack_real64</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_unpack_string">unravel_unpack_string</a></dd>
+<dd><a href="unravel_turn_on_debug_feature__.html#unravel_unpack_string_allocate">unravel_unpack_string_allocate</a></dd>
+<dt><a href="unravel_defines.html">Defines</a></dt>
+</dl>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html> 

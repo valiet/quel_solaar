@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>betray_plugin_api</title>
+<style type="text/css">
+font.header {color:rgb(0,108,216);}
+h2 {color:rgb(0,108,216);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;">
+<dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dd><a href="betray_plugin_api_betray_state_.html">betray state </a></dd><dd><a href="betray_plugin_api_Clipboard__.html">Clipboard  </a></dd><dd><a href="betray_plugin_api_Callbacks_.html">Callbacks </a></dd><dd><a href="betray_plugin_api_Image_manipulation_.html">Image manipulation </a></dd><dd><a href="betray_plugin_api_Sound_call_backs_.html">Sound call backs </a></dd><dd><a href="betray_plugin_api_Allocate_new_buttons,_pointers_a.html">Allocate new buttons, pointers and axis </a></dd><dd><a href="betray_plugin_api_Settings_.html">Settings </a></dd><dd><a href="betray_plugin_api_Windows_specific_.html">Windows specific </a></dd><dd><a href="betray_plugin_ap_defines.html">Defines</a></dd><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dt><a href="testify.html" style="color:rgb(216,0,108);">testify</a></dt></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+
+<h1><p>Image manipulation </p></h1>
+<p class="group">A plugin is able to take over the main rendering loop and have the application render to one or more back buffewrs instead of the screen so that the plugin can modify the render output before drawing it to screen. If <a href="betray_plugin_api_Image_manipulation_.html#betray_plugin_callback_set_image_warp">betray_plugin_callback_set_image_warp</a> is called a separate OpenGL context will be created to the plugin so that it can set state and draw indipendently from the application. If the application sets the betray_plugin_callback_set_image_warpcallback, it needs to in that call back to call <a href="betray_plugin_api_Image_manipulation_.html#betray_plugin_application_draw">betray_plugin_application_draw</a> to signal to the application that it needs it to draw its graphics to a specific FBO. <a href="betray_plugin_api_Image_manipulation_.html#betray_plugin_callback_set_image_warp">betray_plugin_callback_set_image_warp</a> can only be called once and only inside the betray_plugin_init function. </p>
+<H3><p id="betray_plugin_callback_set_image_warp">betray_plugin_callback_set_image_warp</p></H3>
+<p class="code">void		betray_plugin_callback_set_image_warp(boolean (*image_warp)(BInputState *input)); </p>
+<font class="header">Description:</font>
+<font class="description">Set a callback to give you access to the image as a texture, and lets you return a different texture for screen drawing. If the given callback returns false, betray will ignore it and itself trigger the application to draw. This call must be called BEFORE any openGL calls can be made, since it is responcible for creating a separate OpenGL context.</font>
+<H3><p id="betray_plugin_application_draw">betray_plugin_application_draw</p></H3>
+<p class="code">void		betray_plugin_application_draw(uint fbo, uint x_size, uint y_size, float *vantage, boolean vantage_modify, float *matrix); </p>
+<font class="header">Description:</font>
+<font class="description">issues a draw call to the application to draw to a specific FBO, to a specific screen size. If the aplication binds FBO 0, this FBO will be bound instead. The plugin can modify the vantage and transformation matrix in order to produce multiple different vantages in order to support cave, or sterioscopic applications. </font>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html> 

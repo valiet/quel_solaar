@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>testify</title>
+<style type="text/css">
+font.header {color:rgb(216,0,108);}
+h2 {color:rgb(216,0,108);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;">
+<dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dt><a href="testify.html" style="color:rgb(216,0,108);">testify</a></dt><dd><a href="testify_TCP_Networking_.html">TCP Networking </a></dd><dd><a href="testify_UDP_Networking_.html">UDP Networking </a></dd><dd><a href="testify_File_Management_.html">File Management </a></dd><dd><a href="testify_Memmory_buffers_.html">Memmory buffers </a></dd><dd><a href="testify_Handle_Utillities_.html">Handle Utillities </a></dd><dd><a href="testify_Debugging_.html">Debugging </a></dd><dd><a href="testify_Markers_.html">Markers </a></dd><dd><a href="testify_Data_packing_.html">Data packing </a></dd><dd><a href="testify_Data_unpacking_.html">Data unpacking </a></dd><dd><a href="testify_defines.html">Defines</a></dd></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+
+<h1><p>Data packing </p></h1>
+<p class="group">Functions used to pack data in to a stram. If <a href="testify_Testify_.html#TESTIFY_DEBUG">TESTIFY_DEBUG</a> is not defined, the param "name" will be removed with a macro. In debug mode (where both <a href="testify_Testify_.html#TESTIFY_DEBUG">TESTIFY_DEBUG</a> is defined AND the bug mode of the stream has been set to <a href="forge_Forge_is_a_basic_utility_library.html#TRUE">TRUE</a> testify_debug_mode_set) the name, and data type will be checked to make sure they match the name and type that was packed. If this test fails the application will terminate on unpack and write out a Error raport to standard out.</p>
+<H3><p id="testify_pack_uint8">testify_pack_uint8</p></H3>
+<p class="code">void		testify_pack_uint8(THandle *handle, uint8 value, char *name); </p>
+<font class="header">Description:</font>
+<font class="description">Packs one uint8 "value" in to the stream. "name" is a string that needs to be matched when unpacking if the handle is running in debug mode. </font>
+<H3><p id="testify_pack_int8">testify_pack_int8</p></H3>
+<p class="code">void		testify_pack_int8(THandle *handle, int8 value, char *name); </p>
+<font class="header">Description:</font>
+<font class="description">Packs one int8 "value" in to the stream. "name" is a string that needs to be matched when unpacking if the handle is running in debug mode. </font>
+<H3><p id="testify_pack_uint16">testify_pack_uint16</p></H3>
+<p class="code">void		testify_pack_uint16(THandle *handle, uint16 value, char *name); </p>
+<font class="header">Description:</font>
+<font class="description">Packs one uint16 "value" in to the stream. "name" is a string that needs to be matched when unpacking if the handle is running in debug mode. </font>
+<H3><p id="testify_pack_int16">testify_pack_int16</p></H3>
+<p class="code">void		testify_pack_int16(THandle *handle, int16 value, char *name); </p>
+<font class="header">Description:</font>
+<font class="description">Packs one int16 "value" in to the stream. "name" is a string that needs to be matched when unpacking if the handle is running in debug mode. </font>
+<H3><p id="testify_pack_uint32">testify_pack_uint32</p></H3>
+<p class="code">void		testify_pack_uint32(THandle *handle, uint32 value, char *name); </p>
+<font class="header">Description:</font>
+<font class="description">Packs one uint32 "value" in to the stream. "name" is a string that needs to be matched when unpacking if the handle is running in debug mode. </font>
+<H3><p id="testify_pack_int32">testify_pack_int32</p></H3>
+<p class="code">void		testify_pack_int32(THandle *handle, int32 value, char *name); </p>
+<font class="header">Description:</font>
+<font class="description">Packs one int32 "value" in to the stream. "name" is a string that needs to be matched when unpacking if the handle is running in debug mode. </font>
+<H3><p id="testify_pack_uint64">testify_pack_uint64</p></H3>
+<p class="code">void		testify_pack_uint64(THandle *handle, uint64 value, char *name); </p>
+<font class="header">Description:</font>
+<font class="description">Packs one uint64 "value" in to the stream. "name" is a string that needs to be matched when unpacking if the handle is running in debug mode. </font>
+<H3><p id="testify_pack_int64">testify_pack_int64</p></H3>
+<p class="code">void		testify_pack_int64(THandle *handle, int64 value, char *name);	 </p>
+<font class="header">Description:</font>
+<font class="description">Packs one int64 "value" in to the stream. "name" is a string that needs to be matched when unpacking if the handle is running in debug mode. </font>
+<H3><p id="testify_pack_real32">testify_pack_real32</p></H3>
+<p class="code">void		testify_pack_real32(THandle *handle, float value, char *name); </p>
+<font class="header">Description:</font>
+<font class="description">Packs one float "value" in to the stream. "name" is a string that needs to be matched when unpacking if the handle is running in debug mode. </font>
+<H3><p id="testify_pack_real64">testify_pack_real64</p></H3>
+<p class="code">void		testify_pack_real64(THandle *handle, double value, char *name); </p>
+<font class="header">Description:</font>
+<font class="description">Packs one double "value" in to the stream. "name" is a string that needs to be matched when unpacking if the handle is running in debug mode. </font>
+<H3><p id="testify_pack_string">testify_pack_string</p></H3>
+<p class="code">boolean	testify_pack_string(THandle *handle, char *value, char *name); </p>
+<font class="header">Description:</font>
+<font class="description">Packs one uint8 "value" in to the stream. "name" is a string that needs to be matched when unpacking if the handle is running in debug mode. </font>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html> 

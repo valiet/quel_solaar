@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>betray</title>
+<style type="text/css">
+font.header {color:rgb(0,216,108);}
+h2 {color:rgb(0,216,108);}
+body {background-color:#333333;}
+dt {font-family:"Verdana", sans-serif; font-size:12px;} 
+h3 {font-family:"Verdana", sans-serif; font-size:20px;}
+h2 {font-family:"Arial Black", sans-serif; font-size:20px;}
+a {font-family:"Verdana", sans-serif; font-size:12px;color:#000000;text-decoration:none;} 
+a:link {color:#333333;}      /* unvisited link */
+a:visited {color:#555555;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+p.group {font-family:"Verdana", sans-serif; font-size:14px;color:#000000;} 
+p.code {font-family:"Courier New", sans-serif; font-size:12px;top:0px;} 
+font.header {font-family:"Verdana", sans-serif; font-size:12px;font-style:italic;} 
+font.description {font-family:'Verdana', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+p.code {font-family:'Courier New', sans-serif; font-size:12px;} 
+</style>
+
+</head>
+<body>
+<div id="container" style="width:936px;margin-left:auto;margin-right:auto;background-color:#FFFFFF;background-image:url(backdropp.png);background-repeat:no-repeat;">
+<div id="header" style="height:50px;"></div>
+<div id="menu" style="width:170px;height:inherit;float:left;padding:40px;">
+<dl>
+<dt><a href="index.html">Home</a></dt>
+<dt><a href="forge.html" style="color:rgb(216,108,0);">forge</a></dt><dt><a href="imagine.html" style="color:rgb(108,216,0);">imagine</a></dt><dt><a href="betray.html" style="color:rgb(0,216,108);">betray</a></dt><dd><a href="betray_Functionality_query_.html">Functionality query </a></dd><dd><a href="betray_Display_Functionality_.html">Display Functionality </a></dd><dd><a href="betray_Main_loop_.html">Main loop </a></dd><dd><a href="betray_Mouse_Warp_.html">Mouse Warp </a></dd><dd><a href="betray_File_requesters_.html">File requesters </a></dd><dd><a href="betray_Clip_board_.html">Clip board </a></dd><dd><a href="betray_Timers_.html">Timers </a></dd><dd><a href="betray_OpenGL_.html">OpenGL </a></dd><dd><a href="betray_Button_and_key_.html">Button and key </a></dd><dd><a href="betray_Sound_Clip_.html">Sound Clip </a></dd><dd><a href="betray_Sound_Stream__.html">Sound Stream  </a></dd><dd><a href="betray_Sound_Listener__.html">Sound Listener  </a></dd><dd><a href="betray_Sound_Listener__.html">Sound Listener  </a></dd><dd><a href="betray_Settings_.html">Settings </a></dd><dd><a href="betray_defines.html">Defines</a></dd><dt><a href="betray_plugin_api.html" style="color:rgb(0,108,216);">betray_plugin_api</a></dt><dt><a href="relinquish.html" style="color:rgb(108,0,216);">relinquish</a></dt><dt><a href="testify.html" style="color:rgb(216,0,108);">testify</a></dt></dl>
+</div>
+
+<div id="content" style="width:570px;float:left;padding:40px;">
+
+<h1><p>Display Functionality </p></h1>
+<p class="group">Display, screen mode and wiev angle A<a href="forge_Forge_is_a_basic_utility_library.html#PI">PI</a> (Must always be supported) </p>
+<H3><p id="betray_init">betray_init</p></H3>
+<p class="code">void		betray_init(BContextType context_type, int argc, char **argv, uint window_size_x, uint window_size_y, uint samples, boolean window_fullscreen, char *name);</p>
+<p>Types:<p>
+<p class="header">Enum:</p> <p class="code">BContextType<p>
+<table border="1">
+<tr><td valign=top><p class="code">B_CT_OPENGL</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Normal OpenGL context </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_CT_OPENGLES2</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> OpenGL 2.0 ES Context</font>
+</td></tr>
+<tr><td valign=top><p class="code">B_CT_OPENGL_OR_ES</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Creating a context of either OpenGL Or OpenGLES</font>
+</td></tr>
+</table>
+<H3><p id="betray_context_type_get">betray_context_type_get</p></H3>
+<p class="code">BContextType	betray_context_type_get(); </p>
+<font class="header">Description:</font>
+<font class="description">Returns the type of context currently active. Can only be called after betray_init. If you want to know what context is possible to create use betray_support_context. This function is useful for finding out what context was created if betray was called with the parameter B_CT_OPENGL_OR_ES</font>
+<p>Types:<p>
+<p class="header">Enum:</p> <p class="code">BContextType<p>
+<table border="1">
+<tr><td valign=top><p class="code">B_CT_OPENGL</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Normal OpenGL context </font>
+</td></tr>
+<tr><td valign=top><p class="code">B_CT_OPENGLES2</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> OpenGL 2.0 ES Context</font>
+</td></tr>
+<tr><td valign=top><p class="code">B_CT_OPENGL_OR_ES</p></td>
+<td valign=top>
+<font class="header">Description:</font>
+<font class="description"> Creating a context of either OpenGL Or OpenGLES</font>
+</td></tr>
+</table>
+<H3><p id="betray_screen_mode_set">betray_screen_mode_set</p></H3>
+<p class="code">boolean	betray_screen_mode_set(uint x_size, uint y_size, uint samples, boolean fullscreen); </p>
+<font class="header">Description:</font>
+<font class="description">Change screen mode</font>
+<H3><p id="betray_screen_mode_get">betray_screen_mode_get</p></H3>
+<p class="code">double	betray_screen_mode_get(uint *x_size, uint *y_size, boolean *fullscreen); </p>
+<font class="header">Description:</font>
+<font class="description">Get the current screen size, and if it is in fullscreen. Any pameters can be set to NULL, if you are not interested in any parameter. The fuinction returns the aspect ratio of the window/display</font>
+<H3><p id="betray_view_vantage">betray_view_vantage</p></H3>
+<p class="code">void		betray_view_vantage(float *pos); </p>
+<font class="header">Description:</font>
+<font class="description">The head position compared to screen positioned at 0, 0, 0 with the width randing form -1.0 to 1.0 horizontaly. Should be supported in order to do prespective corect rendering for Sterio scopics and Headtracking. If no headtracking is active the data pointed to will be unaffected. </font>
+<H3><p id="betray_view_direction">betray_view_direction</p></H3>
+<p class="code">void		betray_view_direction(float *matrix);  </p>
+<font class="header">Description:</font>
+<font class="description">A 4X4 rotation matrix  that should be aplied to all drawing in order to support multi display solutions and headmounted dispålays. </font>
+<H3><p id="betray_get_input_state">betray_get_input_state</p></H3>
+<p class="code">BInputState *betray_get_input_state(void); </p>
+<font class="header">Description:</font>
+<font class="description">A fiuinction that always returns the current input state. Useful for debugging.</font>
+</div>
+<div id="footer" style="background-color:#AAAAAA;clear:both;text-align:center;">
+<a href="http://www.quelsolaar.com">Quel Solaar</a></div>
+</div>
+</body>
+</html> 
