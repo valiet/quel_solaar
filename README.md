@@ -1,7 +1,7 @@
 # Quel Solaar
 
 [gamepipeline](https://gamepipeline.org/)
-[Quel Solaar](https://http://www.quelsolaar.com/)
+[Quel Solaar](https://www.quelsolaar.com/)
 
 These libraries are developed by Eskil Steenberg under the Quel Solaar banner. All souce code is available under the Free BSD licence meaning that you are free to use ut anyway you want as long as you atribute its source.
 
