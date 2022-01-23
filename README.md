@@ -5,7 +5,7 @@
 
 These libraries are developed by Eskil Steenberg under the Quel Solaar banner. All souce code is available under the Free BSD licence meaning that you are free to use ut anyway you want as long as you atribute its source.
 
-The libraries here comprice a significant ammount of functionality that has been written to be easy to use, light weight, have few dependencies. Im releasing this software because i hope that it can help other developers to make games and other software. The code Is divided in to a num,ber of libraries and you can include just the once you need in to your project. I will do my best to answer any question you may have on eskil 'at' obsession dot se.
+The libraries here comprice a significant ammount of functionality that has been written to be easy to use, light weight, have few dependencies. Im releasing this software because i hope that it can help other developers to make games and other software. The code is divided into a number of libraries and you can include just the once you need in to your project.
 
 ## Forge
 
