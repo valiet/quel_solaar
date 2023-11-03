@@ -2,7 +2,10 @@
 
 [gamepipeline](https://gamepipeline.org/)
 [Quel Solaar](https://www.quelsolaar.com/)
-[Github-Account](https://github.com/quelsolaar)
+
+[https://github.com/quelsolaar](https://github.com/quelsolaar)
+
+[https://github.com/quelsolaar/MergeSource](https://github.com/quelsolaar/MergeSource)
 
 These libraries are developed by Eskil Steenberg under the Quel Solaar banner. All souce code is available under the Free BSD licence meaning that you are free to use ut anyway you want as long as you atribute its source.
 
