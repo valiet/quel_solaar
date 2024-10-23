@@ -1,10 +1,9 @@
 # Quel Solaar
-
+[Twitch](https://www.twitch.tv/quel_solaar)
+[Twitter](http://www.twitter.com/quelsolaar)
 [gamepipeline](https://gamepipeline.org/)
 [Quel Solaar](https://www.quelsolaar.com/)
-
 [https://github.com/quelsolaar](https://github.com/quelsolaar)
-
 [https://github.com/quelsolaar/MergeSource](https://github.com/quelsolaar/MergeSource)
 
 These libraries are developed by Eskil Steenberg under the Quel Solaar banner. All souce code is available under the Free BSD licence meaning that you are free to use ut anyway you want as long as you atribute its source.
